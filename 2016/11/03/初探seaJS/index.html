@@ -59,28 +59,16 @@
 
 
 
-<meta name="description" content="模块化开发1.原始方法
-函数2.对象方法
-对象3.立即执行的函数表达式
-
-4.放大模式5.宽放大模式">
+<meta name="description" content="seaJS 模块化开发commonJS规范  ES6模块化 打包加载seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AMD理解">
-<meta property="og:url" content="http://yoursite.com/2016/10/29/AMD理解/index.html">
+<meta property="og:title" content="初探seaJS">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/初探seaJS/index.html">
 <meta property="og:site_name" content="有你的小时光">
-<meta property="og:description" content="模块化开发1.原始方法
-函数2.对象方法
-对象3.立即执行的函数表达式
-
-4.放大模式5.宽放大模式">
-<meta property="og:updated_time" content="2016-10-29T03:38:14.605Z">
+<meta property="og:description" content="seaJS 模块化开发commonJS规范  ES6模块化 打包加载seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载">
+<meta property="og:updated_time" content="2016-11-03T14:18:16.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AMD理解">
-<meta name="twitter:description" content="模块化开发1.原始方法
-函数2.对象方法
-对象3.立即执行的函数表达式
-
-4.放大模式5.宽放大模式">
+<meta name="twitter:title" content="初探seaJS">
+<meta name="twitter:description" content="seaJS 模块化开发commonJS规范  ES6模块化 打包加载seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载">
 
 
 
@@ -98,7 +86,7 @@
   };
 </script>
 
-  <title> AMD理解 | 有你的小时光 </title>
+  <title> 初探seaJS | 有你的小时光 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -403,7 +391,7 @@
             
             
               
-                AMD理解
+                初探seaJS
               
             
           </h1>
@@ -415,8 +403,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:37:31+08:00" content="2016-10-29">
-              2016-10-29
+            <time itemprop="dateCreated" datetime="2016-11-03T22:17:38+08:00" content="2016-11-03">
+              2016-11-03
             </time>
           </span>
 
@@ -426,8 +414,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/29/AMD理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/AMD理解/" itemprop="commentsCount"></span>
+                <a href="/2016/11/03/初探seaJS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/03/初探seaJS/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -437,7 +425,7 @@
 
           
           
-             <span id="/2016/10/29/AMD理解/" class="leancloud_visitors" data-flag-title="AMD理解">
+             <span id="/2016/11/03/初探seaJS/" class="leancloud_visitors" data-flag-title="初探seaJS">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -458,64 +446,30 @@
       
 
       
-        <h1 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h1><h2 id="1-原始方法"><a href="#1-原始方法" class="headerlink" title="1.原始方法"></a>1.原始方法</h2><ul>
-<li>函数<h2 id="2-对象方法"><a href="#2-对象方法" class="headerlink" title="2.对象方法"></a>2.对象方法</h2></li>
-<li>对象<h2 id="3-立即执行的函数表达式"><a href="#3-立即执行的函数表达式" class="headerlink" title="3.立即执行的函数表达式"></a>3.立即执行的函数表达式</h2></li>
-</ul>
-<h2 id="4-放大模式"><a href="#4-放大模式" class="headerlink" title="4.放大模式"></a>4.放大模式</h2><h2 id="5-宽放大模式"><a href="#5-宽放大模式" class="headerlink" title="5.宽放大模式"></a>5.宽放大模式</h2><a id="more"></a>
-<p>异步加载</p>
-<h1 id="AMD思想"><a href="#AMD思想" class="headerlink" title="AMD思想"></a>AMD思想</h1><p>require([module],callback);<br>require([‘math’],function(math){<br>    math.add(2,3);<br>})</p>
-<h1 id="AMD实现"><a href="#AMD实现" class="headerlink" title="AMD实现"></a>AMD实现</h1><h2 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h2><pre><code>&lt;script src=&quot;&quot; async=&quot;true&quot;&gt;&lt;/script&gt; IE需要些defer
-
-&lt;script src=&quot;&quot; data-main=&quot;main.js&quot;&gt;&lt;/script&gt;
-
-
-
-require.config({
-    baseUrl:&apos;/amd/libs&apos; //两种写路径方法
-    paths:{
-        zepto:&apos;../../libs/zepto&apos;,
-        iscroll:&apos;../../libs/iscroll&apos;,
-        swiper:&apos;../../libs/swiper&apos;,
-
+        <h1 id="seaJS-模块化开发"><a href="#seaJS-模块化开发" class="headerlink" title="seaJS 模块化开发"></a>seaJS 模块化开发</h1><h2 id="commonJS规范-ES6模块化-打包加载"><a href="#commonJS规范-ES6模块化-打包加载" class="headerlink" title="commonJS规范  ES6模块化 打包加载"></a>commonJS规范  ES6模块化 打包加载</h2><h2 id="seaJS-基于AMD-AMD-requireJS实现-浏览器异步加载"><a href="#seaJS-基于AMD-AMD-requireJS实现-浏览器异步加载" class="headerlink" title="seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载"></a>seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载</h2><a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>cnpm i seajs -D
+</code></pre><h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><pre><code>location /seajs{
+    root ;
+    index ;
+}    
+启动nginx
+</code></pre><h2 id="新建入口app-js"><a href="#新建入口app-js" class="headerlink" title="新建入口app.js"></a>新建入口app.js</h2><h2 id="定义模块common-js"><a href="#定义模块common-js" class="headerlink" title="定义模块common.js"></a>定义模块common.js</h2><pre><code>define(function(require,exports,module){
+    var obj ={
+        name:&apos;zzz&apos;,
+        sayName:function(){
+            return this.name
+        }
     }
+    module.exports=obj;
 })
-require([&apos;zepto&apos;,&apos;iscroll&apos;,&apos;swiper&apos;],function($,IScroll,Swiper){
-
-})
-
-# 定义一个模块
-define(function(){
-    var add = function(x,y){
-            return x + y;
-    }
-    return{
-        add:add  //对外暴露add方法
-    }
-})
-
-require(&apos;[MATH]&apos;,function(math){
-    console.log(math.add(4,5))
-})
-
-define([&apos;zepto&apos;],function($){
-    var add = function(x,y){
-            return x + y;
-    }
-    var showStr=function(str){
-        $(&apos;div&apos;).html(str)
-    }
-    return{
-        add:add  //对外暴露add方法
-        ,show:showStr
-    }
-})
-
-shim:{
-    &apos;underscore&apos;:{
-        exports:&apos;&apos;
-    }
-}
+</code></pre><h2 id="在app-js中引用模块"><a href="#在app-js中引用模块" class="headerlink" title="在app.js中引用模块"></a>在app.js中引用模块</h2><pre><code>define(function(require,exports,module){
+    var obj =require(&apos;./commom.js&apos;);
+    cosnole.log(obj.sayName())
+    })
+</code></pre><h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><pre><code>&lt;script src=&apos;./js/sea.js&apos;&gt;&lt;/script&gt;
+&lt;script&gt;
+seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
+&lt;/script&gt;        
 </code></pre>
       
     </div>
@@ -549,17 +503,13 @@ shim:{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/29/YO框架核心/" rel="next" title="YO框架核心">
-                <i class="fa fa-chevron-left"></i> YO框架核心
+              <a href="/2016/11/03/nginx入门/" rel="next" title="nginx入门">
+                <i class="fa fa-chevron-left"></i> nginx入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/29/移动端小问题/" rel="prev" title="移动端小问题">
-                移动端小问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,10 +524,10 @@ shim:{
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/10/29/AMD理解/"
-     data-title="AMD理解"
+        <div class="ds-share flat" data-thread-key="2016/11/03/初探seaJS/"
+     data-title="初探seaJS"
      data-content=""
-     data-url="http://yoursite.com/2016/10/29/AMD理解/">
+     data-url="http://yoursite.com/2016/11/03/初探seaJS/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -607,8 +557,8 @@ shim:{
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/29/AMD理解/"
-           data-title="AMD理解" data-url="http://yoursite.com/2016/10/29/AMD理解/">
+      <div class="ds-thread" data-thread-key="2016/11/03/初探seaJS/"
+           data-title="初探seaJS" data-url="http://yoursite.com/2016/11/03/初探seaJS/">
       </div>
     
   </div>
@@ -741,7 +691,7 @@ shim:{
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化开发"><span class="nav-number">1.</span> <span class="nav-text">模块化开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-原始方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.原始方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-对象方法"><span class="nav-number">1.2.</span> <span class="nav-text">2.对象方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-立即执行的函数表达式"><span class="nav-number">1.3.</span> <span class="nav-text">3.立即执行的函数表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-放大模式"><span class="nav-number">1.4.</span> <span class="nav-text">4.放大模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-宽放大模式"><span class="nav-number">1.5.</span> <span class="nav-text">5.宽放大模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD思想"><span class="nav-number">2.</span> <span class="nav-text">AMD思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD实现"><span class="nav-number">3.</span> <span class="nav-text">AMD实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#require-js"><span class="nav-number">3.1.</span> <span class="nav-text">require.js</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#seaJS-模块化开发"><span class="nav-number">1.</span> <span class="nav-text">seaJS 模块化开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commonJS规范-ES6模块化-打包加载"><span class="nav-number">1.1.</span> <span class="nav-text">commonJS规范  ES6模块化 打包加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seaJS-基于AMD-AMD-requireJS实现-浏览器异步加载"><span class="nav-number">1.2.</span> <span class="nav-text">seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置nginx"><span class="nav-number">1.4.</span> <span class="nav-text">配置nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建入口app-js"><span class="nav-number">1.5.</span> <span class="nav-text">新建入口app.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义模块common-js"><span class="nav-number">1.6.</span> <span class="nav-text">定义模块common.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在app-js中引用模块"><span class="nav-number">1.7.</span> <span class="nav-text">在app.js中引用模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use"><span class="nav-number">1.8.</span> <span class="nav-text">use</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
