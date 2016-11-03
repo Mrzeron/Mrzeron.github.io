@@ -1,0 +1,1330 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="有你的小时光" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="angualr通常使用~~待更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular常用">
+<meta property="og:url" content="http://yoursite.com/2016/11/01/angular常用/index.html">
+<meta property="og:site_name" content="有你的小时光">
+<meta property="og:description" content="angualr通常使用~~待更新">
+<meta property="og:updated_time" content="2016-11-02T08:45:55.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular常用">
+<meta name="twitter:description" content="angualr通常使用~~待更新">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> angular常用 | 有你的小时光 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">有你的小时光</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+
+    
+
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                angular常用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T14:24:57+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/01/angular常用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/angular常用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/01/angular常用/" class="leancloud_visitors" data-flag-title="angular常用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>angualr通常使用~~待更新<br><a id="more"></a></p>
+<h1 id="angular"><a href="#angular" class="headerlink" title="angular"></a>angular</h1><ul>
+<li>cnpm i angular -D //安装ng</li>
+<li>ng-app=”name” //注册angular开始解析节点</li>
+<li>var myApp = angular.module(‘el’,[]); //module是angular的根模块</li>
+<li>var users=[{<br>  name:’zhangsan’,<br>  age:10<br>},{<br>  name:’lisi’,<br>  age:30<br>}]</li>
+<li>myApp.controller(‘myController’，function($scope){<br>  $scope.users=users;<br>})  //第一个参数是controller的名字 第二个参数是回调</li>
+<li>ng-controller=”刚定义的controller名字” //内部就可以使用   显示数据</li>
+<li>ng-bind=”user[0].name” //可以消除页面出现花括号</li>
+</ul>
+<p>//或者</p>
+<ul>
+<li>angular.module(‘el’,[]).controller(‘myController’,function($scope){</li>
+</ul>
+<p>})</p>
+<ul>
+<li>ng-repeat =”user in users” //循环</li>
+<li>$index 索引</li>
+<li>ng-show ng-hide ng-if<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2></li>
+<li>ng-model=””<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2></li>
+<li>ng-事件名=”函数()”//必须有()  $.scope.add=function(){}</li>
+<li>内容重复再repeat中加track by $index</li>
+<li>ng-class=”{‘classname’:}” //控制类名</li>
+<li>ng-repeat = “item in items |  limitTo:3 /<em>限制条数 正数从前负数倒数 可以写变量在vm里面修改</em>/“</li>
+<li>ng-init=”” 初始化数据<h2 id="过滤器filter"><a href="#过滤器filter" class="headerlink" title="过滤器filter"></a>过滤器filter</h2></li>
+<li>|filtet :   :布尔值  //为true完全匹配 后面也可以跟一个函数</li>
+</ul>
+<h2 id="自定义filter"><a href="#自定义filter" class="headerlink" title="自定义filter"></a>自定义filter</h2><pre><code>var persons=[{
+    name:&quot;name~~~~&quot;,
+    age:12,
+    gender:0
+},
+{
+    name:&quot;name2~~~~&quot;,
+    age:10,
+    gender:0
+},
+{
+    name:&quot;name3~~~~&quot;,
+    age:13,
+    gender:1
+}
+]
+|gender
+</code></pre><ul>
+<li>定义过滤器<br>  .filter(‘gender’,function(){<pre><code>return function(sex){
+    switch (sex){
+    case 0:
+    return &quot;男&quot;;
+    case 1:
+    return &quot;女&quot;;
+    }
+}
+</code></pre>  })  //名字 回调</li>
+</ul>
+<h1 id="Defrred"><a href="#Defrred" class="headerlink" title="Defrred"></a>Defrred</h1><ul>
+<li>var $dfd=$.Defrred();</li>
+<li>$dfd.resolve()</li>
+<li>return $dfd</li>
+<li>$dfd.reject() 执行fail</li>
+<li>resolve 一执行 when就执行<h2 id="deferred-promise"><a href="#deferred-promise" class="headerlink" title="deferred.promise()"></a>deferred.promise()</h2></li>
+<li>return dtd.promise()</li>
+<li>$.when().then(=&gt;{</li>
+</ul>
+<p>},=&gt;{</p>
+<p>})</p>
+<ul>
+<li>$.when().done().fail()可以跟多个</li>
+<li>$.when().always() 不管成功失败都执行</li>
+</ul>
+<h2 id="log-console"><a href="#log-console" class="headerlink" title="$log =console"></a>$log =console</h2><pre><code> .controller(&apos;myCon&apos;,function($scope,$log){
+$log.log(&apos;log&apos;)
+$log.info(&apos;log&apos;) //蓝色i
+$log.warn(&apos;log&apos;) //黄色
+$log.error(&apos;log&apos;) //红色
+$log.debug(&apos;log&apos;) //字为蓝色
+</code></pre><p>})</p>
+<h2 id="timeout-setTimeout"><a href="#timeout-setTimeout" class="headerlink" title="$timeout =setTimeout"></a>$timeout =setTimeout</h2><pre><code>$timeout(function(){
+
+    },3000)
+$timeout.cancel(变量)    //取消定时器
+            //$scope上的方法都可以调用
+</code></pre><h2 id="http-Ajax"><a href="#http-Ajax" class="headerlink" title="$http //Ajax"></a>$http //Ajax</h2><pre><code>$http.get(url).then(function(){
+    //success
+    },
+    function(){
+        //error
+        })
+</code></pre><ul>
+<li>$http({<br>  method:””,<br>  url:””<br>}}.then(func1,func2)</li>
+</ul>
+<p>//withCredentials：true cors跨域带token时候必须加</p>
+<h2 id="q"><a href="#q" class="headerlink" title="$q"></a>$q</h2><pre><code>var defer = $q.defer();
+var data ={
+    status:&quot;ok&quot;,
+    userName:&quot;name~~~&quot;
+}
+$timeout(function(){
+    defei.resolve(data);
+},2000)
+defer.promise
+    .then(function(){},function(){})
+</code></pre><h2 id="自定义service"><a href="#自定义service" class="headerlink" title="自定义service"></a>自定义service</h2><ul>
+<li>angular.module(‘appname’,[])<br>  .factory(‘User’,function(){ //如果还要使用其他的 参数直接注入<pre><code>var user={
+    id:1,
+    name:&quot;namessss&quot;,
+    email:&quot;safdasfsafsa&quot;
+}
+var  _getUser=function(){
+    return user;
+}
+var _setUser =function(id,name,email){
+    user.id=id;
+    user.name=name;
+    user.email=email;
+}
+return {
+    get:_getUser,
+    set:_setUser
+}
+</code></pre>  }) //user是自定义服务名</li>
+<li>在别的服务中注入就可以使用了  //数据共享</li>
+</ul>
+<h2 id="controller-as-起别名"><a href="#controller-as-起别名" class="headerlink" title="controller as //起别名"></a>controller as //起别名</h2><ul>
+<li>this.name=”abc”</li>
+<li>在ng-controll=”a as b” 调用时候b.name</li>
+<li>
+</li>
+</ul>
+<h2 id="ng-include-””-直接写模板名字-带路径要加’’必须加"><a href="#ng-include-””-直接写模板名字-带路径要加’’必须加" class="headerlink" title="ng-include=”” //直接写模板名字-带路径要加’’必须加"></a>ng-include=”” //直接写模板名字-带路径要加’’必须加</h2><h1 id="路由-引入angular-route"><a href="#路由-引入angular-route" class="headerlink" title="路由-引入angular-route"></a>路由-引入angular-route</h1><pre><code>1. &lt;div ng-view&gt;&lt;/div&gt; //声明路由节点
+2. var myApp =angular.module(&apos;myapp&apos;,[&apos;ngRoute&apos;]);//依赖注入(小驼峰式是指令)
+2. .config([&apos;$routeProvider&apos;],function($routeProvider){
+     $routeProvider
+         .when(&apos;/home&apos;,{
+             templateUrl:&apos;&apos;,
+             controller:&apos;&apos; //如果加双引号 下面要用.controller 如果不加下面用函数
+             })//定义路由
+
+    }) // 为了解决压缩依赖注入问题 数组中前面是服务名最后是函数 位置不能颠倒顺序要一致
+3. .controller(&apos;&apos;,[&apos;$scope&apos;,function($scope){
+
+    }])        
+4. 调用路由href=&quot;#/路由名&quot;        
+5.  .config([&apos;$routeProvider&apos;],function($routeProvider){
+     $routeProvider
+         .when(&apos;/home&apos;,{
+             templateUrl:&apos;&apos;,
+             controller:
+             })//定义路由----&gt;.when()
+        .otherwise({
+            redirectTo:&apos;/home&apos;
+            })
+            //设置默认页面
+
+    })
+6. 路由传参
+.when(&apos;/employee/:id&apos;,{
+    templateUrl:&apos;......./employeedetail.html&apos;,
+    controller:&apos;&apos;
+    })
+href=&apos;#/employee/{{id}}&apos;
+myApp.controller(&apos;&apos;,[&apos;$routeParams&apos;,function($routeParams){
+        //$routeParams里面带有传进来的参数 参数名跟when后面那个名字一致
+    }])
+7. caseInsensitiveMatch 设置路由对大小写是否敏感
+    .when(&apos;/home&apos;,{
+             templateUrl:&apos;&apos;,
+             controller:,
+             caseInsensitiveMatch:&apos;&apos;//默认false 对路由大小写敏感 对一个设置
+             })
+    $routeProvider.caseInsensitiveMatch=&apos;true&apos; //设置所有路由大小写不敏感
+8. 路由设置controllerAs:&apos;别名&apos; //用途同controller as
+9. 路由刷新
+    1. 引入$route服务
+    2. 调用 $route.reload()
+10. 路由事件 事件在$scope上挂接
+    1. 在路由切换前触发 加给谁从谁离开触发
+    $scope.$on(&apos;$routeChangeStart&apos;,function(event,next,current){
+        //可以传三个参数 next下一个路由信息 cur当前路由信息
+        //阻止跳转 event.preventDefault()
+        })
+    2. 在路由切换成功触发 加给谁谁进入时候触发
+    $scope.$on(&apos;$routeChangeSuccess&apos;,function(event,next,current){
+
+        })
+    3. 在路由切换失败触发 加给谁谁进入失败时候触发
+    $scope.$on(&apos;$routeChangeError&apos;,function(event,next,current){
+
+        })
+11. 手动跳转 $location服务
+    用法$location.url(url)
+12. resolve        
+    .when(&apos;/home&apos;,{
+             templateUrl:&apos;&apos;,
+             controller:,
+             caseInsensitiveMatch:&apos;&apos;,//默认false 对路由大小写敏感 对一个设置
+             resolve:{
+                 employeelist:function($http,$q){
+                    return $http.get(&apos;url&apos;).then(function(res){
+                        return res.data
+                        })
+                 }
+             }//内部延迟成功后再做路由跳转
+             //resolve 必须返回一个延迟对象
+
+             })
+    调用先注入服务employeelist(名字在resolve起的)
+</code></pre><h2 id="rootScope-全局作用域"><a href="#rootScope-全局作用域" class="headerlink" title="$rootScope 全局作用域"></a>$rootScope 全局作用域</h2><pre><code>1. 引入服务$rootScope
+2. 调用            
+</code></pre><h2 id="抽离controller"><a href="#抽离controller" class="headerlink" title="抽离controller"></a>抽离controller</h2><pre><code>1. 新建controller.js
+2. &apos;use strict&apos;
+function storeController($scopre){
+
+}
+</code></pre><h2 id="ng-src-””-定义src"><a href="#ng-src-””-定义src" class="headerlink" title="ng-src=”” //定义src"></a>ng-src=”” //定义src</h2><h2 id="定义module注入"><a href="#定义module注入" class="headerlink" title="定义module注入"></a>定义module注入</h2><pre><code>1. var appCtrl =angular.module(&apos;app-ctrl&apos;,[]);
+appCtrl.controller(&apos;storeController&apos;,[&apos;$scope,&apos;DataService&apos;,function($scope,DataService){
+
+    }&apos;])
+2. 进行依赖注入在需要用的里面[] 注入名字是app-ctrl
+</code></pre><h2 id="自定义指令-directive"><a href="#自定义指令-directive" class="headerlink" title="自定义指令 directive"></a>自定义指令 directive</h2><h3 id="标签指令-常用"><a href="#标签指令-常用" class="headerlink" title="标签指令 常用"></a>标签指令 常用</h3><pre><code>1. 定义指令
+myApp.directive(&apos;helloWorld&apos;,function(){
+    return{
+        template:&quot;&quot;,//内容
+        replace:true,//是否替换helloWrold标签
+        }
+    })    //指令名字小驼峰
+2. 调用指令
+&lt;hello-world&gt;&lt;/hello-world&gt;
+&lt;hello&gt;&lt;/hello&gt;
+</code></pre><h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><pre><code>调用&lt;标签 helloWorld&gt;&lt;/标签&gt;
+</code></pre><h3 id="class指令"><a href="#class指令" class="headerlink" title="class指令"></a>class指令</h3><pre><code>定义时多加一个restrict属性
+restrict:&apos;EAC&apos; //E元素 A属性 C Class M 注释 默认开两个AE
+调用 class=&quot;helloWorld&quot;
+</code></pre><h3 id="注释指令"><a href="#注释指令" class="headerlink" title="注释指令"></a>注释指令</h3><pre><code>调用 &lt;!--directive:helloWorld--&gt;
+</code></pre><h3 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h3><pre><code>myApp.directive(&apos;helloWorld&apos;,function(){
+    return{
+        templateUrl:&quot;&quot;,//模板的url
+        replace:true,//是否替换helloWrold标签
+        scope:true, //是否引入父controller默认true scope可以写成{}断链写成false不能断链
+        {
+            message:&apos;@message&apos; //可以选择取父对象的某些属性 需在元素上加上一个属性message={{message}}  可以用来实现单向数据绑定
+            // =等号可以实现双向数据绑定
+        }
+        controller:function(){
+
+            }//定义自己的controller
+        },
+        compile:function(elem,attrs){
+
+        }//compile返回一个link 如果return 就不需要写link 把link内容写在compile中
+        ,
+        link:function(scope,elem,attrs){
+            //elem是一个jq对象
+            //scope 可以拿到当前作用域
+        }//可以拿到元素对象 属性集合 可以用来深度定制属性 属性里面-写法 取值用驼峰
+        //angular 内置jqlite
+    })
+    angular解析模板 先把模板装载到一个节点上(compile) 渲染模板(link)
+</code></pre><h1 id="控制器之间的信息传递"><a href="#控制器之间的信息传递" class="headerlink" title="控制器之间的信息传递"></a>控制器之间的信息传递</h1><h2 id="emit-类似trigger可以触发事件上代可以收到"><a href="#emit-类似trigger可以触发事件上代可以收到" class="headerlink" title="$emit 类似trigger可以触发事件上代可以收到"></a>$emit 类似trigger可以触发事件上代可以收到</h2><h2 id="broadcast-后代控制器广播可以收到"><a href="#broadcast-后代控制器广播可以收到" class="headerlink" title="$broadcast 后代控制器广播可以收到"></a>$broadcast 后代控制器广播可以收到</h2><pre><code>myApp.controller(&apos;child1Ctrl&apos;,function($scope){
+    $scope.action=function(){
+        $scope.$emit(&apos;parent-ctrl&apos;);
+        $scope.$broadcast(&apos;child-ctrl&apos;);
+        }
+    })
+myApp.controller(&apos;parentCtrl&apos;,function(){
+    $scope.$on(&apos;parent-ctrl&apos;,function(){
+
+        })//绑定一个事件parent-ctrl
+
+    })
+myApp.controller(&apos;grandsonCtrl&apos;,function(){
+        #scope.$on(&apos;child-ctrl&apos;,function(){
+
+        })//绑定一个事件parent-ctrl
+    })
+</code></pre><h1 id="angular-ui-router-实现多层路由嵌套"><a href="#angular-ui-router-实现多层路由嵌套" class="headerlink" title="angular-ui-router 实现多层路由嵌套"></a>angular-ui-router 实现多层路由嵌套</h1><hr>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><pre><code>&lt;ui-view&gt;&lt;/ui-view&gt;
+</code></pre><h2 id="依赖注入模块-‘ui-router’"><a href="#依赖注入模块-‘ui-router’" class="headerlink" title="依赖注入模块 [‘ui.router’]"></a>依赖注入模块 [‘ui.router’]</h2><h2 id="修改href-ui-sref-”name”-state的名字"><a href="#修改href-ui-sref-”name”-state的名字" class="headerlink" title="修改href ui-sref=”name” state的名字"></a>修改href ui-sref=”name” state的名字</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>myApp.config([&apos;$stateProvider&apos;,&apos;$urlRouterProvider&apos;,&apos;$urlMatcherFactoryProvider&apos;,function($stateProvider,$urlRouterProvider,$urlMatcherFactoryProvider){
+    //$urlRouterProvider  otherwise挂在这个上面设置默认页面 需要注入$urlRouterProvider服务
+    //$urlMatcherFactoryProvider.caseInsensitiveMatch() //设置路由对大小写是否敏感
+    $stateProvider
+        .state(&apos;home&apos;,{//路由的名字
+            url:&apos;/home&apos;, //真正的路由 如果传参&apos;/home/:参数名&apos;
+            templateUrl:&apos;&apos;,//路由的路径
+            controller:&quot;&quot;,//定义控制器
+            controllerAs:&apos;&apos;,
+            resolve:{ //延迟执行
+                employeelist:function(){
+
+                }
+            }
+            })
+    $urlRouterProvider.otherwise(&apos;/home&apos;);//设置默认页面 可以单独设置一个config抽离
+    $urlMatchFactoryProvider.caseInsensitiveMatch(true);//设置对路由大小写敏感
+    }])
+</code></pre><h2 id="controller中使用相关功能"><a href="#controller中使用相关功能" class="headerlink" title="controller中使用相关功能"></a>controller中使用相关功能</h2><h3 id="实现reload"><a href="#实现reload" class="headerlink" title="实现reload()"></a>实现reload()</h3><pre><code>注入$state
+$state.reload()
+</code></pre><h3 id="实现location-跳转"><a href="#实现location-跳转" class="headerlink" title="实现location()跳转"></a>实现location()跳转</h3><pre><code>注入$state
+$state.go(&apos;要跳转到的路由state的名字&apos;,{
+    //参数
+    })
+</code></pre><h3 id="接收参数"><a href="#接收参数" class="headerlink" title="接收参数"></a>接收参数</h3><pre><code>注入$stateParams
+$stateParams里面包含传入的参数
+</code></pre><h2 id="路由数据挂接"><a href="#路由数据挂接" class="headerlink" title="路由数据挂接"></a>路由数据挂接</h2><h3 id="设置路由上的数据"><a href="#设置路由上的数据" class="headerlink" title="设置路由上的数据"></a>设置路由上的数据</h3><pre><code>.state(&apos;home&apos;,{//路由的名字
+            url:&apos;/home&apos;, //真正的路由 如果传参&apos;/home/:参数名&apos;
+            templateUrl:&apos;&apos;,//路由的路径
+            controller:&quot;&quot;,//定义控制器
+            controllerAs:&apos;&apos;,
+            data:{
+                customData:&apos;&apos;//要传递的数据
+            }
+            })
+</code></pre><h3 id="获取路由数据"><a href="#获取路由数据" class="headerlink" title="获取路由数据"></a>获取路由数据</h3><pre><code>在要使用controller中            
+注入$state服务
+数据在$state.current.data中
+</code></pre><h3 id="可以获取其他路由的数据"><a href="#可以获取其他路由的数据" class="headerlink" title="可以获取其他路由的数据"></a>可以获取其他路由的数据</h3><pre><code>在要使用controller中            
+注入$state服务
+$state.get(&apos;要取数据的路由名字&apos;).data
+数据在$state.get(&apos;要取数据的路由名字&apos;).data中
+</code></pre><h2 id="实现子路由嵌套"><a href="#实现子路由嵌套" class="headerlink" title="实现子路由嵌套"></a>实现子路由嵌套</h2><h3 id="定义父路由"><a href="#定义父路由" class="headerlink" title="定义父路由"></a>定义父路由</h3><pre><code>.state(&apos;parent&apos;,{
+    url:&apos;/employee&apos;,
+    templateUrl:&apos;&apos;,
+    controller:&apos;&apos;
+    })
+</code></pre><h3 id="定义子路由"><a href="#定义子路由" class="headerlink" title="定义子路由"></a>定义子路由</h3><pre><code>.state(&apos;parent.employee&apos;,{
+    url:&apos;/&apos;,
+    templateUrl:&apos;&apos;,
+    controller:&apos;&apos;
+    })
+</code></pre><h3 id="跳转默认子路由"><a href="#跳转默认子路由" class="headerlink" title="跳转默认子路由"></a>跳转默认子路由</h3><pre><code>ui-sref=&quot;name&quot; state的名字
+</code></pre><h1 id="ng-disabled-表单的值后端不能直接拿到"><a href="#ng-disabled-表单的值后端不能直接拿到" class="headerlink" title="ng-disabled 表单的值后端不能直接拿到"></a>ng-disabled 表单的值后端不能直接拿到</h1>
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>您的支持将鼓励我继续进步！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://ocq2u27lk.bkt.clouddn.com/alipay.png" alt="你喜欢的哈士奇 Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/29/vue常用/" rel="next" title="vue">
+                <i class="fa fa-chevron-left"></i> vue
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/01/angular常用/"
+     data-title="angular常用"
+     data-content=""
+     data-url="http://yoursite.com/2016/11/01/angular常用/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/01/angular常用/"
+           data-title="angular常用" data-url="http://yoursite.com/2016/11/01/angular常用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="你喜欢的哈士奇" />
+          <p class="site-author-name" itemprop="name">你喜欢的哈士奇</p>
+          <p class="site-description motion-element" itemprop="description">关于爱的定义</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Mrzeron" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  gayHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-zhan-90" target="_blank">
+                  
+                    <i class="fa fa-google"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" target="_blank">百度</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://example.com/" target="_blank">新浪</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#angular"><span class="nav-number">1.</span> <span class="nav-text">angular</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#双向数据绑定"><span class="nav-number">1.1.</span> <span class="nav-text">双向数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">1.2.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器filter"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义filter"><span class="nav-number">1.4.</span> <span class="nav-text">自定义filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Defrred"><span class="nav-number">2.</span> <span class="nav-text">Defrred</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deferred-promise"><span class="nav-number">2.1.</span> <span class="nav-text">deferred.promise()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#log-console"><span class="nav-number">2.2.</span> <span class="nav-text">$log =console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#timeout-setTimeout"><span class="nav-number">2.3.</span> <span class="nav-text">$timeout =setTimeout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-Ajax"><span class="nav-number">2.4.</span> <span class="nav-text">$http //Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q"><span class="nav-number">2.5.</span> <span class="nav-text">$q</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义service"><span class="nav-number">2.6.</span> <span class="nav-text">自定义service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#controller-as-起别名"><span class="nav-number">2.7.</span> <span class="nav-text">controller as //起别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-include-””-直接写模板名字-带路径要加’’必须加"><span class="nav-number">2.8.</span> <span class="nav-text">ng-include=”” //直接写模板名字-带路径要加’’必须加</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由-引入angular-route"><span class="nav-number">3.</span> <span class="nav-text">路由-引入angular-route</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rootScope-全局作用域"><span class="nav-number">3.1.</span> <span class="nav-text">$rootScope 全局作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽离controller"><span class="nav-number">3.2.</span> <span class="nav-text">抽离controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-src-””-定义src"><span class="nav-number">3.3.</span> <span class="nav-text">ng-src=”” //定义src</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义module注入"><span class="nav-number">3.4.</span> <span class="nav-text">定义module注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义指令-directive"><span class="nav-number">3.5.</span> <span class="nav-text">自定义指令 directive</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签指令-常用"><span class="nav-number">3.5.1.</span> <span class="nav-text">标签指令 常用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性指令"><span class="nav-number">3.5.2.</span> <span class="nav-text">属性指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class指令"><span class="nav-number">3.5.3.</span> <span class="nav-text">class指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释指令"><span class="nav-number">3.5.4.</span> <span class="nav-text">注释指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐写法"><span class="nav-number">3.5.5.</span> <span class="nav-text">推荐写法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制器之间的信息传递"><span class="nav-number">4.</span> <span class="nav-text">控制器之间的信息传递</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#emit-类似trigger可以触发事件上代可以收到"><span class="nav-number">4.1.</span> <span class="nav-text">$emit 类似trigger可以触发事件上代可以收到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#broadcast-后代控制器广播可以收到"><span class="nav-number">4.2.</span> <span class="nav-text">$broadcast 后代控制器广播可以收到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#angular-ui-router-实现多层路由嵌套"><span class="nav-number">5.</span> <span class="nav-text">angular-ui-router 实现多层路由嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">5.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖注入模块-‘ui-router’"><span class="nav-number">5.2.</span> <span class="nav-text">依赖注入模块 [‘ui.router’]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改href-ui-sref-”name”-state的名字"><span class="nav-number">5.3.</span> <span class="nav-text">修改href ui-sref=”name” state的名字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">5.4.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#controller中使用相关功能"><span class="nav-number">5.5.</span> <span class="nav-text">controller中使用相关功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现reload"><span class="nav-number">5.5.1.</span> <span class="nav-text">实现reload()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现location-跳转"><span class="nav-number">5.5.2.</span> <span class="nav-text">实现location()跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收参数"><span class="nav-number">5.5.3.</span> <span class="nav-text">接收参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由数据挂接"><span class="nav-number">5.6.</span> <span class="nav-text">路由数据挂接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置路由上的数据"><span class="nav-number">5.6.1.</span> <span class="nav-text">设置路由上的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取路由数据"><span class="nav-number">5.6.2.</span> <span class="nav-text">获取路由数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以获取其他路由的数据"><span class="nav-number">5.6.3.</span> <span class="nav-text">可以获取其他路由的数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现子路由嵌套"><span class="nav-number">5.7.</span> <span class="nav-text">实现子路由嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义父路由"><span class="nav-number">5.7.1.</span> <span class="nav-text">定义父路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义子路由"><span class="nav-number">5.7.2.</span> <span class="nav-text">定义子路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳转默认子路由"><span class="nav-number">5.7.3.</span> <span class="nav-text">跳转默认子路由</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-disabled-表单的值后端不能直接拿到"><span class="nav-number">6.</span> <span class="nav-text">ng-disabled 表单的值后端不能直接拿到</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">你喜欢的哈士奇</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zzzmmm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+</body>
+</html>
