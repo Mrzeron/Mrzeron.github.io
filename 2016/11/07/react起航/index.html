@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-07T05:42:10.399Z">
+<meta property="og:updated_time" content="2016-11-07T09:51:49.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
@@ -447,9 +447,7 @@
 
       
         <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
-<h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx</p>
-<pre><code>cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react
-</code></pre><p>.babelrc添加react<br>用来渲染react</p>
+<h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br>    cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react<br>.babelrc添加react<br>用来渲染react</p>
 <pre><code>cnpm i react react-dom -D
 </code></pre><p>调整package.json</p>
 <pre><code>创建新文件server.js //和.babelrc同级
@@ -469,7 +467,7 @@ new WebpackDevServer(webpack(config),{ //拿到config后可以用.config所有�
                 &apos;^/rest&apos;:&apos;&apos;   //以rest开头的替换为空 /rest/list-&gt;localhost:8888/list
             }
         }    //前面以/rest/开头的所有都使用代理转发
-}
+} 
 
 
 })
@@ -503,6 +501,56 @@ ReactDom.render(){
     document.getElementById() //要挂载的节点
 }
 </code></pre><p>使用<br>    执行webpack  进行打包<br>    启动server npm run start</p>
+<h2 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h2><p>安装 react-hot-loader<br>在webpack.config.js中修改    </p>
+<pre><code>entry:[
+&apos;webpack-dev-server/client?http://localhost:80&apos;, //必须和server.js里面一致
+&apos;webpack/hot/only-dev-server&apos;,
+__dirname+&apos;/src/scripts/app.js&apos;
+]
+plygins:[
+    new webpack.HotModuleReplacementPlugin()
+]
+</code></pre><p>在server.js中</p>
+<pre><code>添加hot:true    
+</code></pre><h3 id="模块热替换的问题"><a href="#模块热替换的问题" class="headerlink" title="模块热替换的问题"></a>模块热替换的问题</h3><p>fix在app.js中</p>
+<pre><code>if(module.hot){
+module.hot.accept();
+}
+</code></pre><h1 id="评论功能组件"><a href="#评论功能组件" class="headerlink" title="评论功能组件"></a>评论功能组件</h1><p>新建comment文件夹<br>在app.js引入并挂载CommentBox<br>新建CommentBox.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    import CommentForm from ‘’;//在comment-form.js写完后引入<br>    import CommentList from ‘’;//在 CommentList写完后引入<br>    class CommentBox extends React.Component{<br>        constructor(props){ //继承时会自动执行<br>        super(props)    //不执行会报错<br>        this.state ={<br>            data:[]<br>        }//定义状态<br>        fetch(‘./json’).then(res=&gt;res.json()).then(data=&gt;{<br>            this.setState({<br>                data:data<br>            })<br>            //进行状态的修改 一修改DOM就重新渲染<br>        }).catch(e=&gt;{<br>            console.log(‘error’)<br>            })</p>
+<pre><code>    };
+    render(){
+        return (
+        &lt;div&gt;//只能有一个根元素
+            &lt;div className=&apos;m-index&apos;&gt; //写classNmae 不能写class
+            &lt;h1&gt;评论&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;CommentList data={this.props.data} /&gt; //向子传递数据 --&gt;
+            &lt;CommentList data={this.state.data} /&gt; //通过fetch获取数据 改变state渲染Dom
+
+            &lt;CommentForm /&gt;
+        &lt;/div&gt;
+
+        )
+    }
+}
+export { CommentBox as default};
+</code></pre><p>在app.js中引入scss</p>
+<pre><code>import &apos;../.....scss&apos;    ;//引入sass
+</code></pre><p>新建comment-list.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    import CommentItem from ‘’;//在 CommentIten写完后引入<br>    class CommentList extends React.Component{<br>        render(){<br>            let CommentNodes = this.props.data.map((comment,index)=&gt;{<br>                return (<br>                     <commentitem key="{index}" author="{comment.author}" date="{comment.date}"> //组件信息传递 遍历集合时 key必须传不传报错 保证渲染DOM的唯一性<br>                    {comment.content}<br>                </commentitem><br>                )<br>            })<br>            return (<br>                <div><br>                <!-- <CommentItem author="张三 " date="5分钟前"> //组件信息传递
+                    今天天气不错
+                </CommentItem>
+                <CommentItem author="李四 " date="3分钟前">
+                    今天天气不错啊
+                </CommentItem> --><br>                //react具有数组自展开的功能<br>                {CommentNodes}<br>                </div><br>            )<br>        }<br>    }<br>    export { CommentList as default};</p>
+<p>新建comment-item.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    class CommentItem extends React.Component{<br>        render(){<br>            return (<br>                <div classname="comment"><br>                    <span>{this.props.author}</span>  //在html里面写js 用{} this.props指他的父组件<br>                    <span>{this.props.date}</span><br>                    <div>{this.props.children}</div> //children拿到里面内容</div></p>
+<pre><code>            &lt;/div&gt;
+        )
+    }
+}
+export { CommentItem as default};
+</code></pre><p>新建comment-form.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    class CommentForm extends React.Component{<br>        render(){<br>            return (<br>                //使用yo框架的表单输入框<br>                <div classname="yo-list"><br>                    <label classname="item item-input"><input type="text" classname="yo-input flex" placeholder="发布者"></label><br>                    <label classname="item item-input"><textarea type="text" classname="yo-input flex" placeholder="留言内容"></textarea></label><br>                    <label><button classname="yo-btn yo-btn-l">发表评论</button></label><br>                </div><br>            )<br>        }<br>    }<br>    export { CommentForm as default};</p>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>在app.js中编辑<br>    let Comments=[<br>    {<br>        author=”张三,<br>        data:’5分钟前’,<br>        content:’今天天气不错’<br>    },<br>    {<br>        author=”王三,<br>        data:’2分钟前’,<br>        content:’今天天气很好’<br>    }<br>    ]<br>    ReactDom.render(<br>    <!-- <CommentBox data={Comments}/> //数据传递到子组件 -->\<br>    <commentbox url="./mock/comments.json"> //fetch取数据<br>    )<br>    //prd下面新建comments.json 把数据放进去</commentbox></p>
+<h3 id="React-Developer-tools"><a href="#React-Developer-tools" class="headerlink" title="React Developer tools"></a>React Developer tools</h3><p>可以用来调试react各个模块嵌套关系</p>
 
       
     </div>
@@ -724,7 +772,7 @@ ReactDom.render(){
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">2.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">2.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">3.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">3.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">4.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">4.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">4.1.1.</span> <span class="nav-text">React Developer tools</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
