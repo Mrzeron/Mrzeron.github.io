@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-07T09:51:49.430Z">
+<meta property="og:updated_time" content="2016-11-07T09:53:45.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
@@ -516,8 +516,27 @@ plygins:[
 <pre><code>if(module.hot){
 module.hot.accept();
 }
-</code></pre><h1 id="评论功能组件"><a href="#评论功能组件" class="headerlink" title="评论功能组件"></a>评论功能组件</h1><p>新建comment文件夹<br>在app.js引入并挂载CommentBox<br>新建CommentBox.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    import CommentForm from ‘’;//在comment-form.js写完后引入<br>    import CommentList from ‘’;//在 CommentList写完后引入<br>    class CommentBox extends React.Component{<br>        constructor(props){ //继承时会自动执行<br>        super(props)    //不执行会报错<br>        this.state ={<br>            data:[]<br>        }//定义状态<br>        fetch(‘./json’).then(res=&gt;res.json()).then(data=&gt;{<br>            this.setState({<br>                data:data<br>            })<br>            //进行状态的修改 一修改DOM就重新渲染<br>        }).catch(e=&gt;{<br>            console.log(‘error’)<br>            })</p>
-<pre><code>    };
+</code></pre><h1 id="评论功能组件"><a href="#评论功能组件" class="headerlink" title="评论功能组件"></a>评论功能组件</h1><p>新建comment文件夹<br>在app.js引入并挂载CommentBox<br>新建CommentBox.js</p>
+<pre><code>&apos;use strict&apos;
+import React from &apos;react&apos;;
+import CommentForm from &apos;&apos;;//在comment-form.js写完后引入
+import CommentList from &apos;&apos;;//在 CommentList写完后引入
+class CommentBox extends React.Component{
+    constructor(props){ //继承时会自动执行
+    super(props)    //不执行会报错
+    this.state ={
+        data:[]
+    }//定义状态
+    fetch(&apos;./json&apos;).then(res=&gt;res.json()).then(data=&gt;{
+        this.setState({
+            data:data
+        })
+        //进行状态的修改 一修改DOM就重新渲染
+    }).catch(e=&gt;{
+        console.log(&apos;error&apos;)
+        })
+
+    };
     render(){
         return (
         &lt;div&gt;//只能有一个根元素
@@ -536,21 +555,85 @@ module.hot.accept();
 export { CommentBox as default};
 </code></pre><p>在app.js中引入scss</p>
 <pre><code>import &apos;../.....scss&apos;    ;//引入sass
-</code></pre><p>新建comment-list.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    import CommentItem from ‘’;//在 CommentIten写完后引入<br>    class CommentList extends React.Component{<br>        render(){<br>            let CommentNodes = this.props.data.map((comment,index)=&gt;{<br>                return (<br>                     <commentitem key="{index}" author="{comment.author}" date="{comment.date}"> //组件信息传递 遍历集合时 key必须传不传报错 保证渲染DOM的唯一性<br>                    {comment.content}<br>                </commentitem><br>                )<br>            })<br>            return (<br>                <div><br>                <!-- <CommentItem author="张三 " date="5分钟前"> //组件信息传递
-                    今天天气不错
-                </CommentItem>
-                <CommentItem author="李四 " date="3分钟前">
-                    今天天气不错啊
-                </CommentItem> --><br>                //react具有数组自展开的功能<br>                {CommentNodes}<br>                </div><br>            )<br>        }<br>    }<br>    export { CommentList as default};</p>
-<p>新建comment-item.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    class CommentItem extends React.Component{<br>        render(){<br>            return (<br>                <div classname="comment"><br>                    <span>{this.props.author}</span>  //在html里面写js 用{} this.props指他的父组件<br>                    <span>{this.props.date}</span><br>                    <div>{this.props.children}</div> //children拿到里面内容</div></p>
-<pre><code>            &lt;/div&gt;
+</code></pre><p>新建comment-list.js</p>
+<pre><code>&apos;use strict&apos;
+import React from &apos;react&apos;;
+import CommentItem from &apos;&apos;;//在 CommentIten写完后引入
+class CommentList extends React.Component{
+    render(){
+        let CommentNodes = this.props.data.map((comment,index)=&gt;{
+            return (
+                 &lt;CommentItem key=&quot;{index}&quot; author={comment.author} date={comment.date}&gt; //组件信息传递 遍历集合时 key必须传不传报错 保证渲染DOM的唯一性
+                {comment.content}
+            &lt;/CommentItem&gt;
+            )
+        })
+        return (
+            &lt;div&gt;
+            &lt;!-- &lt;CommentItem author=&quot;张三 &quot; date=&quot;5分钟前&quot;&gt; //组件信息传递
+                今天天气不错
+            &lt;/CommentItem&gt;
+            &lt;CommentItem author=&quot;李四 &quot; date=&quot;3分钟前&quot;&gt;
+                今天天气不错啊
+            &lt;/CommentItem&gt; --&gt;
+            //react具有数组自展开的功能
+            {CommentNodes}
+            &lt;/div&gt;
+        )
+    }
+}
+export { CommentList as default};
+</code></pre><p>新建comment-item.js</p>
+<pre><code>&apos;use strict&apos;
+import React from &apos;react&apos;;
+class CommentItem extends React.Component{
+    render(){
+        return (
+            &lt;div className=&apos;comment&apos;&gt; 
+                &lt;span&gt;{this.props.author}&lt;/span&gt;  //在html里面写js 用{} this.props指他的父组件
+                &lt;span&gt;{this.props.date}&lt;/span&gt;
+                &lt;div&gt;{this.props.children}&lt;/div&gt; //children拿到里面内容
+
+            &lt;/div&gt;
         )
     }
 }
 export { CommentItem as default};
-</code></pre><p>新建comment-form.js<br>    ‘use strict’<br>    import React from ‘react’;<br>    class CommentForm extends React.Component{<br>        render(){<br>            return (<br>                //使用yo框架的表单输入框<br>                <div classname="yo-list"><br>                    <label classname="item item-input"><input type="text" classname="yo-input flex" placeholder="发布者"></label><br>                    <label classname="item item-input"><textarea type="text" classname="yo-input flex" placeholder="留言内容"></textarea></label><br>                    <label><button classname="yo-btn yo-btn-l">发表评论</button></label><br>                </div><br>            )<br>        }<br>    }<br>    export { CommentForm as default};</p>
-<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>在app.js中编辑<br>    let Comments=[<br>    {<br>        author=”张三,<br>        data:’5分钟前’,<br>        content:’今天天气不错’<br>    },<br>    {<br>        author=”王三,<br>        data:’2分钟前’,<br>        content:’今天天气很好’<br>    }<br>    ]<br>    ReactDom.render(<br>    <!-- <CommentBox data={Comments}/> //数据传递到子组件 -->\<br>    <commentbox url="./mock/comments.json"> //fetch取数据<br>    )<br>    //prd下面新建comments.json 把数据放进去</commentbox></p>
-<h3 id="React-Developer-tools"><a href="#React-Developer-tools" class="headerlink" title="React Developer tools"></a>React Developer tools</h3><p>可以用来调试react各个模块嵌套关系</p>
+</code></pre><p>新建comment-form.js</p>
+<pre><code>&apos;use strict&apos;
+import React from &apos;react&apos;;
+class CommentForm extends React.Component{
+    render(){
+        return (
+            //使用yo框架的表单输入框
+            &lt;div className=&quot;yo-list&quot;&gt;
+                &lt;label className=&quot;item item-input&quot;&gt;&lt;input type=&quot;text&quot; className=&quot;yo-input flex&quot; placeholder=&quot;发布者&quot;/&gt;&lt;/label&gt;
+                &lt;label className=&quot;item item-input&quot;&gt;&lt;textarea type=&quot;text&quot; className=&quot;yo-input flex&quot; placeholder=&quot;留言内容&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;
+                &lt;label&gt;&lt;button className=&quot;yo-btn yo-btn-l&quot;&gt;发表评论&lt;/button&gt;&lt;/label&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+export { CommentForm as default};
+</code></pre><h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>在app.js中编辑</p>
+<pre><code>let Comments=[
+{
+    author=&quot;张三,
+    data:&apos;5分钟前&apos;,
+    content:&apos;今天天气不错&apos;
+},
+{
+    author=&quot;王三,
+    data:&apos;2分钟前&apos;,
+    content:&apos;今天天气很好&apos;
+}
+]
+ReactDom.render(
+&lt;!-- &lt;CommentBox data={Comments}/&gt; //数据传递到子组件 --&gt;\
+&lt;CommentBox url=&quot;./mock/comments.json&quot;/&gt; //fetch取数据
+)
+//prd下面新建comments.json 把数据放进去
+</code></pre><h3 id="React-Developer-tools"><a href="#React-Developer-tools" class="headerlink" title="React Developer tools"></a>React Developer tools</h3><p>可以用来调试react各个模块嵌套关系</p>
 
       
     </div>
