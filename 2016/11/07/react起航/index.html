@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-07T05:39:32.218Z">
+<meta property="og:updated_time" content="2016-11-07T05:42:10.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
@@ -447,8 +447,32 @@
 
       
         <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
-<h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br>    cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react<br>.babelrc添加react<br>用来渲染react<br>    cnpm i react react-dom -D<br>调整package.json<br>    创建新文件server.js //和.babelrc同级<br>    将devServer移除<br>    编辑server.js<br>    var webpack=require(‘webpack’);//会去node_moudele里面找<br>    var WebpackDevServer = require(‘webpack-dev-server’);//会去node_moudele里面找<br>    var config = require(‘./webpack.config.js’)<br>    new WebpackDevServer(webpack(config),{ //拿到config后可以用.config所有变量<br>        contentBase:__dirname+’/prd’,<br>        inline:true,<br>        proxy:{<br>            ‘/rest/*’：{<br>                target:    ‘<a href="http://localhost:端口号" target="_blank" rel="external">http://localhost:端口号</a>‘,<br>                secure:false,<br>                pathRewrite:{<br>                    ‘^/rest’:’’   //以rest开头的替换为空 /rest/list-&gt;localhost:8888/list<br>                }<br>            }    //前面以/rest/开头的所有都使用代理转发<br>    }</p>
-<pre><code>})
+<h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx</p>
+<pre><code>cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react
+</code></pre><p>.babelrc添加react<br>用来渲染react</p>
+<pre><code>cnpm i react react-dom -D
+</code></pre><p>调整package.json</p>
+<pre><code>创建新文件server.js //和.babelrc同级
+将devServer移除
+编辑server.js
+var webpack=require(&apos;webpack&apos;);//会去node_moudele里面找
+var WebpackDevServer = require(&apos;webpack-dev-server&apos;);//会去node_moudele里面找
+var config = require(&apos;./webpack.config.js&apos;)
+new WebpackDevServer(webpack(config),{ //拿到config后可以用.config所有变量
+    contentBase:__dirname+&apos;/prd&apos;,
+    inline:true,
+    proxy:{
+        &apos;/rest/*&apos;：{
+            target:    &apos;http://localhost:端口号&apos;,
+            secure:false,
+            pathRewrite:{
+                &apos;^/rest&apos;:&apos;&apos;   //以rest开头的替换为空 /rest/list-&gt;localhost:8888/list
+            }
+        }    //前面以/rest/开头的所有都使用代理转发
+}
+
+
+})
 .listen(80,&apos;localhost&apos;,funtion(err,restlt){
     if(err){
         console.log(err);
@@ -459,7 +483,26 @@
 
 编辑package.json
 &quot;start&quot;: &quot;node server.js&quot; //用nodejs启动server
-</code></pre><h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><p>创建name.js<br>    import React from ‘react’;<br>    class Name extends React.Component{<br>        render(){<br>            return (<br>                <div>hello</div>//里面<br>            )<br>    }<br>    }<br>    export default Name //暴露接口<br>    export {Name as default } //这种也可以暴露<br>编译app.js<br>    import React from ‘react’; //名字为包名<br>    import ReactDom from ‘react-dom’;//名字为包名<br>    import Name from ‘’ //Name.js的路径<br>    ReactDom.render(){<br>        <name>,//要挂载的内容<br>        document.getElementById() //要挂载的节点<br>    }<br>使用<br>    执行webpack  进行打包<br>    启动server npm run start</name></p>
+</code></pre><h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><p>创建name.js</p>
+<pre><code>import React from &apos;react&apos;;
+class Name extends React.Component{
+    render(){
+        return (
+            &lt;div&gt;hello&lt;/div&gt;//里面
+        )
+}
+}
+export default Name //暴露接口
+export {Name as default } //这种也可以暴露
+</code></pre><p>编译app.js</p>
+<pre><code>import React from &apos;react&apos;; //名字为包名
+import ReactDom from &apos;react-dom&apos;;//名字为包名
+import Name from &apos;&apos; //Name.js的路径
+ReactDom.render(){
+    &lt;Name/&gt;,//要挂载的内容
+    document.getElementById() //要挂载的节点
+}
+</code></pre><p>使用<br>    执行webpack  进行打包<br>    启动server npm run start</p>
 
       
     </div>
