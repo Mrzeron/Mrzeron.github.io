@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-08T14:51:22.440Z">
+<meta property="og:updated_time" content="2016-11-08T14:54:07.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
@@ -688,7 +688,24 @@ ReactDom.render(
     }
 )
 </code></pre><h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><h2 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h2><pre><code>cnpm i react-router -D
-</code></pre><p>新建router文件夹<br>里面新建router-app.jsx<br>    ‘use strict’;<br>    import React from ‘react’;<br>    import {Link} from ‘react-router’;//引入Link<br>    export default React.createClass({<br>        render(){<br>            return(<br>                <div><br>                    <div><br>                        <link to="/">首页 //路由跳转<br>                        <link to="/tv">电视<br>                    </div><br>                    {this.props.children} //路由信息显示的位置<br>                </div><br>            )<br>        }<br>    })<br>在app.js中修改<br>导入router</p>
+</code></pre><p>新建router文件夹<br>里面新建router-app.jsx</p>
+<pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+import {Link} from &apos;react-router&apos;;//引入Link
+export default React.createClass({
+    render(){
+        return(
+            &lt;div&gt;
+                &lt;div&gt;
+                    &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt; //路由跳转
+                    &lt;Link to=&quot;/tv&quot;&gt;电视&lt;/Link&gt;
+                &lt;/div&gt;
+                {this.props.children} //路由信息显示的位置
+            &lt;/div&gt;
+        )
+    }
+})
+</code></pre><p>在app.js中修改<br>导入router</p>
 <pre><code>import {Router,Route,hashHistory,IndexRoute,Redirect} from &apos;react-router&apos;;//引入router Redirect重定向 IndexRoute 默认页面的内容
 import App from &apos;&apos;;//引入router-app.jsx
 import Tv from &apos;&apos;;//引入router-tv.jsx 在route-tv写好之后引入
