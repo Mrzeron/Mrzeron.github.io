@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-08T15:04:18.015Z">
+<meta property="og:updated_time" content="2016-11-09T10:05:59.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
@@ -447,6 +447,7 @@
 
       
         <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
+<h1 id="React基础-1"><a href="#React基础-1" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序</p>
 <h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br>    cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react<br>.babelrc添加react<br>用来渲染react</p>
 <pre><code>cnpm i react react-dom -D
 </code></pre><p>调整package.json</p>
@@ -765,6 +766,130 @@ export default React.createClass({
         )
     }
 })
+</code></pre><h2 id="组件生命周期函数"><a href="#组件生命周期函数" class="headerlink" title="组件生命周期函数"></a>组件生命周期函数</h2><h3 id="First-Render"><a href="#First-Render" class="headerlink" title="First Render"></a>First Render</h3><ol>
+<li>getDefaultProps</li>
+<li>getInitialState</li>
+<li>componentWillMount</li>
+<li>render</li>
+<li>componentDidMount<h3 id="Props-Change"><a href="#Props-Change" class="headerlink" title="Props Change"></a>Props Change</h3></li>
+<li>componentWillReceiveProps</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate<h3 id="State-Change"><a href="#State-Change" class="headerlink" title="State Change"></a>State Change</h3></li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate<h3 id="Unmount"><a href="#Unmount" class="headerlink" title="Unmount"></a>Unmount</h3>componentWillUnmount<h3 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props){}"></a>constructor(props){}</h3>可以做一些初始化工作 必须super(props)不然会报错</li>
+</ol>
+<h1 id="Flux-单向数据流"><a href="#Flux-单向数据流" class="headerlink" title="Flux 单向数据流"></a>Flux 单向数据流</h1><ol>
+<li>View视图层</li>
+<li>Action(动作):视图层发出的消息</li>
+<li>Dispatcher(派发器):用来接收Actions执行回调</li>
+<li>Store(数据层):存放应用状态 数据一旦更新提示视图更新</li>
+</ol>
+<p>在app.js中</p>
+<pre><code>import MyButtonCtontroller from &apos;/flex/components/mybutton.jsx&apos;;
+let app=document.getElementById(&apos;app&apos;);
+ ReactDOM.render(
+&lt;MyButtonCtontroller /&gt;
+ ,app);
+</code></pre><p>新建flux文件夹<br>里面新建components<br>里面新建MybuttonController.jsx</p>
+<pre><code>import MyButton from &apos;./MyButton.jsx&apos;;
+import ButtonActions from &apos;&apos;;
+import ListStore from &apos;&apos;;
+import React from &apos;&apos;;
+export default React.createClass({
+    getInitialState(){
+        return {
+            items:ListStore.getAll()
+        }
+    },
+    createNewItem(){
+        ButtonActions.addNewItem(&apos;new Item&apos;);
+    },
+    componentDidMount(){
+        ListStore.addChangeListener(this._onChange)
+    },
+    componentWillUnmount(){
+        ListStore.removeChangeListener(this._onChange)
+    }
+    ,
+    _onChange(){
+        this.setState({
+            items:ListStore.getAll()
+            })
+    },
+    render(){
+        return (
+            &lt;MyButton onClick={this.createNewItem} items={this.state.items}/&gt;
+            )
+    }
+    })
+</code></pre><p>里面新建MyButton.jsx</p>
+<pre><code>import React from &apos;&apos;;
+
+export default React.createClass({
+    render(){
+        let items = this.pros.items;
+        let itemHTML=items.map((listItem,i)=&gt;{
+            return &lt;li key={i}&gt;{listItem}&lt;/li&gt;
+            })
+        return (
+            &lt;div&gt;
+            &lt;ul&gt;
+                {itemHTML}
+
+            &lt;/ul&gt;
+                &lt;button&gt;New Item&lt;/button&gt;
+            &lt;/div&gt;
+            )
+    }
+    })
+</code></pre><p>flux中新建文件夹stores<br>stores中新建listStore.js</p>
+<pre><code>import{ EventEmitter } from &apos;events&apos;;//node中自带的事件
+
+export default Object.assign({},EventEmitter.prototype,{
+    items:[],
+    getAll(){
+        return this.items
+    },
+    addNewItemHandle(text){
+        this.items.push(text);
+    },
+    emmitChange(){
+        this.emit(&apos;change&apos;);
+    },
+    addChangeListener(callback){
+        this.on(&apos;change&apos;,callback)
+    },
+    removeChangeListener(callback){
+        this.removeListener(&apos;change&apos;,callback);
+    }
+    })   //对象merge
+</code></pre><p>新建Actions文件夹<br>新建ButtonActions.js</p>
+<pre><code>import AppDispatcher from &apos;&apos;;
+export default{
+    addNewItem(text){
+        AppDispatcher.dispathch({
+            actionType: &apos;ADD_NEW_ITEM&apos;,
+            text:text
+            })
+    }
+}
+</code></pre><p>新建dispatchers文件夹<br>新建AppDispatcher.js</p>
+<pre><code>安装flux cnpm i flux -D;
+import ListStore from &apos;&apos;;
+import {Dispatcher} from &apos;flux&apos;;
+ AppDispatcher.register(action=&gt;{
+    switch(action.actionType){
+        case &apos;ADD_NEW_ITEM&apos;:
+        ListStore.addNewItemHandle(action.text);
+        ListStore.emmitChange();
+        break;
+    }
+})
+export default AppDispatcher;
 </code></pre>
       
     </div>
@@ -986,7 +1111,7 @@ export default React.createClass({
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">2.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">3.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">3.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">4.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">4.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">4.1.1.</span> <span class="nav-text">React Developer tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">4.1.2.</span> <span class="nav-text">JSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">5.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router"><span class="nav-number">5.1.</span> <span class="nav-text">react-router</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础-1"><span class="nav-number">2.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">3.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">4.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">4.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">4.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">5.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">5.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">5.1.1.</span> <span class="nav-text">React Developer tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">5.1.2.</span> <span class="nav-text">JSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">6.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router"><span class="nav-number">6.1.</span> <span class="nav-text">react-router</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件生命周期函数"><span class="nav-number">6.2.</span> <span class="nav-text">组件生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Render"><span class="nav-number">6.2.1.</span> <span class="nav-text">First Render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Props-Change"><span class="nav-number">6.2.2.</span> <span class="nav-text">Props Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Change"><span class="nav-number">6.2.3.</span> <span class="nav-text">State Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unmount"><span class="nav-number">6.2.4.</span> <span class="nav-text">Unmount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">6.2.5.</span> <span class="nav-text">constructor(props){}</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flux-单向数据流"><span class="nav-number">7.</span> <span class="nav-text">Flux 单向数据流</span></a></li></ol></div>
             
           </div>
         </section>
