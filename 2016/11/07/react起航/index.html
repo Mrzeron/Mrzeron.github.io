@@ -65,10 +65,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/07/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
-<meta property="og:updated_time" content="2016-11-09T10:05:59.583Z">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
+<meta property="og:updated_time" content="2016-11-10T12:03:41.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
 <meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
 
 
 
@@ -447,7 +449,6 @@
 
       
         <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
-<h1 id="React基础-1"><a href="#React基础-1" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序</p>
 <h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br>    cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react<br>.babelrc添加react<br>用来渲染react</p>
 <pre><code>cnpm i react react-dom -D
 </code></pre><p>调整package.json</p>
@@ -767,11 +768,11 @@ export default React.createClass({
     }
 })
 </code></pre><h2 id="组件生命周期函数"><a href="#组件生命周期函数" class="headerlink" title="组件生命周期函数"></a>组件生命周期函数</h2><h3 id="First-Render"><a href="#First-Render" class="headerlink" title="First Render"></a>First Render</h3><ol>
-<li>getDefaultProps</li>
-<li>getInitialState</li>
-<li>componentWillMount</li>
-<li>render</li>
-<li>componentDidMount<h3 id="Props-Change"><a href="#Props-Change" class="headerlink" title="Props Change"></a>Props Change</h3></li>
+<li>getDefaultProps //数据初始化</li>
+<li>getInitialState //状态初始化</li>
+<li>componentWillMount //渲染前</li>
+<li>render //渲染</li>
+<li>componentDidMount //渲染完执行<h3 id="Props-Change"><a href="#Props-Change" class="headerlink" title="Props Change"></a>Props Change</h3></li>
 <li>componentWillReceiveProps</li>
 <li>shouldComponentUpdate</li>
 <li>componentWillUpdate</li>
@@ -786,110 +787,158 @@ export default React.createClass({
 <li>View视图层</li>
 <li>Action(动作):视图层发出的消息</li>
 <li>Dispatcher(派发器):用来接收Actions执行回调</li>
-<li>Store(数据层):存放应用状态 数据一旦更新提示视图更新</li>
+<li>Store(数据层):用来存放应用的状态，一旦发生变动，就提醒Views要更新页面</li>
 </ol>
-<p>在app.js中</p>
-<pre><code>import MyButtonCtontroller from &apos;/flex/components/mybutton.jsx&apos;;
-let app=document.getElementById(&apos;app&apos;);
- ReactDOM.render(
-&lt;MyButtonCtontroller /&gt;
- ,app);
-</code></pre><p>新建flux文件夹<br>里面新建components<br>里面新建MybuttonController.jsx</p>
-<pre><code>import MyButton from &apos;./MyButton.jsx&apos;;
-import ButtonActions from &apos;&apos;;
-import ListStore from &apos;&apos;;
-import React from &apos;&apos;;
-export default React.createClass({
-    getInitialState(){
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png" alt=""></p>
+<h2 id="Flux的特点"><a href="#Flux的特点" class="headerlink" title="Flux的特点"></a>Flux的特点</h2><ol>
+<li>用户访问 View</li>
+<li>View 发出用户的 Action</li>
+<li>Dispatcher 收到 Action，要求 Store 进行相应的更新</li>
+<li>Store 更新后，发出一个”change”事件</li>
+<li>View 收到”change”事件后，更新页面</li>
+<li>数据总是”单向流动”，任何相邻的部分都不会发生数据的”双向流动”。这保证了流程的清晰。</li>
+</ol>
+<h2 id="利用Flux实现todolist"><a href="#利用Flux实现todolist" class="headerlink" title="利用Flux实现todolist"></a>利用Flux实现todolist</h2><h3 id="新建app-js-入口文件"><a href="#新建app-js-入口文件" class="headerlink" title="新建app.js 入口文件"></a>新建app.js 入口文件</h3><pre><code>&apos;use strict&apos;;//采用严格模式解析代码
+import React from &apos;react&apos;; //引入React
+import ReactDOM from &apos;react-dom&apos;; //引入ReactDOM渲染DOM
+import Tdcontroller from &apos;./components/todo_controller.jsx&apos;; //引入子组件 子组件变量名首字母必须大写 不大写不会被渲染
+
+ReactDOM.render(&lt;Tdcontroller /&gt;,//要渲染的子组件
+    document.getElementById(&apos;app&apos;)//子组件要添加的位置
+)
+
+if (module.hot) {
+    module.hot.accept() //子组件更新热替换也可以刷新
+}
+</code></pre><h3 id="新建components文件夹-V层"><a href="#新建components文件夹-V层" class="headerlink" title="新建components文件夹 V层"></a>新建components文件夹 V层</h3><h3 id="新建todo-controller-jsx"><a href="#新建todo-controller-jsx" class="headerlink" title="新建todo_controller.jsx"></a>新建todo_controller.jsx</h3><p>采用React 的 controller view 模式”controller view”组件只用来保存状态，然后将其转发给子组件。</p>
+<pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+import Form_td from &apos;./form.jsx&apos;;//在form.jsx创建后引入 子组件层
+import ListStore from &apos;../stores/store.js&apos;;//在store.js创建后引入 store层
+import ButtonActions from &apos;../actions/addAction.js&apos;; //在addAction.js创建后引入 action层
+
+export default React.createClass(
+    {
+     getInitialState(){
+         //初始化state数据
         return {
             items:ListStore.getAll()
         }
     },
-    createNewItem(){
-        ButtonActions.addNewItem(&apos;new Item&apos;);
+    createNewItem(event){
+                //todolist的点击添加事件
+    var addvalue=this.refs.addval.refs.input.value; //input中的内容 可以利用refs取出子组件中的属性 this.refs是指本层的refs属性
+
+        ButtonActions.addNewItem(addvalue);//将取出Input的数据通过调用action层的addNewItem方法传入action层
     },
-    componentDidMount(){
+    delItem(event){
+            //todolist的点击删除
+        let delIndex=event.target.dataset.index;//当前内容的index 通过给button绑定data-index={i}添加属性 然后在父组件通过event取出
+        ButtonActions.delItem(delIndex);//将取出的当前index通过调用action层的delItem方法传入action层
+    }
+    ,
+    componentDidMount(){//在数据渲染完成后 调用store层的方法并将_onChange函数传入
         ListStore.addChangeListener(this._onChange)
     },
-    componentWillUnmount(){
+    componentWillUnmount(){//在数据渲染完成后 调用store层的方法并将_onChange函数传入
         ListStore.removeChangeListener(this._onChange)
     }
     ,
     _onChange(){
+            //在数据变化时更新state触发render
         this.setState({
-            items:ListStore.getAll()
+            items:ListStore.getAll()  //调用store层的getall方法更新item
             })
     },
     render(){
-        return (
-            &lt;MyButton onClick={this.createNewItem} items={this.state.items}/&gt;
-            )
+        return(
+            &lt;Form_td  ref=&quot;addval&quot;
+            addBtn={this.createNewItem} items={this.state.items}
+            delBtn={this.delItem}
+            /&gt;
+            //ref为子组件向父组件传递信息的钩子 addBtn为自定义属性将父组件的createNewItem方法传入 delBtn同理 items将父组件的state的items属性传入
+        )
     }
-    })
-</code></pre><p>里面新建MyButton.jsx</p>
-<pre><code>import React from &apos;&apos;;
+})
+</code></pre><h3 id="新建form-jsx"><a href="#新建form-jsx" class="headerlink" title="新建form.jsx"></a>新建form.jsx</h3><pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+export default React.createClass(
+    {
 
-export default React.createClass({
-    render(){
-        let items = this.pros.items;
+      render(){
+        let items = this.props.items; //将父组件传入的state.items取出
         let itemHTML=items.map((listItem,i)=&gt;{
-            return &lt;li key={i}&gt;{listItem}&lt;/li&gt;
-            })
-        return (
+            return &lt;li key={i}&gt;{listItem}&lt;button data-index={i} onClick={this.props.delBtn}&gt;X&lt;/button&gt;&lt;/li&gt;
+            }) //定义一个变量接收 items数组拼接后返回的数组 data-index用来定义删除时的索引 onClick用来触发父组件传入的事件处理函数
+
+        return(
             &lt;div&gt;
-            &lt;ul&gt;
-                {itemHTML}
-
-            &lt;/ul&gt;
-                &lt;button&gt;New Item&lt;/button&gt;
+            &lt;input  ref=&quot;input&quot; type=&quot;text&quot;/ &gt;
+            &lt;button onClick={this.props.addBtn}&gt;确定&lt;/button&gt;
+                &lt;ul&gt;{itemHTML}&lt;/ul&gt; //react有自展开数组和对象的功能
             &lt;/div&gt;
-            )
-    }
-    })
-</code></pre><p>flux中新建文件夹stores<br>stores中新建listStore.js</p>
-<pre><code>import{ EventEmitter } from &apos;events&apos;;//node中自带的事件
 
-export default Object.assign({},EventEmitter.prototype,{
-    items:[],
-    getAll(){
-        return this.items
-    },
-    addNewItemHandle(text){
-        this.items.push(text);
-    },
-    emmitChange(){
-        this.emit(&apos;change&apos;);
-    },
-    addChangeListener(callback){
-        this.on(&apos;change&apos;,callback)
-    },
-    removeChangeListener(callback){
-        this.removeListener(&apos;change&apos;,callback);
+        )
     }
-    })   //对象merge
-</code></pre><p>新建Actions文件夹<br>新建ButtonActions.js</p>
-<pre><code>import AppDispatcher from &apos;&apos;;
+})
+</code></pre><h3 id="新建actions文件夹-action层"><a href="#新建actions文件夹-action层" class="headerlink" title="新建actions文件夹 action层"></a>新建actions文件夹 action层</h3><h3 id="新建addAction-js文件"><a href="#新建addAction-js文件" class="headerlink" title="新建addAction.js文件"></a>新建addAction.js文件</h3><p>每个Action都是一个对象，包含一个actionType属性（说明动作的类型）和一些其他属性（用来传递数据）。</p>
+<pre><code>import AppDispatcher from &apos;../dispatchers/AppDispatcher.js&apos;;//引入Dispather层
 export default{
     addNewItem(text){
-        AppDispatcher.dispathch({
-            actionType: &apos;ADD_NEW_ITEM&apos;,
-            text:text
-            })
-    }
+            AppDispatcher.dispatch({
+                    actionType: &apos;ADD_NEW_ITEM&apos;,
+                    text:text
+                    })
+    },//调用Dispather层的addNewItem方法 并将actionType和参数传入
+    delItem(index){
+    AppDispatcher.dispatch({
+        actionType: &apos;DEL_ITEM&apos;,
+        index:index
+    })
+    }//同上
 }
-</code></pre><p>新建dispatchers文件夹<br>新建AppDispatcher.js</p>
+</code></pre><h3 id="新建dispatchers文件夹"><a href="#新建dispatchers文件夹" class="headerlink" title="新建dispatchers文件夹"></a>新建dispatchers文件夹</h3><h3 id="新建AppDispatcher-js"><a href="#新建AppDispatcher-js" class="headerlink" title="新建AppDispatcher.js"></a>新建AppDispatcher.js</h3><p>Dispatcher 的作用是将 Action 派发到 Store、。你可以把它看作一个路由器，负责在 View 和 Store 之间，建立 Action 的正确传递路线。注意，Dispatcher 只能有一个，而且是全局的。</p>
 <pre><code>安装flux cnpm i flux -D;
-import ListStore from &apos;&apos;;
-import {Dispatcher} from &apos;flux&apos;;
- AppDispatcher.register(action=&gt;{
-    switch(action.actionType){
+import ListStore from &apos;../stores/store.js&apos;;//引入store层准备把数据传入store层
+var AppDispatcher = new Dispatcher(); //创建一个Dispatcher实例
+import {Dispatcher} from &apos;flux&apos;;        //引入flux
+ AppDispatcher.register(action=&gt;{ //在Dispatcher实例中注册函数并将参数action传入
+    switch(action.actionType){ //判断参数类型 类型为action层中设置根据不同类型做不同操作
         case &apos;ADD_NEW_ITEM&apos;:
-        ListStore.addNewItemHandle(action.text);
-        ListStore.emmitChange();
+        ListStore.addNewItemHandle(action.text);//调用store层的addNewItemHandle方法并将参数(新增item项)传入store层
+        ListStore.emitChange();//触发state的刷新
+        break;
+         case &apos;DEL_ITEM&apos;:
+           ListStore.delItemHandle(action.index);//调用store层的delItemHandle方法并将参数(要删除item项的索引)传入store层
+           ListStore.emitChange();//触发state的刷新
         break;
     }
 })
 export default AppDispatcher;
+</code></pre><h3 id="新建stores文件夹-store层"><a href="#新建stores文件夹-store层" class="headerlink" title="新建stores文件夹 store层"></a>新建stores文件夹 store层</h3><p>Store 保存整个应用的状态。它的角色有点像 MVC 架构之中的Model</p>
+<h3 id="新建store-js"><a href="#新建store-js" class="headerlink" title="新建store.js"></a>新建store.js</h3><pre><code>import {EventEmitter} from &apos;events&apos;; //引入nodejs的事件对象
+export default Object.assign({},EventEmitter.prototype,{
+    items:[],//定义一个空数组用来保存新添加的li
+    getAll(){
+        return this.items //该方法返回items属性
+    },
+    addNewItemHandle(text){
+        this.items.push(text); //用来将V层的数据添加进数组
+    },
+    delItemHandle(index){
+        this.items.splice(index,1); //用来将V层的数据从数组里删除
+    }
+    ,
+    emitChange(){
+        this.emit(&apos;change&apos;); //该方法会调用change方法
+    },
+    addChangeListener(callback){
+        this.on(&apos;change&apos;,callback) //该方法对change方法会监听change事件回调函数调用时会刷新数据
+    },
+    removeChangeListener(callback){
+        this.removeListener(&apos;change&apos;,callback);//该方法会移除change事件的事件监听并执行回调
+    }
+})//将EventEmitter对象与传入的对象merge
 </code></pre>
       
     </div>
@@ -1111,7 +1160,7 @@ export default AppDispatcher;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础-1"><span class="nav-number">2.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">3.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">4.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">4.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">4.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">5.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">5.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">5.1.1.</span> <span class="nav-text">React Developer tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">5.1.2.</span> <span class="nav-text">JSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">6.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router"><span class="nav-number">6.1.</span> <span class="nav-text">react-router</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件生命周期函数"><span class="nav-number">6.2.</span> <span class="nav-text">组件生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Render"><span class="nav-number">6.2.1.</span> <span class="nav-text">First Render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Props-Change"><span class="nav-number">6.2.2.</span> <span class="nav-text">Props Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Change"><span class="nav-number">6.2.3.</span> <span class="nav-text">State Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unmount"><span class="nav-number">6.2.4.</span> <span class="nav-text">Unmount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">6.2.5.</span> <span class="nav-text">constructor(props){}</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flux-单向数据流"><span class="nav-number">7.</span> <span class="nav-text">Flux 单向数据流</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">2.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">3.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">3.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">4.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">4.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">4.1.1.</span> <span class="nav-text">React Developer tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">4.1.2.</span> <span class="nav-text">JSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">5.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router"><span class="nav-number">5.1.</span> <span class="nav-text">react-router</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件生命周期函数"><span class="nav-number">5.2.</span> <span class="nav-text">组件生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Render"><span class="nav-number">5.2.1.</span> <span class="nav-text">First Render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Props-Change"><span class="nav-number">5.2.2.</span> <span class="nav-text">Props Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Change"><span class="nav-number">5.2.3.</span> <span class="nav-text">State Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unmount"><span class="nav-number">5.2.4.</span> <span class="nav-text">Unmount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">5.2.5.</span> <span class="nav-text">constructor(props){}</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flux-单向数据流"><span class="nav-number">6.</span> <span class="nav-text">Flux 单向数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flux的特点"><span class="nav-number">6.1.</span> <span class="nav-text">Flux的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用Flux实现todolist"><span class="nav-number">6.2.</span> <span class="nav-text">利用Flux实现todolist</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建app-js-入口文件"><span class="nav-number">6.2.1.</span> <span class="nav-text">新建app.js 入口文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建components文件夹-V层"><span class="nav-number">6.2.2.</span> <span class="nav-text">新建components文件夹 V层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建todo-controller-jsx"><span class="nav-number">6.2.3.</span> <span class="nav-text">新建todo_controller.jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建form-jsx"><span class="nav-number">6.2.4.</span> <span class="nav-text">新建form.jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建actions文件夹-action层"><span class="nav-number">6.2.5.</span> <span class="nav-text">新建actions文件夹 action层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建addAction-js文件"><span class="nav-number">6.2.6.</span> <span class="nav-text">新建addAction.js文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建dispatchers文件夹"><span class="nav-number">6.2.7.</span> <span class="nav-text">新建dispatchers文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建AppDispatcher-js"><span class="nav-number">6.2.8.</span> <span class="nav-text">新建AppDispatcher.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建stores文件夹-store层"><span class="nav-number">6.2.9.</span> <span class="nav-text">新建stores文件夹 store层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建store-js"><span class="nav-number">6.2.10.</span> <span class="nav-text">新建store.js</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
