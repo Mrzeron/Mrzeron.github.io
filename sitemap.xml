@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-11-11T14:51:38.470Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2016-11-11T14:48:57.411Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/11/07/react%E8%B5%B7%E8%88%AA/</loc>
     
     <lastmod>2016-11-10T12:03:41.083Z</lastmod>
@@ -187,20 +201,6 @@
     <loc>http://yoursite.com/2016/08/31/%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2016-08-31T12:26:21.498Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2016-08-31T02:08:51.769Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2016-08-31T02:07:46.671Z</lastmod>
     
   </url>
   
