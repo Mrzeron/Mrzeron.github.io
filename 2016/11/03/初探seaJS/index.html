@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="有你的小时光" />
+  <meta name="keywords" content="模块化之seaJS," />
 
 
 
@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/03/初探seaJS/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="seaJS 模块化开发commonJS规范  ES6模块化 打包加载seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载">
-<meta property="og:updated_time" content="2016-11-03T14:18:16.921Z">
+<meta property="og:updated_time" content="2016-11-12T02:23:37.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探seaJS">
 <meta name="twitter:description" content="seaJS 模块化开发commonJS规范  ES6模块化 打包加载seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载">
@@ -439,6 +439,37 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/模块化/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/模块化/前端工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -477,30 +508,11 @@
 
       
         <h1 id="seaJS-模块化开发"><a href="#seaJS-模块化开发" class="headerlink" title="seaJS 模块化开发"></a>seaJS 模块化开发</h1><h2 id="commonJS规范-ES6模块化-打包加载"><a href="#commonJS规范-ES6模块化-打包加载" class="headerlink" title="commonJS规范  ES6模块化 打包加载"></a>commonJS规范  ES6模块化 打包加载</h2><h2 id="seaJS-基于AMD-AMD-requireJS实现-浏览器异步加载"><a href="#seaJS-基于AMD-AMD-requireJS实现-浏览器异步加载" class="headerlink" title="seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载"></a>seaJS(基于AMD) AMD(requireJS实现)浏览器异步加载</h2><a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>cnpm i seajs -D
-</code></pre><h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><pre><code>location /seajs{
-    root ;
-    index ;
-}    
-启动nginx
-</code></pre><h2 id="新建入口app-js"><a href="#新建入口app-js" class="headerlink" title="新建入口app.js"></a>新建入口app.js</h2><h2 id="定义模块common-js"><a href="#定义模块common-js" class="headerlink" title="定义模块common.js"></a>定义模块common.js</h2><pre><code>define(function(require,exports,module){
-    var obj ={
-        name:&apos;zzz&apos;,
-        sayName:function(){
-            return this.name
-        }
-    }
-    module.exports=obj;
-})
-</code></pre><h2 id="在app-js中引用模块"><a href="#在app-js中引用模块" class="headerlink" title="在app.js中引用模块"></a>在app.js中引用模块</h2><pre><code>define(function(require,exports,module){
-    var obj =require(&apos;./commom.js&apos;);
-    cosnole.log(obj.sayName())
-    })
-</code></pre><h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><pre><code>&lt;script src=&apos;./js/sea.js&apos;&gt;&lt;/script&gt;
-&lt;script&gt;
-seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
-&lt;/script&gt;        
-</code></pre>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i seajs -D</div></pre></td></tr></table></figure>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">location /seajs&#123;</div><div class="line">	root ;</div><div class="line">	index ;</div><div class="line">&#125;	</div><div class="line">启动nginx</div></pre></td></tr></table></figure>
+<h2 id="新建入口app-js"><a href="#新建入口app-js" class="headerlink" title="新建入口app.js"></a>新建入口app.js</h2><h2 id="定义模块common-js"><a href="#定义模块common-js" class="headerlink" title="定义模块common.js"></a>定义模块common.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj =&#123;</div><div class="line">		name:<span class="string">'zzz'</span>,</div><div class="line">		sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">module</span>.exports=obj;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="在app-js中引用模块"><a href="#在app-js中引用模块" class="headerlink" title="在app.js中引用模块"></a>在app.js中引用模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj =<span class="built_in">require</span>(<span class="string">'./commom.js'</span>);</div><div class="line">	cosnole.log(obj.sayName())</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'./js/sea.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">seajs.use(<span class="string">'app.js'</span>)<span class="comment">//目录相当于seaJS目录</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -527,6 +539,12 @@ seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/模块化之seaJS/" rel="tag">#模块化之seaJS</a>
+          
+        </div>
       
 
       
@@ -637,7 +655,7 @@ seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -645,7 +663,7 @@ seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -654,7 +672,7 @@ seajs.use(&apos;app.js&apos;)//目录相当于seaJS目录
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

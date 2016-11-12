@@ -423,7 +423,280 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/29/gulp实现前端工程化/" itemprop="url">
+                <a class="post-title-link" href="/2015/07/15/es6常用语法/" itemprop="url">
+                  es6常用语法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-15T11:58:43+08:00" content="2015-07-15">
+              2015-07-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/15/es6常用语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/es6常用语法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/07/15/es6常用语法/" class="leancloud_visitors" data-flag-title="es6常用语法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><h2 id="let关键字声明"><a href="#let关键字声明" class="headerlink" title="let关键字声明"></a>let关键字声明</h2><h2 id="const-声明常量-修改报错-一旦声明不能修改-常量全大写规则"><a href="#const-声明常量-修改报错-一旦声明不能修改-常量全大写规则" class="headerlink" title="const 声明常量(修改报错)一旦声明不能修改 (常量全大写规则)"></a>const 声明常量(修改报错)一旦声明不能修改 (常量全大写规则)</h2><h2 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h2><h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">breakfast</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">return</span>&#123;</div><div class="line">	dessert:<span class="string">"cake"</span>,</div><div class="line">	drink:<span class="string">"tea"</span>,</div><div class="line">	fruit:<span class="string">"apple"</span></div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//var foo =breakfast();</span></div><div class="line"><span class="comment">//console.log(foo.dessert,foo.drink,foo.fruit);</span></div><div class="line"><span class="keyword">let</span>&#123;</div><div class="line">	dessert,drink,fruit</div><div class="line">&#125;=breakfast();</div><div class="line"><span class="built_in">console</span>.log(dessert,drink,fruit)</div></pre></td></tr></table></figure>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> dessert =<span class="string">"cake"</span>	,drink=<span class="string">"milk"</span>;</div><div class="line"><span class="keyword">let</span> breakfast = <span class="string">`今天的早餐是 <span class="subst">$&#123;dessert&#125;</span><span class="subst">$&#123;drink&#125;</span>`</span></div><div class="line"><span class="built_in">console</span>.log()</div></pre></td></tr></table></figure>
+<h2 id="带标签的模板字符串-ternjs插件-模板字符串可以换行-kitchen会自动执行"><a href="#带标签的模板字符串-ternjs插件-模板字符串可以换行-kitchen会自动执行" class="headerlink" title="带标签的模板字符串 //ternjs插件 模板字符串可以换行 kitchen会自动执行"></a>带标签的模板字符串 //ternjs插件 模板字符串可以换行 kitchen会自动执行</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> dessert=<span class="string">"cake"</span>,drink=<span class="string">'tea'</span>;	</div><div class="line"><span class="keyword">let</span> breakfast = kitchen<span class="string">`今天的早餐是 <span class="subst">$&#123;dessert&#125;</span><span class="subst">$&#123;drink&#125;</span>`</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">kitchen</span>(<span class="params">strings,...values</span>)</span>&#123;  <span class="comment">//展开数组是两个变量</span></div><div class="line">	<span class="built_in">console</span>.log(strings);</div><div class="line">	<span class="built_in">console</span>.log(values)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="判断字符串里是否包含其他字符串"><a href="#判断字符串里是否包含其他字符串" class="headerlink" title="判断字符串里是否包含其他字符串"></a>判断字符串里是否包含其他字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dessert =<span class="string">"cake"</span>,drink:<span class="string">"tea"</span>;</div><div class="line"><span class="keyword">let</span> breakfast = <span class="string">`今天的早餐是 <span class="subst">$&#123;dessert&#125;</span><span class="subst">$&#123;drink&#125;</span>`</span>;</div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">	breakfast.startsWith(<span class="string">'今天'</span>) <span class="comment">//以某个字符开头</span></div><div class="line">	breakfast.endsWith(<span class="string">'a'</span>) <span class="comment">//以某个字符结尾</span></div><div class="line">	breakfast.includes(<span class="string">"早餐"</span>)<span class="comment">//包含</span></div><div class="line">)</div></pre></td></tr></table></figure>
+<h2 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y=3</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> x+y;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(add(<span class="number">2</span>))</div></pre></td></tr></table></figure>
+<h2 id="展开操作符"><a href="#展开操作符" class="headerlink" title="展开操作符"></a>展开操作符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fruit =[<span class="string">'apple'</span>,<span class="string">'banana'</span>]	,</div><div class="line">foods=[...fruit,<span class="string">'bread'</span>];</div><div class="line"><span class="built_in">console</span>.log(foods);</div></pre></td></tr></table></figure>
+<h2 id="剩余操作符"><a href="#剩余操作符" class="headerlink" title="剩余操作符"></a>剩余操作符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">breakfast</span>(<span class="params">dessert,drink,...foods</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(dessert,drink,...foods)</div><div class="line">&#125;	</div><div class="line">breakfast(<span class="string">'cake'</span>,<span class="string">'tea'</span>,<span class="string">'apple'</span>)</div></pre></td></tr></table></figure>
+<h2 id="解构参数"><a href="#解构参数" class="headerlink" title="解构参数"></a>解构参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">breakfast</span>(<span class="params">dessert,drink,&#123;location,restaurant&#125;</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(dessert,drink,location,restaurant);</div><div class="line">&#125;	</div><div class="line">breakfast(<span class="string">'cake'</span>,<span class="string">'bear'</span>,&#123;location:<span class="string">'北科'</span>,restaurant:<span class="string">'毛毛家'</span>&#125;)</div></pre></td></tr></table></figure>
+<h2 id="函数的名字"><a href="#函数的名字" class="headerlink" title="函数的名字"></a>函数的名字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> breakfast =<span class="function"><span class="keyword">function</span> <span class="title">superBreakfast</span>(<span class="params">arg</span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(breakfast.name) <span class="comment">//显示原函数名字</span></div></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> breakfast =(dessert,drink)=&gt;&#123;</div><div class="line">	<span class="keyword">return</span> dessert+<span class="string">''</span>+drink;</div><div class="line">&#125;	</div><div class="line"><span class="built_in">console</span>.log(breakfast(<span class="string">'cake'</span>,<span class="string">'tea'</span>))</div></pre></td></tr></table></figure>
+<h2 id="对象表达式"><a href="#对象表达式" class="headerlink" title="对象表达式"></a>对象表达式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> dessert =<span class="string">'cake'</span>,drink=<span class="string">'bear'</span>;</div><div class="line"><span class="keyword">let</span> food=&#123;</div><div class="line">	dessert,drink,breakfast()&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;	</div><div class="line"><span class="built_in">console</span>.log(food)</div></pre></td></tr></table></figure>
+<h2 id="对象属性名-对象属性名这样可以带空格"><a href="#对象属性名-对象属性名这样可以带空格" class="headerlink" title="对象属性名 //对象属性名这样可以带空格"></a>对象属性名 //对象属性名这样可以带空格</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> food=&#123;&#125;;</div><div class="line"><span class="keyword">let</span> drink=<span class="string">'hot drink'</span>;</div><div class="line">food.dessert=<span class="string">'cake'</span>;</div><div class="line">food[drink] =<span class="string">'tea'</span>;</div><div class="line"><span class="built_in">console</span>.log(food)</div></pre></td></tr></table></figure>
+<h2 id="对比两个值是否相等"><a href="#对比两个值是否相等" class="headerlink" title="对比两个值是否相等"></a>对比两个值是否相等</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.is(a,b)</div></pre></td></tr></table></figure>
+<h2 id="把对象的值复制到另一个对象里-可以扩展对象"><a href="#把对象的值复制到另一个对象里-可以扩展对象" class="headerlink" title="把对象的值复制到另一个对象里 可以扩展对象"></a>把对象的值复制到另一个对象里 可以扩展对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> breakfast=&#123;&#125;	;</div><div class="line"><span class="built_in">Object</span>.assign(</div><div class="line">	breakfast,</div><div class="line">	&#123;drink:<span class="string">'bear'</span>&#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<h2 id="设置对象的prototype"><a href="#设置对象的prototype" class="headerlink" title="设置对象的prototype"></a>设置对象的prototype</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> breakfast = &#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'tea'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> dinner=&#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'bear'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> sunday = <span class="built_in">Object</span>.create(breakfast);</div><div class="line"><span class="built_in">console</span>.log(sunday.getDrink());</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(sunday)) <span class="comment">//拿到sunday的原型</span></div><div class="line"><span class="built_in">Object</span>。setPrototypeOf(sunday,dinner) <span class="comment">//设置sunday的原型</span></div><div class="line"><span class="built_in">console</span>.log(sunday.getDrink())</div></pre></td></tr></table></figure>
+<h2 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">	<span class="keyword">let</span> breakfast = &#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'tea'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> dinner=&#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'bear'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> sunday=&#123;</div><div class="line">	__proto__:breakfast</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(sunday.getDrink())</div><div class="line">sunday.__proto__=dinner;</div></pre></td></tr></table></figure>
+<h2 id="super可以在子对象里面直接访问父对象的方法和属性"><a href="#super可以在子对象里面直接访问父对象的方法和属性" class="headerlink" title="super可以在子对象里面直接访问父对象的方法和属性"></a>super可以在子对象里面直接访问父对象的方法和属性</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> breakfast=&#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'tea'</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> dinner=&#123;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'bear'</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> sunday =&#123;</div><div class="line">	__proto__:breakfast;</div><div class="line">	getDrink()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.getDrink();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(sunday.getDrink())</div></pre></td></tr></table></figure>
+<h2 id="class-类"><a href="#class-类" class="headerlink" title="class 类"></a>class 类</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chef</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(food)&#123;</div><div class="line">		<span class="keyword">this</span>.food=food;</div><div class="line">		<span class="keyword">this</span>.dish=[];</div><div class="line">	&#125;</div><div class="line">	cook()&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.food)</div><div class="line">	&#125;</div><div class="line">	get menu()&#123;  <span class="comment">//get+空格+方法名</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.dish;</div><div class="line">	&#125;</div><div class="line">	set menu(dish)&#123;</div><div class="line">		<span class="keyword">this</span>.dish.push(dish)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> gp = <span class="keyword">new</span> Chef(<span class="string">'tomato'</span>);</div><div class="line"><span class="comment">//gp.cook();</span></div><div class="line">gp.menu =<span class="string">"pizza"</span>;</div><div class="line">gp.menu =<span class="string">"apple"</span>;</div><div class="line"><span class="built_in">console</span>.log(gp.menu) <span class="comment">//后面不带等号调用get方法</span></div></pre></td></tr></table></figure>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chef</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(food)&#123;</div><div class="line">		<span class="keyword">this</span>.food=food;</div><div class="line">		<span class="keyword">this</span>.dish=[];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">static</span> cook(food)&#123;  	<span class="comment">//静态方法</span></div><div class="line">		<span class="built_in">console</span>.log(food)</div><div class="line">	&#125;</div><div class="line">	get menu()&#123;  <span class="comment">//get+空格+方法名</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.dish;</div><div class="line">	&#125;</div><div class="line">	set menu(dish)&#123;</div><div class="line">		<span class="keyword">this</span>.dish.push(dish)</div><div class="line">	&#125;</div><div class="line">&#125;	</div><div class="line">Chef.cook(<span class="string">'tomato'</span>) <span class="comment">//静态方法可以直接用类名调用不报错</span></div></pre></td></tr></table></figure>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(name,birthday)&#123;</div><div class="line">		<span class="keyword">this</span>.name=name;</div><div class="line">		<span class="keyword">this</span>.birthday=birthday;</div><div class="line">	&#125;</div><div class="line">	intro()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>,$(this.birthday)`</span>;</div><div class="line">	&#125;</div><div class="line">&#125;	</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chef</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(name,birthday)&#123;</div><div class="line">		<span class="keyword">super</span>(name,birthday)</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> gp =<span class="keyword">new</span> Chef(<span class="string">"pz"</span>,<span class="string">'1992-02-21'</span>);</div><div class="line"><span class="built_in">console</span>.log(gp.intro())</div></pre></td></tr></table></figure>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> dessert = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'apple'</span>,<span class="string">'cake'</span>,<span class="string">'milk'</span>])	;</div><div class="line"><span class="built_in">console</span>.log(dessert);</div><div class="line"><span class="built_in">console</span>.log(dessert.size);<span class="comment">//长度</span></div><div class="line"><span class="built_in">console</span>.log(dessert.has(<span class="string">'apple'</span>)) ; <span class="comment">//是否有</span></div><div class="line"><span class="built_in">console</span>.log(dessert.delete(<span class="string">'milk'</span>));<span class="comment">//删除</span></div><div class="line"><span class="built_in">console</span>.log(dessert)</div><div class="line">dessert.forEach(dessert =&gt;&#123;</div><div class="line">	<span class="built_in">console</span>.log(dessert)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> food = <span class="keyword">new</span> <span class="built_in">Map</span>()	;</div><div class="line"><span class="keyword">let</span> fruit = &#123;&#125;,cook = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,dessert=<span class="string">'甜点'</span>;</div><div class="line">food.set(fruit,<span class="string">'lemon'</span>);</div><div class="line"><span class="built_in">console</span>.log(food);</div><div class="line">food.set(cook,<span class="string">'fork'</span>);</div><div class="line"><span class="built_in">console</span>.log(food);</div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">console</span>.,log(food.get(fruit))</div><div class="line"><span class="built_in">console</span>.,log(food.get(甜点))</div></pre></td></tr></table></figure>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="comment">//后面可以返回任何类型 具体值要加default  暴露</span></div><div class="line"><span class="keyword">import</span> &#123;fruit,dessert&#125; <span class="keyword">from</span> <span class="string">'路径'</span> <span class="comment">//导入</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/10/nginx入门/" itemprop="url">
+                  nginx入门
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-10T12:10:47+08:00" content="2015-07-10">
+              2015-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nginx技术/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/10/nginx入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/10/nginx入门/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/07/10/nginx入门/" class="leancloud_visitors" data-flag-title="nginx入门">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="nginx-1-10-2稳定版"><a href="#nginx-1-10-2稳定版" class="headerlink" title="nginx 1.10.2稳定版"></a>nginx 1.10.2稳定版</h1><h2 id="功能-用于生产环境"><a href="#功能-用于生产环境" class="headerlink" title="功能:用于生产环境"></a>功能:用于生产环境</h2><p>可以实现目录转发和反向代理<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/10/nginx入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/22/gulp实现前端工程化/" itemprop="url">
                   gulp实现前端工程化
                 </a>
               
@@ -437,19 +710,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:42:33+08:00" content="2016-10-29">
-              2016-10-29
+            <time itemprop="dateCreated" datetime="2015-06-22T11:42:33+08:00" content="2015-06-22">
+              2015-06-22
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/29/gulp实现前端工程化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/gulp实现前端工程化/" itemprop="commentsCount"></span>
+                <a href="/2015/06/22/gulp实现前端工程化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/22/gulp实现前端工程化/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -459,7 +751,7 @@
 
           
           
-             <span id="/2016/10/29/gulp实现前端工程化/" class="leancloud_visitors" data-flag-title="gulp实现前端工程化">
+             <span id="/2015/06/22/gulp实现前端工程化/" class="leancloud_visitors" data-flag-title="gulp实现前端工程化">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -490,7 +782,7 @@
 <li>包管理</li>
 <li>版本号控制
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/29/gulp实现前端工程化/#more" rel="contents">
+            <a class="btn" href="/2015/06/22/gulp实现前端工程化/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -537,8 +829,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/29/移动端小问题/" itemprop="url">
-                  移动端小问题
+                <a class="post-title-link" href="/2015/04/01/angular常用/" itemprop="url">
+                  angular渐入佳境
                 </a>
               
             
@@ -551,19 +843,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:39:00+08:00" content="2016-10-29">
-              2016-10-29
+            <time itemprop="dateCreated" datetime="2015-04-01T14:24:57+08:00" content="2015-04-01">
+              2015-04-01
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Angular1-x实践篇/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular1.x实践篇</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/29/移动端小问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/移动端小问题/" itemprop="commentsCount"></span>
+                <a href="/2015/04/01/angular常用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/01/angular常用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -573,7 +884,7 @@
 
           
           
-             <span id="/2016/10/29/移动端小问题/" class="leancloud_visitors" data-flag-title="移动端小问题">
+             <span id="/2015/04/01/angular常用/" class="leancloud_visitors" data-flag-title="angular渐入佳境">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -595,21 +906,57 @@
 
       
         
-          <h1 id="viewport-amp-单位"><a href="#viewport-amp-单位" class="headerlink" title="viewport&amp;单位"></a>viewport&amp;单位</h1><pre><code>px是相对单位 em相对于父元素的字体 rem相对于root
-ppi=dpi x*x+y*y开方 /尺寸
-dp=dip 是物理尺寸
-</code></pre><h2 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h2><pre><code>layoutviewport 布局viewport
-initial-scale=1.0前提条件是width=device-width
-user-scalable=no 不允许用户缩放s
-maximum-scale=&quot;&quot;
-minimum-scale=&quot;&quot;
-window.innerWidth 逻辑宽度
-</code></pre><h1 id="移动端meta"><a href="#移动端meta" class="headerlink" title="移动端meta"></a>移动端meta</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/29/移动端小问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <a id="more"></a>
+<h1 id="angular"><a href="#angular" class="headerlink" title="angular"></a>angular</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm i angular -D //安装ng</div><div class="line">ng-app=&quot;name&quot; //注册angular开始解析节点</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> myApp = angular.module(<span class="string">'el'</span>,[]); <span class="comment">//module是angular的根模块</span></div><div class="line"> <span class="keyword">var</span> users=[&#123;</div><div class="line">	name:<span class="string">'zhangsan'</span>,</div><div class="line">	age:<span class="number">10</span></div><div class="line">&#125;,&#123;</div><div class="line">	name:<span class="string">'lisi'</span>,</div><div class="line">	age:<span class="number">30</span></div><div class="line">&#125;]</div><div class="line"> myApp.controller(<span class="string">'myController'</span>，<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">	$scope.users=users;</div><div class="line">&#125;)  <span class="comment">//第一个参数是controller的名字 第二个参数是回调</span></div><div class="line"> ng-controller=<span class="string">"刚定义的controller名字"</span> <span class="comment">//内部就可以使用   &#123;&#123;users[0].name&#125;&#125;显示数据</span></div><div class="line"> ng-bind=<span class="string">"user[0].name"</span> <span class="comment">//可以消除页面出现花括号</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//或者</span></div><div class="line"></div><div class="line">angular.module(<span class="string">'el'</span>,[]).controller(<span class="string">'myController'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">ng-repeat =<span class="string">"user in users"</span> <span class="comment">//循环</span></div><div class="line">$index 索引</div><div class="line">ng-show ng-hide ng-<span class="keyword">if</span></div></pre></td></tr></table></figure>
+<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ng-model=<span class="string">""</span></div></pre></td></tr></table></figure>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><ol>
+<li>ng-事件名=”函数()”//必须有()  $.scope.add=function(){}</li>
+<li>内容重复再repeat中加track by $index</li>
+<li>ng-class=”{‘classname’:}” //控制类名</li>
+<li>ng-repeat = “item in items |  limitTo:3 /<em>限制条数 正数从前负数倒数 可以写变量在vm里面修改</em>/“</li>
+<li>ng-init=”” 初始化数据<h2 id="过滤器filter"><a href="#过滤器filter" class="headerlink" title="过滤器filter"></a>过滤器filter</h2></li>
+</ol>
+<p>|filtet :   :布尔值  //为true完全匹配 后面也可以跟一个函数</p>
+<h2 id="自定义filter"><a href="#自定义filter" class="headerlink" title="自定义filter"></a>自定义filter</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> persons=[&#123;</div><div class="line">	name:<span class="string">"name~~~~"</span>,</div><div class="line">	age:<span class="number">12</span>,</div><div class="line">	gender:<span class="number">0</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">	name:<span class="string">"name2~~~~"</span>,</div><div class="line">	age:<span class="number">10</span>,</div><div class="line">	gender:<span class="number">0</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">	name:<span class="string">"name3~~~~"</span>,</div><div class="line">	age:<span class="number">13</span>,</div><div class="line">	gender:<span class="number">1</span></div><div class="line">&#125;</div><div class="line">]</div><div class="line">|gender</div></pre></td></tr></table></figure>
+<h2 id="定义过滤器"><a href="#定义过滤器" class="headerlink" title="定义过滤器"></a>定义过滤器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.filter(<span class="string">'gender'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">sex</span>)</span>&#123;</div><div class="line">		<span class="keyword">switch</span> (sex)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">		<span class="keyword">return</span> <span class="string">"男"</span>;</div><div class="line">		<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">		<span class="keyword">return</span> <span class="string">"女"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)  <span class="comment">//名字 回调</span></div></pre></td></tr></table></figure>
+<h2 id="Defrred"><a href="#Defrred" class="headerlink" title="Defrred"></a>Defrred</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $dfd=$.Defrred();</div><div class="line">$dfd.resolve()</div><div class="line"><span class="keyword">return</span> $dfd</div><div class="line">$dfd.reject() 执行fail</div><div class="line">resolve 一执行 when就执行</div></pre></td></tr></table></figure>
+<h2 id="deferred-promise"><a href="#deferred-promise" class="headerlink" title="deferred.promise()"></a>deferred.promise()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> dtd.promise()</div><div class="line">$.when().then(=&gt;&#123;</div><div class="line"></div><div class="line">&#125;,=&gt;&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line">$.when().done().fail()可以跟多个</div><div class="line">$.when().always() 不管成功失败都执行</div></pre></td></tr></table></figure>
+<h2 id="log-console"><a href="#log-console" class="headerlink" title="$log =console"></a>$log =console</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">	 .controller(<span class="string">'myCon'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$log</span>)</span>&#123;</div><div class="line">	$log.log(<span class="string">'log'</span>)</div><div class="line">	$log.info(<span class="string">'log'</span>) <span class="comment">//蓝色i</span></div><div class="line">	$log.warn(<span class="string">'log'</span>) <span class="comment">//黄色</span></div><div class="line">	$log.error(<span class="string">'log'</span>) <span class="comment">//红色</span></div><div class="line">	$log.debug(<span class="string">'log'</span>) <span class="comment">//字为蓝色</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="timeout-setTimeout"><a href="#timeout-setTimeout" class="headerlink" title="$timeout =setTimeout"></a>$timeout =setTimeout</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">	&#125;,<span class="number">3000</span>)</div><div class="line">$timeout.cancel(变量)	<span class="comment">//取消定时器</span></div><div class="line">			<span class="comment">//$scope上的方法都可以调用</span></div></pre></td></tr></table></figure>
+<h2 id="http-Ajax"><a href="#http-Ajax" class="headerlink" title="$http //Ajax"></a>$http //Ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">	$http.get(url).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="comment">//success</span></div><div class="line">		&#125;,</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="comment">//error</span></div><div class="line">			&#125;)</div><div class="line"></div><div class="line">$http(&#123;</div><div class="line">	method:<span class="string">""</span>,</div><div class="line">	url:<span class="string">""</span></div><div class="line">&#125;&#125;.then(func1,func2)</div><div class="line"></div><div class="line"><span class="comment">//withCredentials：true cors跨域带token时候必须加</span></div></pre></td></tr></table></figure>
+<h2 id="q"><a href="#q" class="headerlink" title="$q"></a>$q</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> defer = $q.defer();</div><div class="line"><span class="keyword">var</span> data =&#123;</div><div class="line">	status:<span class="string">"ok"</span>,</div><div class="line">	userName:<span class="string">"name~~~"</span></div><div class="line">&#125;</div><div class="line">$timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	defei.resolve(data);</div><div class="line">&#125;,<span class="number">2000</span>)</div><div class="line">defer.promise</div><div class="line">	.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</div></pre></td></tr></table></figure>
+<h2 id="自定义service"><a href="#自定义service" class="headerlink" title="自定义service"></a>自定义service</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">angular.module('appname',[])</div><div class="line">	.factory('User',function()&#123; //如果还要使用其他的 参数直接注入</div><div class="line">		var user=&#123;</div><div class="line">			id:1,</div><div class="line">			name:"namessss",</div><div class="line">			email:"safdasfsafsa"</div><div class="line">		&#125;</div><div class="line">		var  _getUser=function()&#123;</div><div class="line">			return user;</div><div class="line">		&#125;</div><div class="line">		var _setUser =function(id,name,email)&#123;</div><div class="line">			user.id=id;</div><div class="line">			user.name=name;</div><div class="line">			user.email=email;</div><div class="line">		&#125;</div><div class="line">		return &#123;</div><div class="line">			get:_getUser,</div><div class="line">			set:_setUser</div><div class="line">		&#125;</div><div class="line">	&#125;) //user是自定义服务名</div><div class="line">在别的服务中注入就可以使用了  //数据共享</div><div class="line"></div><div class="line">## controller as //起别名</div><div class="line">```js</div><div class="line"> this.name="abc"</div><div class="line"> 在ng-controll="a as b" 调用时候b.name</div><div class="line"> &#123;&#123;$parent.name&#125;&#125;</div></pre></td></tr></table></figure>
+<h2 id="ng-include-””-直接写模板名字-带路径要加’’必须加"><a href="#ng-include-””-直接写模板名字-带路径要加’’必须加" class="headerlink" title="ng-include=”” //直接写模板名字-带路径要加’’必须加"></a>ng-include=”” //直接写模板名字-带路径要加’’必须加</h2><h1 id="路由-引入angular-route"><a href="#路由-引入angular-route" class="headerlink" title="路由-引入angular-route"></a>路由-引入angular-route</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> &lt;div ng-view&gt;&lt;/div&gt; <span class="comment">//声明路由节点</span></div><div class="line"><span class="number">2.</span> <span class="keyword">var</span> myApp =angular.module(<span class="string">'myapp'</span>,[<span class="string">'ngRoute'</span>]);<span class="comment">//依赖注入(小驼峰式是指令)</span></div><div class="line"><span class="number">2.</span> .config([<span class="string">'$routeProvider'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">	 $routeProvider</div><div class="line">	 	.when(<span class="string">'/home'</span>,&#123;</div><div class="line">	 		templateUrl:<span class="string">''</span>,</div><div class="line">	 		controller:<span class="string">''</span> <span class="comment">//如果加双引号 下面要用.controller 如果不加下面用函数</span></div><div class="line">	 		&#125;)<span class="comment">//定义路由</span></div><div class="line"></div><div class="line">	&#125;) <span class="comment">// 为了解决压缩依赖注入问题 数组中前面是服务名最后是函数 位置不能颠倒顺序要一致</span></div><div class="line"><span class="number">3.</span> .controller(<span class="string">''</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">	&#125;])		</div><div class="line"><span class="number">4.</span> 调用路由href=<span class="string">"#/路由名"</span>		</div><div class="line"><span class="number">5.</span>  .config([<span class="string">'$routeProvider'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">	 $routeProvider</div><div class="line">	 	.when(<span class="string">'/home'</span>,&#123;</div><div class="line">	 		templateUrl:<span class="string">''</span>,</div><div class="line">	 		controller:</div><div class="line">	 		&#125;)<span class="comment">//定义路由----&gt;.when()</span></div><div class="line">		.otherwise(&#123;</div><div class="line">			redirectTo:<span class="string">'/home'</span></div><div class="line">			&#125;)</div><div class="line">			<span class="comment">//设置默认页面</span></div><div class="line"></div><div class="line">	&#125;)</div><div class="line"><span class="number">6.</span> 路由传参</div><div class="line">.when(<span class="string">'/employee/:id'</span>,&#123;</div><div class="line">	templateUrl:<span class="string">'......./employeedetail.html'</span>,</div><div class="line">	controller:<span class="string">''</span></div><div class="line">	&#125;)</div><div class="line">href=<span class="string">'#/employee/&#123;&#123;id&#125;&#125;'</span></div><div class="line">myApp.controller(<span class="string">''</span>,[<span class="string">'$routeParams'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$routeParams</span>)</span>&#123;</div><div class="line">		<span class="comment">//$routeParams里面带有传进来的参数 参数名跟when后面那个名字一致</span></div><div class="line">	&#125;])</div><div class="line"><span class="number">7.</span> caseInsensitiveMatch 设置路由对大小写是否敏感</div><div class="line">	.when(<span class="string">'/home'</span>,&#123;</div><div class="line">	 		templateUrl:<span class="string">''</span>,</div><div class="line">	 		controller:,</div><div class="line">	 		caseInsensitiveMatch:<span class="string">''</span><span class="comment">//默认false 对路由大小写敏感 对一个设置</span></div><div class="line">	 		&#125;)</div><div class="line">	$routeProvider.caseInsensitiveMatch=<span class="string">'true'</span> <span class="comment">//设置所有路由大小写不敏感</span></div><div class="line"><span class="number">8.</span> 路由设置controllerAs:<span class="string">'别名'</span> <span class="comment">//用途同controller as</span></div><div class="line"><span class="number">9.</span> 路由刷新</div><div class="line">	<span class="number">1.</span> 引入$route服务</div><div class="line">	<span class="number">2.</span> 调用 $route.reload()</div><div class="line"><span class="number">10.</span> 路由事件 事件在$scope上挂接</div><div class="line">	<span class="number">1.</span> 在路由切换前触发 加给谁从谁离开触发</div><div class="line">	$scope.$on(<span class="string">'$routeChangeStart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event,next,current</span>)</span>&#123;</div><div class="line">		<span class="comment">//可以传三个参数 next下一个路由信息 cur当前路由信息</span></div><div class="line">		<span class="comment">//阻止跳转 event.preventDefault()</span></div><div class="line">		&#125;)</div><div class="line">	<span class="number">2.</span> 在路由切换成功触发 加给谁谁进入时候触发</div><div class="line">	$scope.$on(<span class="string">'$routeChangeSuccess'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event,next,current</span>)</span>&#123;</div><div class="line"></div><div class="line">		&#125;)</div><div class="line">	<span class="number">3.</span> 在路由切换失败触发 加给谁谁进入失败时候触发</div><div class="line">	$scope.$on(<span class="string">'$routeChangeError'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event,next,current</span>)</span>&#123;</div><div class="line"></div><div class="line">		&#125;)</div><div class="line"><span class="number">11.</span> 手动跳转 $location服务</div><div class="line">	用法$location.url(url)</div><div class="line"><span class="number">12.</span> resolve		</div><div class="line">	.when(<span class="string">'/home'</span>,&#123;</div><div class="line">	 		templateUrl:<span class="string">''</span>,</div><div class="line">	 		controller:,</div><div class="line">	 		caseInsensitiveMatch:<span class="string">''</span>,<span class="comment">//默认false 对路由大小写敏感 对一个设置</span></div><div class="line">	 		resolve:&#123;</div><div class="line">	 			employeelist:<span class="function"><span class="keyword">function</span>(<span class="params">$http,$q</span>)</span>&#123;</div><div class="line">					<span class="keyword">return</span> $http.get(<span class="string">'url'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">						<span class="keyword">return</span> res.data</div><div class="line">						&#125;)</div><div class="line">	 			&#125;</div><div class="line">	 		&#125;<span class="comment">//内部延迟成功后再做路由跳转</span></div><div class="line">	 		<span class="comment">//resolve 必须返回一个延迟对象</span></div><div class="line"></div><div class="line">	 		&#125;)</div><div class="line">	调用先注入服务employeelist(名字在resolve起的)</div></pre></td></tr></table></figure>
+<h2 id="rootScope-全局作用域"><a href="#rootScope-全局作用域" class="headerlink" title="$rootScope 全局作用域"></a>$rootScope 全局作用域</h2><ol>
+<li>引入服务$rootScope</li>
+<li>调用            <h2 id="抽离controller"><a href="#抽离controller" class="headerlink" title="抽离controller"></a>抽离controller</h2></li>
+<li>新建controller.js<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">2.</span> <span class="string">'use strict'</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">storeController</span>(<span class="params">$scopre</span>)</span>&#123;</div><div class="line"></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="ng-src-””-定义src"><a href="#ng-src-””-定义src" class="headerlink" title="ng-src=”” //定义src"></a>ng-src=”” //定义src</h2><h2 id="定义module注入"><a href="#定义module注入" class="headerlink" title="定义module注入"></a>定义module注入</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. var appCtrl =angular.module('app-ctrl',[]);</div><div class="line">appCtrl.controller('storeController',['$scope,'DataService',function($scope,DataService)&#123;</div><div class="line"></div><div class="line">	&#125;'])</div><div class="line">2. 进行依赖注入在需要用的里面[] 注入名字是app-ctrl</div></pre></td></tr></table></figure>
+<h2 id="自定义指令-directive"><a href="#自定义指令-directive" class="headerlink" title="自定义指令 directive"></a>自定义指令 directive</h2><h3 id="标签指令-常用"><a href="#标签指令-常用" class="headerlink" title="标签指令 常用"></a>标签指令 常用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 定义指令</div><div class="line">myApp.directive(<span class="string">'helloWorld'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span>&#123;</div><div class="line">		template:<span class="string">""</span>,<span class="comment">//内容</span></div><div class="line">		replace:<span class="literal">true</span>,<span class="comment">//是否替换helloWrold标签</span></div><div class="line">		&#125;</div><div class="line">	&#125;)	<span class="comment">//指令名字小驼峰</span></div><div class="line"><span class="number">2.</span> 调用指令</div><div class="line">&lt;hello-world&gt;&lt;/hello-world&gt;</div><div class="line">&lt;hello&gt;&lt;/hello&gt;</div></pre></td></tr></table></figure>
+<h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用&lt;标签 helloWorld&gt;&lt;/标签&gt;</div></pre></td></tr></table></figure>
+<h3 id="class指令"><a href="#class指令" class="headerlink" title="class指令"></a>class指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">定义时多加一个restrict属性</div><div class="line">restrict:&apos;EAC&apos; //E元素 A属性 C Class M 注释 默认开两个AE</div><div class="line">调用 class=&quot;helloWorld&quot;</div></pre></td></tr></table></figure>
+<h3 id="注释指令"><a href="#注释指令" class="headerlink" title="注释指令"></a>注释指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用 &lt;!--directive:helloWorld--&gt;</div></pre></td></tr></table></figure>
+<h3 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">'helloWorld'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span>&#123;</div><div class="line">		templateUrl:<span class="string">""</span>,<span class="comment">//模板的url</span></div><div class="line">		replace:<span class="literal">true</span>,<span class="comment">//是否替换helloWrold标签</span></div><div class="line">		scope:<span class="literal">true</span>, <span class="comment">//是否引入父controller默认true scope可以写成&#123;&#125;断链写成false不能断链</span></div><div class="line">		&#123;</div><div class="line">			message:<span class="string">'@message'</span> <span class="comment">//可以选择取父对象的某些属性 需在元素上加上一个属性message=&#123;&#123;message&#125;&#125;  可以用来实现单向数据绑定</span></div><div class="line">			<span class="comment">// =等号可以实现双向数据绑定</span></div><div class="line">		&#125;</div><div class="line">		controller:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">			&#125;<span class="comment">//定义自己的controller</span></div><div class="line">		&#125;,</div><div class="line">		compile:<span class="function"><span class="keyword">function</span>(<span class="params">elem,attrs</span>)</span>&#123;</div><div class="line"></div><div class="line">		&#125;<span class="comment">//compile返回一个link 如果return 就不需要写link 把link内容写在compile中</span></div><div class="line">		,</div><div class="line">		link:<span class="function"><span class="keyword">function</span>(<span class="params">scope,elem,attrs</span>)</span>&#123;</div><div class="line">			<span class="comment">//elem是一个jq对象</span></div><div class="line">			<span class="comment">//scope 可以拿到当前作用域</span></div><div class="line">		&#125;<span class="comment">//可以拿到元素对象 属性集合 可以用来深度定制属性 属性里面-写法 取值用驼峰</span></div><div class="line">		<span class="comment">//angular 内置jqlite</span></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<p>angular解析模板 先把模板装载到一个节点上(compile) 渲染模板(link)</p>
+<h1 id="控制器之间的信息传递"><a href="#控制器之间的信息传递" class="headerlink" title="控制器之间的信息传递"></a>控制器之间的信息传递</h1><h2 id="emit-类似trigger可以触发事件上代可以收到"><a href="#emit-类似trigger可以触发事件上代可以收到" class="headerlink" title="$emit 类似trigger可以触发事件上代可以收到"></a>$emit 类似trigger可以触发事件上代可以收到</h2><h2 id="broadcast-后代控制器广播可以收到"><a href="#broadcast-后代控制器广播可以收到" class="headerlink" title="$broadcast 后代控制器广播可以收到"></a>$broadcast 后代控制器广播可以收到</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">myApp.controller('child1Ctrl',function($scope)&#123;</div><div class="line">	$scope.action=function()&#123;</div><div class="line">		$scope.$emit('parent-ctrl');</div><div class="line">		$scope.$broadcast('child-ctrl');</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line">myApp.controller('parentCtrl',function()&#123;</div><div class="line">	$scope.$on('parent-ctrl',function()&#123;</div><div class="line"></div><div class="line">		&#125;)//绑定一个事件parent-ctrl</div><div class="line"></div><div class="line">	&#125;)</div><div class="line">myApp.controller('grandsonCtrl',function()&#123;</div><div class="line">		#scope.$on('child-ctrl',function()&#123;</div><div class="line"></div><div class="line">		&#125;)//绑定一个事件parent-ctrl</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h1 id="angular-ui-router-实现多层路由嵌套"><a href="#angular-ui-router-实现多层路由嵌套" class="headerlink" title="angular-ui-router 实现多层路由嵌套"></a>angular-ui-router 实现多层路由嵌套</h1><hr>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;ui-view&gt;&lt;/ui-view&gt;</div></pre></td></tr></table></figure>
+<h2 id="依赖注入模块-‘ui-router’"><a href="#依赖注入模块-‘ui-router’" class="headerlink" title="依赖注入模块 [‘ui.router’]"></a>依赖注入模块 [‘ui.router’]</h2><h2 id="修改href-ui-sref-”name”-state的名字"><a href="#修改href-ui-sref-”name”-state的名字" class="headerlink" title="修改href ui-sref=”name” state的名字"></a>修改href ui-sref=”name” state的名字</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">myApp.config([<span class="string">'$stateProvider'</span>,<span class="string">'$urlRouterProvider'</span>,<span class="string">'$urlMatcherFactoryProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider,$urlRouterProvider,$urlMatcherFactoryProvider</span>)</span>&#123;</div><div class="line">	<span class="comment">//$urlRouterProvider  otherwise挂在这个上面设置默认页面 需要注入$urlRouterProvider服务</span></div><div class="line">	<span class="comment">//$urlMatcherFactoryProvider.caseInsensitiveMatch() //设置路由对大小写是否敏感</span></div><div class="line">	$stateProvider</div><div class="line">		.state(<span class="string">'home'</span>,&#123;<span class="comment">//路由的名字</span></div><div class="line">			url:<span class="string">'/home'</span>, <span class="comment">//真正的路由 如果传参'/home/:参数名'</span></div><div class="line">			templateUrl:<span class="string">''</span>,<span class="comment">//路由的路径</span></div><div class="line">			controller:<span class="string">""</span>,<span class="comment">//定义控制器</span></div><div class="line">			controllerAs:<span class="string">''</span>,</div><div class="line">			resolve:&#123; <span class="comment">//延迟执行</span></div><div class="line">				employeelist:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			&#125;)</div><div class="line">	$urlRouterProvider.otherwise(<span class="string">'/home'</span>);<span class="comment">//设置默认页面 可以单独设置一个config抽离</span></div><div class="line">	$urlMatchFactoryProvider.caseInsensitiveMatch(<span class="literal">true</span>);<span class="comment">//设置对路由大小写敏感</span></div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+<h2 id="controller中使用相关功能"><a href="#controller中使用相关功能" class="headerlink" title="controller中使用相关功能"></a>controller中使用相关功能</h2><h3 id="实现reload"><a href="#实现reload" class="headerlink" title="实现reload()"></a>实现reload()</h3><p>注入$state<br>$state.reload()</p>
+<h3 id="实现location-跳转"><a href="#实现location-跳转" class="headerlink" title="实现location()跳转"></a>实现location()跳转</h3><p>注入$state<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$state.go(&apos;要跳转到的路由state的名字&apos;,&#123;</div><div class="line">	//参数</div><div class="line">	&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="接收参数"><a href="#接收参数" class="headerlink" title="接收参数"></a>接收参数</h3><p>注入$stateParams<br>$stateParams里面包含传入的参数</p>
+<h2 id="路由数据挂接"><a href="#路由数据挂接" class="headerlink" title="路由数据挂接"></a>路由数据挂接</h2><h3 id="设置路由上的数据"><a href="#设置路由上的数据" class="headerlink" title="设置路由上的数据"></a>设置路由上的数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'home'</span>,&#123;<span class="comment">//路由的名字</span></div><div class="line">			url:<span class="string">'/home'</span>, <span class="comment">//真正的路由 如果传参'/home/:参数名'</span></div><div class="line">			templateUrl:<span class="string">''</span>,<span class="comment">//路由的路径</span></div><div class="line">			controller:<span class="string">""</span>,<span class="comment">//定义控制器</span></div><div class="line">			controllerAs:<span class="string">''</span>,</div><div class="line">			data:&#123;</div><div class="line">				customData:<span class="string">''</span><span class="comment">//要传递的数据</span></div><div class="line">			&#125;</div><div class="line">			&#125;)</div></pre></td></tr></table></figure>
+<h3 id="获取路由数据"><a href="#获取路由数据" class="headerlink" title="获取路由数据"></a>获取路由数据</h3><p>在要使用controller中<br>注入$state服务<br>数据在$state.current.data中</p>
+<h3 id="可以获取其他路由的数据"><a href="#可以获取其他路由的数据" class="headerlink" title="可以获取其他路由的数据"></a>可以获取其他路由的数据</h3><p>在要使用controller中<br>注入$state服务<br>$state.get(‘要取数据的路由名字’).data<br>数据在$state.get(‘要取数据的路由名字’).data中</p>
+<h2 id="实现子路由嵌套"><a href="#实现子路由嵌套" class="headerlink" title="实现子路由嵌套"></a>实现子路由嵌套</h2><h3 id="定义父路由"><a href="#定义父路由" class="headerlink" title="定义父路由"></a>定义父路由</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'parent'</span>,&#123;</div><div class="line">	url:<span class="string">'/employee'</span>,</div><div class="line">	templateUrl:<span class="string">''</span>,</div><div class="line">	controller:<span class="string">''</span></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h3 id="定义子路由"><a href="#定义子路由" class="headerlink" title="定义子路由"></a>定义子路由</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.state(<span class="string">'parent.employee'</span>,&#123;</div><div class="line">	url:<span class="string">'/'</span>,</div><div class="line">	templateUrl:<span class="string">''</span>,</div><div class="line">	controller:<span class="string">''</span></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h3 id="跳转默认子路由"><a href="#跳转默认子路由" class="headerlink" title="跳转默认子路由"></a>跳转默认子路由</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ui-sref=&quot;name&quot; state的名字</div></pre></td></tr></table></figure>
+<h1 id="ng-disabled-表单的值后端不能直接拿到"><a href="#ng-disabled-表单的值后端不能直接拿到" class="headerlink" title="ng-disabled 表单的值后端不能直接拿到"></a>ng-disabled 表单的值后端不能直接拿到</h1>
+          
         
       
     </div>
@@ -653,7 +1000,7 @@ window.innerWidth 逻辑宽度
             
               
                 
-                <a class="post-title-link" href="/2016/10/29/AMD理解/" itemprop="url">
+                <a class="post-title-link" href="/2015/03/29/AMD理解/" itemprop="url">
                   AMD理解
                 </a>
               
@@ -667,19 +1014,38 @@ window.innerWidth 逻辑宽度
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:37:31+08:00" content="2016-10-29">
-              2016-10-29
+            <time itemprop="dateCreated" datetime="2015-03-29T11:37:31+08:00" content="2015-03-29">
+              2015-03-29
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/AMD规范/" itemprop="url" rel="index">
+                    <span itemprop="name">AMD规范</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/29/AMD理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/AMD理解/" itemprop="commentsCount"></span>
+                <a href="/2015/03/29/AMD理解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/29/AMD理解/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -689,7 +1055,7 @@ window.innerWidth 逻辑宽度
 
           
           
-             <span id="/2016/10/29/AMD理解/" class="leancloud_visitors" data-flag-title="AMD理解">
+             <span id="/2015/03/29/AMD理解/" class="leancloud_visitors" data-flag-title="AMD理解">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -717,7 +1083,7 @@ window.innerWidth 逻辑宽度
 </ul>
 <h2 id="4-放大模式"><a href="#4-放大模式" class="headerlink" title="4.放大模式"></a>4.放大模式</h2><h2 id="5-宽放大模式"><a href="#5-宽放大模式" class="headerlink" title="5.宽放大模式"></a>5.宽放大模式</h2>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/29/AMD理解/#more" rel="contents">
+            <a class="btn" href="/2015/03/29/AMD理解/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -764,8 +1130,8 @@ window.innerWidth 逻辑宽度
             
               
                 
-                <a class="post-title-link" href="/2016/10/29/YO框架核心/" itemprop="url">
-                  YO框架核心
+                <a class="post-title-link" href="/2015/01/24/webStorage/" itemprop="url">
+                  webStorage
                 </a>
               
             
@@ -778,349 +1144,8 @@ window.innerWidth 逻辑宽度
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:29:15+08:00" content="2016-10-29">
-              2016-10-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/29/YO框架核心/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/YO框架核心/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/29/YO框架核心/" class="leancloud_visitors" data-flag-title="YO框架核心">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="YO框架核心解读"><a href="#YO框架核心解读" class="headerlink" title="YO框架核心解读"></a>YO框架核心解读</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/29/YO框架核心/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/29/canvas/" itemprop="url">
-                  canvas
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-29T11:20:56+08:00" content="2016-10-29">
-              2016-10-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/29/canvas/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/canvas/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/29/canvas/" class="leancloud_visitors" data-flag-title="canvas">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Canvas常用操作"><a href="#Canvas常用操作" class="headerlink" title="Canvas常用操作"></a>Canvas常用操作</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/29/canvas/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/appcache/" itemprop="url">
-                  appcache
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T17:39:28+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/HTML离线缓存/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML离线缓存</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/24/appcache/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/appcache/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/24/appcache/" class="leancloud_visitors" data-flag-title="appcache">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="AppCache"><a href="#AppCache" class="headerlink" title="AppCache"></a>AppCache</h1><hr>
-<p><h3 style="text-align:center;color:pink"><br>几个注意点</h3><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/24/appcache/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/webSQL/" itemprop="url">
-                  webSQL
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T15:08:20+08:00" content="2016-09-24">
-              2016-09-24
+            <time itemprop="dateCreated" datetime="2015-01-24T14:28:43+08:00" content="2015-01-24">
+              2015-01-24
             </time>
           </span>
 
@@ -1149,8 +1174,8 @@ window.innerWidth 逻辑宽度
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/24/webSQL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/webSQL/" itemprop="commentsCount"></span>
+                <a href="/2015/01/24/webStorage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/24/webStorage/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1160,7 +1185,513 @@ window.innerWidth 逻辑宽度
 
           
           
-             <span id="/2016/09/24/webSQL/" class="leancloud_visitors" data-flag-title="webSQL">
+             <span id="/2015/01/24/webStorage/" class="leancloud_visitors" data-flag-title="webStorage">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="webStorage"><a href="#webStorage" class="headerlink" title="webStorage"></a>webStorage</h1><h2 id="local-storage-本地存储"><a href="#local-storage-本地存储" class="headerlink" title="local storage(本地存储)"></a>local storage(本地存储)</h2><hr>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/24/webStorage/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/21/typedJs/" itemprop="url">
+                  typedJs
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-21T20:06:43+08:00" content="2015-01-21">
+              2015-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效果篇/" itemprop="url" rel="index">
+                    <span itemprop="name">效果篇</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/21/typedJs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/21/typedJs/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/01/21/typedJs/" class="leancloud_visitors" data-flag-title="typedJs">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="打字机效果"><a href="#打字机效果" class="headerlink" title="打字机效果"></a>打字机效果
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/21/typedJs/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/10/移动端小问题/" itemprop="url">
+                  移动端常见错误
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-10T11:39:00+08:00" content="2015-01-10">
+              2015-01-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/移动端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/10/移动端小问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/10/移动端小问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/01/10/移动端小问题/" class="leancloud_visitors" data-flag-title="移动端常见错误">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="viewport-amp-单位"><a href="#viewport-amp-单位" class="headerlink" title="viewport&amp;单位"></a>viewport&amp;单位</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">px是相对单位 em相对于父元素的字体 rem相对于root</div><div class="line">ppi=dpi x*x+y*y开方 /尺寸</div><div class="line">dp=dip 是物理尺寸</div></pre></td></tr></table></figure>
+<h2 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">layoutviewport 布局viewport</div><div class="line">initial-scale=1.0前提条件是width=device-width</div><div class="line">user-scalable=no 不允许用户缩放s</div><div class="line">maximum-scale=&quot;&quot;</div><div class="line">minimum-scale=&quot;&quot;</div><div class="line">window.innerWidth 逻辑宽度</div></pre></td></tr></table></figure>
+<h1 id="移动端meta"><a href="#移动端meta" class="headerlink" title="移动端meta"></a>移动端meta</h1>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/10/移动端小问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/12/09/canvas/" itemprop="url">
+                  canvas入门详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-12-09T11:20:56+08:00" content="2014-12-09">
+              2014-12-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Canvas技术/" itemprop="url" rel="index">
+                    <span itemprop="name">Canvas技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/12/09/canvas/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/09/canvas/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/12/09/canvas/" class="leancloud_visitors" data-flag-title="canvas入门详解">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Canvas常用操作"><a href="#Canvas常用操作" class="headerlink" title="Canvas常用操作"></a>Canvas常用操作</h1>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/12/09/canvas/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/09/24/webSQL/" itemprop="url">
+                  webSQL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-09-24T15:08:20+08:00" content="2014-09-24">
+              2014-09-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTML5存储/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5存储</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/09/24/webSQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/24/webSQL/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/09/24/webSQL/" class="leancloud_visitors" data-flag-title="webSQL">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1187,419 +1718,10 @@ window.innerWidth 逻辑宽度
 <p><p style="text-indent:2em;text-align:center">创建数据库  <span style="color:green">openDatabase <span><p style="text-align:center">我们可以使用这样简单的一条语句，创建或打开一个本地的数据库对象</p></p>
 <p><p><br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/24/webSQL/#more" rel="contents">
+            <a class="btn" href="/2014/09/24/webSQL/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/webStorage/" itemprop="url">
-                  webStorage
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T14:28:43+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/HTML5存储/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5存储</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/24/webStorage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/webStorage/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/24/webStorage/" class="leancloud_visitors" data-flag-title="webStorage">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="webStorage"><a href="#webStorage" class="headerlink" title="webStorage"></a>webStorage</h1><h2 id="local-storage-本地存储"><a href="#local-storage-本地存储" class="headerlink" title="local storage(本地存储)"></a>local storage(本地存储)</h2><hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/24/webStorage/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/css3基础/" itemprop="url">
-                  css3基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T11:18:43+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS3基础/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS3基础</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/24/css3基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/css3基础/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/24/css3基础/" class="leancloud_visitors" data-flag-title="css3基础">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><hr>
-<h4 style="text-align:center;color:red">属性选择器</h4>
-
-<pre><code>1. [att*=val] 属性包含
-2. [att^=val] 开头
-3. [att$=val] 结尾
-4. [att~=val] 包含完整单词
-5. [att|=val] 以val-开头的 或者只有val也可以
-</code></pre><h4 style="text-align:center">五个伪元素</h4>
-
-<pre><code>1. ::after
-2. ::before
-3. ::first-letter
-4. ::first-line
-5. ::selection
-</code></pre><h4 style="text-align:center">结构伪类选择器</h4>
-
-<pre><code>1. :first-child()
-2. :last-child()
-3. :nth-child()
-4. :nth-of-type()
-5. :nth-last-child()
-</code></pre><hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/24/css3基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/html5基础/" itemprop="url">
-                  html5
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-24T10:56:30+08:00" content="2016-09-24">
-              2016-09-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/24/html5基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/html5基础/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/24/html5基础/" class="leancloud_visitors" data-flag-title="html5">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="html5新增常用标签"><a href="#html5新增常用标签" class="headerlink" title="html5新增常用标签"></a>html5新增常用标签</h2><hr>
-<pre><code>header(头部)
-nav(导航条，侧边栏导航，内导航，翻页操作)
-article(文章)
-section(区块)
-aside(侧边)
-figure(独立流的内容 里面可以加标题 figcaption 只能有一个)
-mark(高亮显示文字)
-canvas(画布)
-</code></pre><hr>
-<hr>
-<h3 id="小知识点"><a href="#小知识点" class="headerlink" title="小知识点"></a>小知识点</h3><p>input事件 输入内容的时候触发<br>旧版本浏览器兼容html5标签 可以用html5shaiv.js<br>表单属性 multiple可以输入多个用逗号隔开 required 强制输入 pattern里面是正则 提示内容是title</p>
-
-          
         
       
     </div>
@@ -1667,7 +1789,7 @@ canvas(画布)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1675,7 +1797,7 @@ canvas(画布)
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1684,7 +1806,7 @@ canvas(画布)
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="有你的小时光" />
+  <meta name="keywords" content="webpack," />
 
 
 
@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/29/webpack使用及常用方法/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="webpack实现前端工程化七项功能">
-<meta property="og:updated_time" content="2016-10-29T04:00:50.272Z">
+<meta property="og:updated_time" content="2016-11-12T06:53:26.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack使用及常用方法">
 <meta name="twitter:description" content="webpack实现前端工程化七项功能">
@@ -439,6 +439,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -484,138 +503,17 @@
 <li><p>cnpm i webpack -D 本地安装<br> 新建entry.js index.html</p>
 <p> webpack entry.js bundle.js 编译entry.js为bundle.js<br> 支持commonJS规范 module.exports={} require</p>
 </li>
-<li><p>cnpm i css-loader style-loader -D<br> require(‘style!css!./style.css’);</p>
-<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p> 新建webpack.config.js<br> module.exports={</p>
-<pre><code>entry:&apos;./entry.js&apos;,//入口
-output:{
-path:__dirname, //当前文件夹
-filename:&apos;bundle.js&apos; //文件名字
-}，
-devtool:&apos;source-map&apos;,//配置source-map        
-module:{
-loaders:[
-    {
-        test:/\.css$/,
-        loader:&apos;style!css&apos; //style和css位置不能交换
-    }    
-]    //配置模块
-}
-</code></pre><p> }</p>
-<p> 打开页面输入webpack<br> 打开source-map<br> webpack –devtool source-map<br> 安装server<br> cnpm i webpack-dev-server -g //全局安装<br> cnpm i webpack-dev-server -D //本地安装<br> webpack-dev-server –inline –hot<br> 需要输入localhost:8080才能访问<br> cnpm i babel-loader babel-core babbel-preset-es2015 babbel-preset-react -D</p>
+<li>cnpm i css-loader style-loader -D<br> require(‘style!css!./style.css’);<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">新建webpack.config.js</div><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">	entry:<span class="string">'./entry.js'</span>,<span class="comment">//入口</span></div><div class="line">	output:&#123;</div><div class="line">	path:__dirname, <span class="comment">//当前文件夹</span></div><div class="line">	filename:<span class="string">'bundle.js'</span> <span class="comment">//文件名字</span></div><div class="line">	&#125;，</div><div class="line">	devtool:<span class="string">'source-map'</span>,<span class="comment">//配置source-map		</span></div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">	loaders:[</div><div class="line">		&#123;</div><div class="line">			test:<span class="regexp">/\.css$/</span>,</div><div class="line">			loader:<span class="string">'style!css'</span> <span class="comment">//style和css位置不能交换</span></div><div class="line">		&#125;	</div><div class="line">	]	<span class="comment">//配置模块</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">打开页面输入webpack</div><div class="line">打开source-map</div><div class="line">webpack --devtool source-map</div><div class="line">安装server</div><div class="line">cnpm i webpack-dev-server -g <span class="comment">//全局安装</span></div><div class="line">cnpm i webpack-dev-server -D <span class="comment">//本地安装</span></div><div class="line">webpack-dev-server --inline --hot </div><div class="line">需要输入localhost:<span class="number">8080</span>才能访问</div><div class="line">cnpm i babel-loader babel-core babbel-preset-es2015 babbel-preset-react -D</div><div class="line"></div><div class="line">配置入口</div><div class="line">entry:__dirname+<span class="string">'/src/scripts/app.js'</span>,</div><div class="line">配置map</div><div class="line">devtool:<span class="string">'source-map'</span>,</div><div class="line">配置出口</div><div class="line">output:&#123;</div><div class="line">	path:__dirname+<span class="string">'/prd/'</span>,</div><div class="line">	filename:<span class="string">'bundle.js'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
-<pre><code>配置入口
-entry:__dirname+&apos;/src/scripts/app.js&apos;,
-配置map
-devtool:&apos;source-map&apos;,
-配置出口
-output:{
-    path:__dirname+&apos;/prd/&apos;,
-    filename:&apos;bundle.js&apos;
-}
-</code></pre><h2 id="配置server"><a href="#配置server" class="headerlink" title="配置server"></a>配置server</h2><pre><code>devServer: {
-contentBase: __dirname + &apos;/prd&apos;,
-port: 80,
-inline: true
-</code></pre><p>  },</p>
-<h2 id="sass编译"><a href="#sass编译" class="headerlink" title="sass编译"></a>sass编译</h2><pre><code>cnpm i sass-loader node-sass -D
-配置sass
-module.exports={
-    entry:&apos;./entry.js&apos;,//入口
-    output:{
-    path:__dirname, //当前文件夹
-    filename:&apos;bundle.js&apos; //文件名字
-    }，
-    devtool:&apos;source-map&apos;,//配置source-map        
-    module:{
-    loaders:[
-        {
-            test:/\.css$/,//改了这一行
-            loader:&apos;style!css&apos;  //改了这一行
-        },
-        {
-            test:/\.scss$/,//改了这一行
-            loader:&apos;style!css!sass&apos;  //改了这一行
-        }    
-
-
-    ]    //配置模块
-    }
-}
-使用-&gt;import &apos;&apos;
-</code></pre><h2 id="编译es6"><a href="#编译es6" class="headerlink" title="编译es6"></a>编译es6</h2><pre><code>cnpm i babel-loader babel-core babbel-preset-es2015 babbel-preset-react -D
-配置preset
-创建.babelrc
-{
-    &quot;presets&quot;:[&quot;es2015&quot;]
-}
-配置loader
-//数组中添加一项
-loaders:[
-        {
-            test:/\.js$/,
-            loader:&apos;babel&apos;  //改了这一行
-        }    
-    ]    
-</code></pre><h2 id="抽离"><a href="#抽离" class="headerlink" title="抽离"></a>抽离</h2><pre><code>cnpm i extract-text-webpack-plugin -D
-配置config
-var ET =require(&apos;extract-text-webpack-plugin&apos;);
-{
-            test:/\.scss$/,
-            loader:ET.extract(&apos;style&apos;,&apos;css!sass&apos;)
-        }    
-
-//plugin定义和module平级
-plugins:[
-new    ET(&apos;bundle.css&apos;) //目标文件夹 参照上面出口
-]        
-//打包是webpack做的    
-</code></pre><p>修改配置后server必须重启</p>
-<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><pre><code>配置config
-var webpack =require()
-plugins:[
-new webpack.optimize.UglifyJsplugin() //发布时在用
-]        
-</code></pre><h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><pre><code>output:{
-    path:__dirname+&apos;/prd&apos;,
-    filename:&apos;[name]-[hash].js&apos;
-}    
-    plugins:[
-new    ET(__dirname + &apos;[name]-[hash].css&apos;) //目标文件夹 参照上面出口
-]    
-</code></pre><h2 id="mock数据"><a href="#mock数据" class="headerlink" title="mock数据"></a>mock数据</h2><pre><code>cnpm i json-server -g
-配置 mock.js 
-var fri_msg=require (&quot;./fri_msg.js&quot;);
-    module.exports=function(){
-        return {
-            &quot;fri_msg&quot;:fri_msg
-        }
-    }
-配置fri_msg.js
-module.exports= [{
-                img:&quot;http://ofltwdk94.bkt.clouddn.com/Teemo.png&quot;,
-                name:&quot;炒鸡困要睡觉&quot;,
-                state:&quot;游戏离线&quot;
-            },{
-                    img:&quot;http://ofltwdk94.bkt.clouddn.com/Teemo.png&quot;,
-                name:&quot;红烧鸡翅膀&quot;,
-                state:&quot;游戏离线&quot;
-            }]
-
-
-执行 json-server mock/mock.js -w -p 端口
-修改webpack.config.js
-在devServer里面配置代理-&gt; proxy:{
-    &apos;/rest/*&apos;：{
-        target:    &apos;http://localhost:端口号&apos;,
-        secure:false,
-        pathRewrite:{
-            &apos;^/rest&apos;:&apos;&apos;   //以rest开头的替换为空 /rest/list-&gt;localhost:8888/list
-        }
-        }    //前面以/rest/开头的所有都使用代理转发
-} 
-</code></pre>
+<h2 id="配置server"><a href="#配置server" class="headerlink" title="配置server"></a>配置server</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">devServer: &#123;</div><div class="line">   contentBase: __dirname + <span class="string">'/prd'</span>,</div><div class="line">   port: <span class="number">80</span>,</div><div class="line">   inline: <span class="literal">true</span></div><div class="line"> &#125;,</div></pre></td></tr></table></figure>
+<h2 id="sass编译"><a href="#sass编译" class="headerlink" title="sass编译"></a>sass编译</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">cnpm i sass-loader node-sass -D</div><div class="line">配置sass</div><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">	entry:<span class="string">'./entry.js'</span>,<span class="comment">//入口</span></div><div class="line">	output:&#123;</div><div class="line">	path:__dirname, <span class="comment">//当前文件夹</span></div><div class="line">	filename:<span class="string">'bundle.js'</span> <span class="comment">//文件名字</span></div><div class="line">	&#125;，</div><div class="line">	devtool:<span class="string">'source-map'</span>,<span class="comment">//配置source-map		</span></div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">	loaders:[</div><div class="line">		&#123;</div><div class="line">			test:<span class="regexp">/\.css$/</span>,<span class="comment">//改了这一行</span></div><div class="line">			loader:<span class="string">'style!css'</span>  <span class="comment">//改了这一行</span></div><div class="line">		&#125;,</div><div class="line">		&#123;</div><div class="line">			test:<span class="regexp">/\.scss$/</span>,<span class="comment">//改了这一行</span></div><div class="line">			loader:<span class="string">'style!css!sass'</span>  <span class="comment">//改了这一行</span></div><div class="line">		&#125;	</div><div class="line">			</div><div class="line"></div><div class="line">	]	<span class="comment">//配置模块</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">使用-&gt;<span class="keyword">import</span> <span class="string">''</span></div></pre></td></tr></table></figure>
+<h2 id="编译es6"><a href="#编译es6" class="headerlink" title="编译es6"></a>编译es6</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cnpm i babel-loader babel-core babbel-preset-es2015 babbel-preset-react -D</div><div class="line">配置preset</div><div class="line">创建.babelrc</div><div class="line">&#123;</div><div class="line">	<span class="string">"presets"</span>:[<span class="string">"es2015"</span>]</div><div class="line">&#125;</div><div class="line">配置loader</div><div class="line"><span class="comment">//数组中添加一项</span></div><div class="line">loaders:[</div><div class="line">		&#123;</div><div class="line">			test:<span class="regexp">/\.js$/</span>,</div><div class="line">			loader:<span class="string">'babel'</span>  <span class="comment">//改了这一行</span></div><div class="line">		&#125;	</div><div class="line">	]</div></pre></td></tr></table></figure>
+<h2 id="抽离"><a href="#抽离" class="headerlink" title="抽离"></a>抽离</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">cnpm i extract-text-webpack-plugin -D</div><div class="line">配置config</div><div class="line"><span class="keyword">var</span> ET =<span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</div><div class="line">&#123;</div><div class="line">			test:<span class="regexp">/\.scss$/</span>,</div><div class="line">			loader:ET.extract(<span class="string">'style'</span>,<span class="string">'css!sass'</span>)</div><div class="line">		&#125;	</div><div class="line"></div><div class="line"><span class="comment">//plugin定义和module平级</span></div><div class="line">plugins:[</div><div class="line"><span class="keyword">new</span>	ET(<span class="string">'bundle.css'</span>) <span class="comment">//目标文件夹 参照上面出口</span></div><div class="line">]		</div><div class="line"><span class="comment">//打包是webpack做的</span></div></pre></td></tr></table></figure>
+<p>修改配置后server必须重启</p>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">配置config</div><div class="line"><span class="keyword">var</span> webpack =<span class="built_in">require</span>()</div><div class="line">plugins:[</div><div class="line"><span class="keyword">new</span> webpack.optimize.UglifyJsplugin() <span class="comment">//发布时在用</span></div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">output:&#123;</div><div class="line">	path:__dirname+<span class="string">'/prd'</span>,</div><div class="line">	filename:<span class="string">'[name]-[hash].js'</span></div><div class="line">&#125;	</div><div class="line">	plugins:[</div><div class="line"><span class="keyword">new</span>	ET(__dirname + <span class="string">'[name]-[hash].css'</span>) <span class="comment">//目标文件夹 参照上面出口</span></div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="mock数据"><a href="#mock数据" class="headerlink" title="mock数据"></a>mock数据</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">cnpm i json-server -g</div><div class="line">配置 mock.js </div><div class="line"><span class="keyword">var</span> fri_msg=<span class="built_in">require</span> (<span class="string">"./fri_msg.js"</span>);</div><div class="line">	<span class="built_in">module</span>.exports=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="string">"fri_msg"</span>:fri_msg</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">配置fri_msg.js</div><div class="line"><span class="built_in">module</span>.exports= [&#123;</div><div class="line">				img:<span class="string">"http://ofltwdk94.bkt.clouddn.com/Teemo.png"</span>,</div><div class="line">				name:<span class="string">"炒鸡困要睡觉"</span>,</div><div class="line">				state:<span class="string">"游戏离线"</span></div><div class="line">			&#125;,&#123;</div><div class="line">					img:<span class="string">"http://ofltwdk94.bkt.clouddn.com/Teemo.png"</span>,</div><div class="line">				name:<span class="string">"红烧鸡翅膀"</span>,</div><div class="line">				state:<span class="string">"游戏离线"</span></div><div class="line">			&#125;]</div><div class="line"></div><div class="line"></div><div class="line">执行 json-server mock/mock.js -w -p 端口</div><div class="line">修改webpack.config.js</div><div class="line">在devServer里面配置代理-&gt; proxy:&#123;</div><div class="line">	<span class="string">'/rest/*'</span>：&#123;</div><div class="line">		target:	<span class="string">'http://localhost:端口号'</span>,</div><div class="line">		secure:<span class="literal">false</span>,</div><div class="line">		pathRewrite:&#123;</div><div class="line">			<span class="string">'^/rest'</span>:<span class="string">''</span>   <span class="comment">//以rest开头的替换为空 /rest/list-&gt;localhost:8888/list</span></div><div class="line">		&#125;</div><div class="line">		&#125;    <span class="comment">//前面以/rest/开头的所有都使用代理转发</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -643,22 +541,24 @@ module.exports= [{
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag">#webpack</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/29/es6常用语法/" rel="next" title="es6常用语法">
-                <i class="fa fa-chevron-left"></i> es6常用语法
+              <a href="/2016/08/12/实现DomReady/" rel="next" title="实现DomReady">
+                <i class="fa fa-chevron-left"></i> 实现DomReady
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/29/hybrid开发/" rel="prev" title="hybrid开发">
-                hybrid开发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -752,7 +652,7 @@ module.exports= [{
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -760,7 +660,7 @@ module.exports= [{
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -769,7 +669,7 @@ module.exports= [{
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

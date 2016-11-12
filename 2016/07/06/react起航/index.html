@@ -1,0 +1,1124 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react+flux+webpack," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="有你的小时光" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react起航">
+<meta property="og:url" content="http://yoursite.com/2016/07/06/react起航/index.html">
+<meta property="og:site_name" content="有你的小时光">
+<meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
+<meta property="og:updated_time" content="2016-11-12T06:45:31.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react起航">
+<meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> react起航 | 有你的小时光 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">有你的小时光</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+
+    
+
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'V_fyjhtetD_usbBCyBAh','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react起航
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-06T13:35:02+08:00" content="2016-07-06">
+              2016-07-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/06/react起航/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/06/react起航/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/06/react起航/" class="leancloud_visitors" data-flag-title="react起航">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
+<h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react</div></pre></td></tr></table></figure></p>
+<p>.babelrc添加react<br>用来渲染react<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">cnpm i react react-dom -D</div></pre></td></tr></table></figure></p>
+<p>调整package.json<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">创建新文件server.js <span class="comment">//和.babelrc同级</span></div><div class="line">将devServer移除</div><div class="line">编辑server.js</div><div class="line"><span class="keyword">var</span> webpack=<span class="built_in">require</span>(<span class="string">'webpack'</span>);<span class="comment">//会去node_moudele里面找</span></div><div class="line"><span class="keyword">var</span> WebpackDevServer = <span class="built_in">require</span>(<span class="string">'webpack-dev-server'</span>);<span class="comment">//会去node_moudele里面找</span></div><div class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config.js'</span>)</div><div class="line"><span class="keyword">new</span> WebpackDevServer(webpack(config),&#123; <span class="comment">//拿到config后可以用.config所有变量</span></div><div class="line">	contentBase:__dirname+<span class="string">'/prd'</span>,</div><div class="line">	inline:<span class="literal">true</span>,</div><div class="line">	historyApiFallback: <span class="literal">true</span>,</div><div class="line">	proxy:&#123;</div><div class="line">   		<span class="string">'/rest/*'</span>：&#123;</div><div class="line">	        target:    <span class="string">'http://localhost:端口号'</span>,</div><div class="line">	        secure:<span class="literal">false</span>,</div><div class="line">	        pathRewrite:&#123;</div><div class="line">	            <span class="string">'^/rest'</span>:<span class="string">''</span>   <span class="comment">//以rest开头的替换为空 /rest/list-&gt;localhost:8888/list</span></div><div class="line">	        &#125;</div><div class="line">        &#125;    <span class="comment">//前面以/rest/开头的所有都使用代理转发</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;)</div><div class="line">.listen(<span class="number">80</span>,<span class="string">'localhost'</span>,funtion(err,restlt)&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(err);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'listening at localhost:80'</span>);</div><div class="line">	&#125;</div><div class="line">	)<span class="comment">//可以创建一个服务监听 第一个参数端口号 第二个服务器名称 第三个回调</span></div><div class="line"></div><div class="line">编辑package.json</div><div class="line"><span class="string">"start"</span>: <span class="string">"node server.js"</span> <span class="comment">//用nodejs启动server</span></div></pre></td></tr></table></figure></p>
+<h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><p>创建name.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Name</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;hello&lt;/div&gt;<span class="comment">//里面</span></div><div class="line">		)</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Name <span class="comment">//暴露接口</span></div><div class="line"><span class="keyword">export</span> &#123;Name <span class="keyword">as</span> <span class="keyword">default</span> &#125; <span class="comment">//这种也可以暴露</span></div></pre></td></tr></table></figure></p>
+<p>编译app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>; <span class="comment">//名字为包名</span></div><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;<span class="comment">//名字为包名</span></div><div class="line"><span class="keyword">import</span> Name <span class="keyword">from</span> <span class="string">''</span> <span class="comment">//Name.js的路径</span></div><div class="line">ReactDom.render()&#123;</div><div class="line">	&lt;Name/&gt;,<span class="comment">//要挂载的内容</span></div><div class="line">	<span class="built_in">document</span>.getElementById() <span class="comment">//要挂载的节点</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">执行webpack  进行打包</div><div class="line">启动server npm run start</div></pre></td></tr></table></figure></p>
+<h2 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h2><p>安装 react-hot-loader<br>在webpack.config.js中修改<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">entry:[</div><div class="line"><span class="string">'webpack-dev-server/client?http://localhost:80'</span>, <span class="comment">//必须和server.js里面一致</span></div><div class="line"><span class="string">'webpack/hot/only-dev-server'</span>,</div><div class="line">__dirname+<span class="string">'/src/scripts/app.js'</span></div><div class="line">]</div><div class="line">plygins:[</div><div class="line">	<span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>在server.js中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">添加hot:<span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<h3 id="模块热替换的问题"><a href="#模块热替换的问题" class="headerlink" title="模块热替换的问题"></a>模块热替换的问题</h3><p>fix在app.js中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="built_in">module</span>.hot)&#123;</div><div class="line"><span class="built_in">module</span>.hot.accept();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="评论功能组件"><a href="#评论功能组件" class="headerlink" title="评论功能组件"></a>评论功能组件</h1><p>新建comment文件夹<br>在app.js引入并挂载CommentBox<br>新建CommentBox.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict'</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> CommentForm <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//在comment-form.js写完后引入</span></div><div class="line"><span class="keyword">import</span> CommentList <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//在 CommentList写完后引入</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentBox</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(props)&#123; <span class="comment">//继承时会自动执行</span></div><div class="line">	<span class="keyword">super</span>(props)	<span class="comment">//不执行会报错</span></div><div class="line">	<span class="keyword">this</span>.state =&#123;</div><div class="line">		data:[]</div><div class="line">	&#125;<span class="comment">//定义状态</span></div><div class="line">	<span class="keyword">this</span>.getComments();</div><div class="line">	<span class="comment">//setIterval(this.getComments.bind(this),3000)//轮询刷新 并把this传入因为作用域发生变化</span></div><div class="line">	<span class="comment">/*fetch('./json').then(res=&gt;res.json()).then(data=&gt;&#123;</span></div><div class="line">		this.setState(&#123;</div><div class="line">			data:data</div><div class="line">		&#125;)</div><div class="line">		//进行状态的修改 一修改DOM就重新渲染</div><div class="line">	&#125;).catch(e=&gt;&#123;</div><div class="line">		console.log('error')</div><div class="line">		&#125;)</div><div class="line">	*/</div><div class="line">	&#125;;</div><div class="line">	getComments()&#123; <span class="comment">//定期更新state</span></div><div class="line">		fetch(<span class="string">'./json'</span>).then(res=&gt;res.json()).then(data=&gt;&#123;</div><div class="line">		<span class="keyword">this</span>.setState(&#123;</div><div class="line">			data:data</div><div class="line">		&#125;)</div><div class="line">		<span class="comment">//进行状态的修改 一修改DOM就重新渲染</span></div><div class="line">	&#125;).catch(e=&gt;&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'error'</span>)</div><div class="line">		&#125;)</div><div class="line"></div><div class="line">	&#125;;</div><div class="line">	&#125;</div><div class="line">	handleCommentSubmit(comment)&#123;</div><div class="line">		<span class="keyword">let</span> comments = <span class="keyword">this</span>.state.data;<span class="comment">//获取刚才的data值</span></div><div class="line">		 comments.push(comment);</div><div class="line">		<span class="keyword">this</span>.setState(&#123;data:comments&#125;); <span class="comment">//更新数据</span></div><div class="line">		<span class="comment">//传给字组件</span></div><div class="line">	&#125;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">		&lt;div&gt;//只能有一个根元素</div><div class="line">			&lt;div className='m-index'&gt; //写classNmae 不能写class</div><div class="line">			&lt;h1&gt;评论&lt;/h1&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;!-- &lt;CommentList data=&#123;this.props.data&#125; /&gt; //向子传递数据 --&gt;</div><div class="line">			&lt;CommentList data=&#123;this.state.data&#125; /&gt; //通过fetch获取数据 改变state渲染Dom</div><div class="line"></div><div class="line">			&lt;CommentForm  onCommentSubmit=&#123;this.handleCommentSubmit.bind(this)&#125; /&gt; //将父组件的方法传给子组件</div><div class="line">		&lt;/div&gt;</div><div class="line"></div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">export &#123; CommentBox as default&#125;;</div></pre></td></tr></table></figure></p>
+<p>在app.js中引入scss<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> <span class="string">'../.....scss'</span>	;<span class="comment">//引入sass</span></div></pre></td></tr></table></figure></p>
+<p>新建comment-list.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict'</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> CommentItem <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//在 CommentIten写完后引入</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">let</span> CommentNodes = <span class="keyword">this</span>.props.data.map((comment,index)=&gt;&#123;</div><div class="line">			<span class="keyword">return</span> (</div><div class="line">				 &lt;CommentItem key=&#123;index&#125; author=&#123;comment.author&#125; date=&#123;comment.date&#125;&gt; //组件信息传递 遍历集合时 key必须传不传报错 保证渲染DOM的唯一性</div><div class="line">				&#123;comment.content&#125;</div><div class="line">			&lt;/CommentItem&gt;</div><div class="line">			)</div><div class="line">		&#125;)</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">			&lt;!-- &lt;CommentItem author="张三 " date="5分钟前"&gt; //组件信息传递</div><div class="line">				今天天气不错</div><div class="line">			&lt;/CommentItem&gt;</div><div class="line">			&lt;CommentItem author="李四 " date="3分钟前"&gt;</div><div class="line">				今天天气不错啊</div><div class="line">			&lt;/CommentItem&gt; --&gt;</div><div class="line">			//react具有数组自展开的功能</div><div class="line">			&#123;CommentNodes&#125;</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123; CommentList <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</div></pre></td></tr></table></figure></p>
+<p>新建comment-item.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict'</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentItem</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div className='comment'&gt;</div><div class="line">				&lt;span&gt;&#123;this.props.author&#125;&lt;/span&gt;  //在html里面写js 用&#123;&#125; this.props指他的父组件</div><div class="line">				&lt;span&gt;&#123;this.props.date&#125;&lt;/span&gt;</div><div class="line">				&lt;div&gt;&#123;this.props.children&#125;&lt;/div&gt; //children拿到里面内容</div><div class="line"></div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123; CommentItem <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</div></pre></td></tr></table></figure></p>
+<p>新建comment-form.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict'</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentForm</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	<span class="comment">//定义一个事件</span></div><div class="line">	handleClick()&#123;</div><div class="line">		<span class="comment">//this.refs.ref的名字 可以获得指定表单DOM元素 内容为原生的.value</span></div><div class="line">		<span class="keyword">let</span> author =<span class="keyword">this</span>.refs.author.value,</div><div class="line">		content =<span class="keyword">this</span>.refs.content.value; <span class="comment">//定义两个变量存储表单内容</span></div><div class="line">		<span class="keyword">this</span>.props.onCommentSubmit(&#123;</div><div class="line">			author,content,date: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()</div><div class="line">			&#125;);<span class="comment">//调用父组件传入的方法</span></div><div class="line">		<span class="keyword">this</span>.refs.author.value=<span class="string">""</span>; <span class="comment">//输入完清空内容</span></div><div class="line">		<span class="keyword">this</span>.refs.content.value=<span class="string">""</span>;</div><div class="line">	&#125;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			<span class="comment">//使用yo框架的表单输入框</span></div><div class="line">			&lt;div className=<span class="string">"yo-list"</span>&gt;</div><div class="line">				&lt;label className="item item-input"&gt;&lt;input type="text" className="yo-input flex" placeholder="发布者" ref="author"/&gt;&lt;/label&gt; //ref属性可以获得表单内容</div><div class="line">				&lt;label className="item item-input"&gt;&lt;textarea type="text" className="yo-input flex" placeholder="留言内容" ref="content"&gt;&lt;/textarea&gt;&lt;/label&gt;</div><div class="line">				&lt;label&gt;&lt;button className="yo-btn yo-btn-l" onClick=&#123;this.handleClick.bind(this)&#125;&gt;发表评论&lt;/button&gt;&lt;/label&gt; //绑定单击事件 要把this传入</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123; CommentForm <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><p>在app.js中编辑<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">let Comments=[</div><div class="line">&#123;</div><div class="line">	author="张三,</div><div class="line">	data:'5分钟前',</div><div class="line">	content:'今天天气不错'</div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">	author="王三,</div><div class="line">	data:'2分钟前',</div><div class="line">	content:'今天天气很好'</div><div class="line">&#125;</div><div class="line">]</div><div class="line">ReactDom.render(</div><div class="line">&lt;!-- &lt;CommentBox data=&#123;Comments&#125;/&gt; //数据传递到子组件 --&gt;\</div><div class="line">&lt;CommentBox url="./mock/comments.json"/&gt; //fetch取数据</div><div class="line">)</div><div class="line">//prd下面新建comments.json 把数据放进去</div></pre></td></tr></table></figure></p>
+<h3 id="React-Developer-tools"><a href="#React-Developer-tools" class="headerlink" title="React Developer tools"></a>React Developer tools</h3><p>可以用来调试react各个模块嵌套关系</p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>在webpack.config.js中修改<br>module loaders添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;</div><div class="line">     test: <span class="regexp">/\.jsx$/</span>,</div><div class="line">     exclude: <span class="regexp">/node_modues/</span>,</div><div class="line">     loader: <span class="string">'babel'</span></div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>在app.js中引入 name.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">	&lt;Name&gt;</div><div class="line">	)</div></pre></td></tr></table></figure></p>
+<p>在name.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(</div><div class="line">	&#123;</div><div class="line">		render()&#123;</div><div class="line">			<span class="keyword">return</span> &#123;</div><div class="line">				&lt;div&gt;hello jsx&lt;/div&gt;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><h2 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">cnpm i react-router -D</div></pre></td></tr></table></figure>
+<p>新建router文件夹<br>里面新建router-app.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Link&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;<span class="comment">//引入Link</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">				&lt;div&gt;</div><div class="line">					&lt;Link to="/"&gt;首页&lt;/Link&gt; //路由跳转</div><div class="line">					&lt;Link to="/tv"&gt;电视&lt;/Link&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&#123;this.props.children&#125; //路由信息显示的位置</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>在app.js中修改<br>导入router<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> &#123;Router,Route,hashHistory,IndexRoute,Redirect&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;<span class="comment">//引入router Redirect重定向 IndexRoute 默认页面的内容</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//引入router-app.jsx</span></div><div class="line"><span class="keyword">import</span> Tv <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//引入router-tv.jsx 在route-tv写好之后引入</span></div><div class="line"><span class="keyword">import</span> Show <span class="keyword">from</span> <span class="string">''</span>;<span class="comment">//引入router-show.jsx 在route-show写好之后引入</span></div><div class="line"><span class="keyword">let</span> app=<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>);</div><div class="line"><span class="keyword">let</span> handleEnter =()=&gt;&#123;</div><div class="line">	<span class="comment">//进入路由时触发</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> handleLeave =()=&gt;&#123;</div><div class="line">	<span class="comment">//离开路由时触发</span></div><div class="line">&#125;</div><div class="line">ReactDOM.render((</div><div class="line">	&lt;Router history=&#123;hashHistory&#125;&gt;</div><div class="line">		&lt;Route path="/" component=&#123;App&#125; &gt;   //定义路由 path 路由 component引入的jsx</div><div class="line">			&lt;Route path="tv" component=&#123;Tv&#125;&gt;</div><div class="line">				&lt;IndexRoute&gt;&lt;/IndexRoute&gt;//子路由不写的情况下走IndexRoute</div><div class="line">				&lt;!-- &lt;Route path="shows/:id" component=&#123;Show&#125; /&gt; //没有子路由可以自闭合  --&gt;</div><div class="line">				&lt;Route path="/shows/:id" onEnter=&#123;handleEnter&#125; onLeave=&#123;handleLeave&#125; component=&#123;Show&#125; /&gt; //绝对路由 onEnter进入路由时触发函数 onLeave 离开路由时触发</div><div class="line">				&lt;Redirect from="shows/:id" to="/shows:id" /&gt; //路由重定向 可以把相对路由跳转到绝对路由上</div><div class="line">			&lt;/Route&gt;//定义TV路由</div><div class="line"></div><div class="line"></div><div class="line">		&lt;/Route&gt;</div><div class="line">	&lt;/Router&gt; //低版本可以不加history 3.0.0不加不能运行</div><div class="line">	),app); //第二个参数是要放置的位置 第一个位置是route的定义</div></pre></td></tr></table></figure></p>
+<p>新建router-tv.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">				&#123;this.props.children&#125;					</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>新建router-show.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;h1&gt;节目内容&#123;this.props.params.id&#125;&lt;/h1&gt; <span class="comment">//可以获得url传入的参数 this.props.params.传入参数的key</span></div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>新建route-show-index.jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Link&#125;&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;h1&gt;</div><div class="line">				&lt;Link to="tv/shows/2"&gt;电视节目列表&lt;/Link&gt;</div><div class="line">			&lt;/h1&gt;<span class="comment">// 默认页面显示内容</span></div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="组件生命周期函数"><a href="#组件生命周期函数" class="headerlink" title="组件生命周期函数"></a>组件生命周期函数</h2><h3 id="First-Render"><a href="#First-Render" class="headerlink" title="First Render"></a>First Render</h3><ol>
+<li>getDefaultProps //数据初始化</li>
+<li>getInitialState //状态初始化</li>
+<li>componentWillMount //渲染前</li>
+<li>render //渲染</li>
+<li>componentDidMount //渲染完执行<h3 id="Props-Change"><a href="#Props-Change" class="headerlink" title="Props Change"></a>Props Change</h3></li>
+<li>componentWillReceiveProps</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate<h3 id="State-Change"><a href="#State-Change" class="headerlink" title="State Change"></a>State Change</h3></li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate<h3 id="Unmount"><a href="#Unmount" class="headerlink" title="Unmount"></a>Unmount</h3>componentWillUnmount<h3 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props){}"></a>constructor(props){}</h3>可以做一些初始化工作 必须super(props)不然会报错</li>
+</ol>
+<h1 id="Flux-单向数据流"><a href="#Flux-单向数据流" class="headerlink" title="Flux 单向数据流"></a>Flux 单向数据流</h1><ol>
+<li>View视图层</li>
+<li>Action(动作):视图层发出的消息</li>
+<li>Dispatcher(派发器):用来接收Actions执行回调</li>
+<li>Store(数据层):用来存放应用的状态，一旦发生变动，就提醒Views要更新页面</li>
+</ol>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png" alt=""></p>
+<h2 id="Flux的特点"><a href="#Flux的特点" class="headerlink" title="Flux的特点"></a>Flux的特点</h2><ol>
+<li>用户访问 View</li>
+<li>View 发出用户的 Action</li>
+<li>Dispatcher 收到 Action，要求 Store 进行相应的更新</li>
+<li>Store 更新后，发出一个”change”事件</li>
+<li>View 收到”change”事件后，更新页面</li>
+<li>数据总是”单向流动”，任何相邻的部分都不会发生数据的”双向流动”。这保证了流程的清晰。</li>
+</ol>
+<h2 id="利用Flux实现todolist"><a href="#利用Flux实现todolist" class="headerlink" title="利用Flux实现todolist"></a>利用Flux实现todolist</h2><h3 id="新建app-js-入口文件"><a href="#新建app-js-入口文件" class="headerlink" title="新建app.js 入口文件"></a>新建app.js 入口文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';<span class="comment">//采用严格模式解析代码</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>; <span class="comment">//引入React</span></div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>; <span class="comment">//引入ReactDOM渲染DOM</span></div><div class="line"><span class="keyword">import</span> Tdcontroller <span class="keyword">from</span> <span class="string">'./components/todo_controller.jsx'</span>; <span class="comment">//引入子组件 子组件变量名首字母必须大写 不大写不会被渲染</span></div><div class="line"></div><div class="line">ReactDOM.render(&lt;Tdcontroller /&gt;,//要渲染的子组件</div><div class="line">    document.getElementById('app')//子组件要添加的位置</div><div class="line">)</div><div class="line"></div><div class="line">if (module.hot) &#123;</div><div class="line">    module.hot.accept() //子组件更新热替换也可以刷新</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="新建components文件夹-V层"><a href="#新建components文件夹-V层" class="headerlink" title="新建components文件夹 V层"></a>新建components文件夹 V层</h3><h3 id="新建todo-controller-jsx"><a href="#新建todo-controller-jsx" class="headerlink" title="新建todo_controller.jsx"></a>新建todo_controller.jsx</h3><p>采用React 的 controller view 模式”controller view”组件只用来保存状态，然后将其转发给子组件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> Form_td <span class="keyword">from</span> <span class="string">'./form.jsx'</span>;<span class="comment">//在form.jsx创建后引入 子组件层</span></div><div class="line"><span class="keyword">import</span> ListStore <span class="keyword">from</span> <span class="string">'../stores/store.js'</span>;<span class="comment">//在store.js创建后引入 store层</span></div><div class="line"><span class="keyword">import</span> ButtonActions <span class="keyword">from</span> <span class="string">'../actions/addAction.js'</span>; <span class="comment">//在addAction.js创建后引入 action层</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(</div><div class="line">	&#123;</div><div class="line">	 getInitialState()&#123;</div><div class="line">		 <span class="comment">//初始化state数据</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            items:ListStore.getAll()</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    createNewItem(event)&#123;</div><div class="line">				<span class="comment">//todolist的点击添加事件</span></div><div class="line">          <span class="keyword">var</span> addvalue=<span class="keyword">this</span>.refs.addval.refs.input.value; <span class="comment">//input中的内容 可以利用refs取出子组件中的属性 this.refs是指本层的refs属性</span></div><div class="line"></div><div class="line">        ButtonActions.addNewItem(addvalue);<span class="comment">//将取出Input的数据通过调用action层的addNewItem方法传入action层</span></div><div class="line">    &#125;,</div><div class="line">    delItem(event)&#123;</div><div class="line">			<span class="comment">//todolist的点击删除</span></div><div class="line">        <span class="keyword">let</span> delIndex=event.target.dataset.index;<span class="comment">//当前内容的index 通过给button绑定data-index=&#123;i&#125;添加属性 然后在父组件通过event取出</span></div><div class="line">        ButtonActions.delItem(delIndex);<span class="comment">//将取出的当前index通过调用action层的delItem方法传入action层</span></div><div class="line">    &#125;</div><div class="line">    ,</div><div class="line">    componentDidMount()&#123;<span class="comment">//在数据渲染完成后 调用store层的方法并将_onChange函数传入</span></div><div class="line">        ListStore.addChangeListener(<span class="keyword">this</span>._onChange)</div><div class="line">    &#125;,</div><div class="line">    componentWillUnmount()&#123;<span class="comment">//在数据渲染完成后 调用store层的方法并将_onChange函数传入</span></div><div class="line">        ListStore.removeChangeListener(<span class="keyword">this</span>._onChange)</div><div class="line">    &#125;</div><div class="line">    ,</div><div class="line">    _onChange()&#123;</div><div class="line">			<span class="comment">//在数据变化时更新state触发render</span></div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            items:ListStore.getAll()  <span class="comment">//调用store层的getall方法更新item</span></div><div class="line">            &#125;)</div><div class="line">    &#125;,</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;Form_td  ref="addval"</div><div class="line">			addBtn=&#123;this.createNewItem&#125; items=&#123;this.state.items&#125;</div><div class="line">            delBtn=&#123;this.delItem&#125;</div><div class="line">			/&gt;</div><div class="line">			//ref为子组件向父组件传递信息的钩子 addBtn为自定义属性将父组件的createNewItem方法传入 delBtn同理 items将父组件的state的items属性传入</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="新建form-jsx"><a href="#新建form-jsx" class="headerlink" title="新建form.jsx"></a>新建form.jsx</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(</div><div class="line">	&#123;</div><div class="line"></div><div class="line">	  render()&#123;</div><div class="line">        <span class="keyword">let</span> items = <span class="keyword">this</span>.props.items; <span class="comment">//将父组件传入的state.items取出</span></div><div class="line">        <span class="keyword">let</span> itemHTML=items.map((listItem,i)=&gt;&#123;</div><div class="line">            <span class="keyword">return</span> &lt;li key=&#123;i&#125;&gt;&#123;listItem&#125;&lt;button data-index=&#123;i&#125; onClick=&#123;this.props.delBtn&#125;&gt;X&lt;/button&gt;&lt;/li&gt;</div><div class="line">            &#125;) <span class="comment">//定义一个变量接收 items数组拼接后返回的数组 data-index用来定义删除时的索引 onClick用来触发父组件传入的事件处理函数</span></div><div class="line"></div><div class="line">		<span class="keyword">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">			&lt;input  ref="input" type="text"/ &gt;</div><div class="line">			&lt;button onClick=&#123;this.props.addBtn&#125;&gt;确定&lt;/button&gt;</div><div class="line">				&lt;ul&gt;&#123;itemHTML&#125;&lt;/ul&gt; //react有自展开数组和对象的功能</div><div class="line">			&lt;/div&gt;</div><div class="line"></div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="新建actions文件夹-action层"><a href="#新建actions文件夹-action层" class="headerlink" title="新建actions文件夹 action层"></a>新建actions文件夹 action层</h3><h3 id="新建addAction-js文件"><a href="#新建addAction-js文件" class="headerlink" title="新建addAction.js文件"></a>新建addAction.js文件</h3><p>每个Action都是一个对象，包含一个actionType属性（说明动作的类型）和一些其他属性（用来传递数据）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> AppDispatcher <span class="keyword">from</span> <span class="string">'../dispatchers/AppDispatcher.js'</span>;<span class="comment">//引入Dispather层</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</div><div class="line">	addNewItem(text)&#123;</div><div class="line">			AppDispatcher.dispatch(&#123;</div><div class="line">					actionType: <span class="string">'ADD_NEW_ITEM'</span>,</div><div class="line">					text:text</div><div class="line">					&#125;)</div><div class="line">	&#125;,<span class="comment">//调用Dispather层的addNewItem方法 并将actionType和参数传入</span></div><div class="line">	delItem(index)&#123;</div><div class="line">	AppDispatcher.dispatch(&#123;</div><div class="line">		actionType: <span class="string">'DEL_ITEM'</span>,</div><div class="line">		index:index</div><div class="line">	&#125;)</div><div class="line">	&#125;<span class="comment">//同上</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="新建dispatchers文件夹"><a href="#新建dispatchers文件夹" class="headerlink" title="新建dispatchers文件夹"></a>新建dispatchers文件夹</h3><h3 id="新建AppDispatcher-js"><a href="#新建AppDispatcher-js" class="headerlink" title="新建AppDispatcher.js"></a>新建AppDispatcher.js</h3><p>Dispatcher 的作用是将 Action 派发到 Store、。你可以把它看作一个路由器，负责在 View 和 Store 之间，建立 Action<br><figure class="highlight plain"><figcaption><span>只能有一个，而且是全局的。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">安装flux cnpm i flux -D;</div><div class="line">import ListStore from &apos;../stores/store.js&apos;;//引入store层准备把数据传入store层</div><div class="line">var AppDispatcher = new Dispatcher(); //创建一个Dispatcher实例</div><div class="line">import &#123;Dispatcher&#125; from &apos;flux&apos;;		//引入flux</div><div class="line"> AppDispatcher.register(action=&gt;&#123; //在Dispatcher实例中注册函数并将参数action传入</div><div class="line">    switch(action.actionType)&#123; //判断参数类型 类型为action层中设置根据不同类型做不同操作</div><div class="line">        case &apos;ADD_NEW_ITEM&apos;:</div><div class="line">        ListStore.addNewItemHandle(action.text);//调用store层的addNewItemHandle方法并将参数(新增item项)传入store层</div><div class="line">        ListStore.emitChange();//触发state的刷新</div><div class="line">        break;</div><div class="line">         case &apos;DEL_ITEM&apos;:</div><div class="line">       	ListStore.delItemHandle(action.index);//调用store层的delItemHandle方法并将参数(要删除item项的索引)传入store层</div><div class="line">       	ListStore.emitChange();//触发state的刷新</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">export default AppDispatcher;</div></pre></td></tr></table></figure></p>
+<h3 id="新建stores文件夹-store层"><a href="#新建stores文件夹-store层" class="headerlink" title="新建stores文件夹 store层"></a>新建stores文件夹 store层</h3><p>Store 保存整个应用的状态。它的角色有点像 MVC 架构之中的Model</p>
+<h3 id="新建store-js"><a href="#新建store-js" class="headerlink" title="新建store.js"></a>新建store.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> &#123;EventEmitter&#125; <span class="keyword">from</span> <span class="string">'events'</span>; <span class="comment">//引入nodejs的事件对象</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="built_in">Object</span>.assign(&#123;&#125;,EventEmitter.prototype,&#123;</div><div class="line">	items:[],<span class="comment">//定义一个空数组用来保存新添加的li</span></div><div class="line">	getAll()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.items <span class="comment">//该方法返回items属性</span></div><div class="line">	&#125;,</div><div class="line">	addNewItemHandle(text)&#123;</div><div class="line">		<span class="keyword">this</span>.items.push(text); <span class="comment">//用来将V层的数据添加进数组</span></div><div class="line">	&#125;,</div><div class="line">	delItemHandle(index)&#123;</div><div class="line">		<span class="keyword">this</span>.items.splice(index,<span class="number">1</span>); <span class="comment">//用来将V层的数据从数组里删除</span></div><div class="line">	&#125;</div><div class="line">	,</div><div class="line">	emitChange()&#123;</div><div class="line">		<span class="keyword">this</span>.emit(<span class="string">'change'</span>); <span class="comment">//该方法会调用change方法</span></div><div class="line">	&#125;,</div><div class="line">	addChangeListener(callback)&#123;</div><div class="line">		<span class="keyword">this</span>.on(<span class="string">'change'</span>,callback) <span class="comment">//该方法对change方法会监听change事件回调函数调用时会刷新数据</span></div><div class="line">	&#125;,</div><div class="line">	removeChangeListener(callback)&#123;</div><div class="line">		<span class="keyword">this</span>.removeListener(<span class="string">'change'</span>,callback);<span class="comment">//该方法会移除change事件的事件监听并执行回调</span></div><div class="line">	&#125;</div><div class="line">&#125;)<span class="comment">//将EventEmitter对象与传入的对象merge</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>您的支持将鼓励我继续进步！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://ocq2u27lk.bkt.clouddn.com/alipay.png" alt="Binging Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-flux-webpack/" rel="tag">#react+flux+webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/19/CORS详解/" rel="next" title="CORS详解">
+                <i class="fa fa-chevron-left"></i> CORS详解
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/12/实现DomReady/" rel="prev" title="实现DomReady">
+                实现DomReady <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/06/react起航/"
+     data-title="react起航"
+     data-content=""
+     data-url="http://yoursite.com/2016/07/06/react起航/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/06/react起航/"
+           data-title="react起航" data-url="http://yoursite.com/2016/07/06/react起航/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Binging" />
+          <p class="site-author-name" itemprop="name">Binging</p>
+          <p class="site-description motion-element" itemprop="description"><p>我流浪在这孤独的尘世，真爱如狗，这个标准不可改，单身如狗，直到找到另外一个和我嗅味相投的狗，我们相逢，最后，我们由狗修炼成人，获得自由。</P></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Mrzeron" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  gayHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-zhan-90" target="_blank">
+                  
+                    <i class="fa fa-google"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" target="_blank">百度</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://example.com/" target="_blank">新浪</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React基础"><span class="nav-number">1.</span> <span class="nav-text">React基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调整webpack"><span class="nav-number">2.</span> <span class="nav-text">调整webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块热替换"><span class="nav-number">3.1.</span> <span class="nav-text">模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块热替换的问题"><span class="nav-number">3.1.1.</span> <span class="nav-text">模块热替换的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评论功能组件"><span class="nav-number">4.</span> <span class="nav-text">评论功能组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">4.1.</span> <span class="nav-text">父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Developer-tools"><span class="nav-number">4.1.1.</span> <span class="nav-text">React Developer tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">4.1.2.</span> <span class="nav-text">JSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">5.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router"><span class="nav-number">5.1.</span> <span class="nav-text">react-router</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件生命周期函数"><span class="nav-number">5.2.</span> <span class="nav-text">组件生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Render"><span class="nav-number">5.2.1.</span> <span class="nav-text">First Render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Props-Change"><span class="nav-number">5.2.2.</span> <span class="nav-text">Props Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Change"><span class="nav-number">5.2.3.</span> <span class="nav-text">State Change</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unmount"><span class="nav-number">5.2.4.</span> <span class="nav-text">Unmount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">5.2.5.</span> <span class="nav-text">constructor(props){}</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flux-单向数据流"><span class="nav-number">6.</span> <span class="nav-text">Flux 单向数据流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flux的特点"><span class="nav-number">6.1.</span> <span class="nav-text">Flux的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用Flux实现todolist"><span class="nav-number">6.2.</span> <span class="nav-text">利用Flux实现todolist</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建app-js-入口文件"><span class="nav-number">6.2.1.</span> <span class="nav-text">新建app.js 入口文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建components文件夹-V层"><span class="nav-number">6.2.2.</span> <span class="nav-text">新建components文件夹 V层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建todo-controller-jsx"><span class="nav-number">6.2.3.</span> <span class="nav-text">新建todo_controller.jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建form-jsx"><span class="nav-number">6.2.4.</span> <span class="nav-text">新建form.jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建actions文件夹-action层"><span class="nav-number">6.2.5.</span> <span class="nav-text">新建actions文件夹 action层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建addAction-js文件"><span class="nav-number">6.2.6.</span> <span class="nav-text">新建addAction.js文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建dispatchers文件夹"><span class="nav-number">6.2.7.</span> <span class="nav-text">新建dispatchers文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建AppDispatcher-js"><span class="nav-number">6.2.8.</span> <span class="nav-text">新建AppDispatcher.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建stores文件夹-store层"><span class="nav-number">6.2.9.</span> <span class="nav-text">新建stores文件夹 store层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建store-js"><span class="nav-number">6.2.10.</span> <span class="nav-text">新建store.js</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Binging</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/libs/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zzzmmm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+</body>
+</html>
