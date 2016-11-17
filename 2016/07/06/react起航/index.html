@@ -59,17 +59,17 @@
 
 
 
-<meta name="description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta name="description" content="React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react起航">
 <meta property="og:url" content="http://yoursite.com/2016/07/06/react起航/index.html">
 <meta property="og:site_name" content="有你的小时光">
-<meta property="og:description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta property="og:description" content="React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
-<meta property="og:updated_time" content="2016-11-12T06:45:31.451Z">
+<meta property="og:updated_time" content="2016-11-17T05:31:48.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react起航">
-<meta name="twitter:description" content="React基础用于开发数据不断变化的大型应用程序">
+<meta name="twitter:description" content="React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。">
 <meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
 
 
@@ -497,7 +497,9 @@
       
 
       
-        <h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序<br><a id="more"></a></p>
+        <p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。</p>
+<a id="more"></a>
+<h1 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h1><p>用于开发数据不断变化的大型应用程序</p>
 <h1 id="调整webpack"><a href="#调整webpack" class="headerlink" title="调整webpack"></a>调整webpack</h1><p>安装babel: //解析es6 和jsx<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i babel-core babel-loader babel-preset-es2015 babel-preset-react</div></pre></td></tr></table></figure></p>
 <p>.babelrc添加react<br>用来渲染react<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">cnpm i react react-dom -D</div></pre></td></tr></table></figure></p>
 <p>调整package.json<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">创建新文件server.js <span class="comment">//和.babelrc同级</span></div><div class="line">将devServer移除</div><div class="line">编辑server.js</div><div class="line"><span class="keyword">var</span> webpack=<span class="built_in">require</span>(<span class="string">'webpack'</span>);<span class="comment">//会去node_moudele里面找</span></div><div class="line"><span class="keyword">var</span> WebpackDevServer = <span class="built_in">require</span>(<span class="string">'webpack-dev-server'</span>);<span class="comment">//会去node_moudele里面找</span></div><div class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config.js'</span>)</div><div class="line"><span class="keyword">new</span> WebpackDevServer(webpack(config),&#123; <span class="comment">//拿到config后可以用.config所有变量</span></div><div class="line">	contentBase:__dirname+<span class="string">'/prd'</span>,</div><div class="line">	inline:<span class="literal">true</span>,</div><div class="line">	historyApiFallback: <span class="literal">true</span>,</div><div class="line">	proxy:&#123;</div><div class="line">   		<span class="string">'/rest/*'</span>：&#123;</div><div class="line">	        target:    <span class="string">'http://localhost:端口号'</span>,</div><div class="line">	        secure:<span class="literal">false</span>,</div><div class="line">	        pathRewrite:&#123;</div><div class="line">	            <span class="string">'^/rest'</span>:<span class="string">''</span>   <span class="comment">//以rest开头的替换为空 /rest/list-&gt;localhost:8888/list</span></div><div class="line">	        &#125;</div><div class="line">        &#125;    <span class="comment">//前面以/rest/开头的所有都使用代理转发</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;)</div><div class="line">.listen(<span class="number">80</span>,<span class="string">'localhost'</span>,funtion(err,restlt)&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(err);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'listening at localhost:80'</span>);</div><div class="line">	&#125;</div><div class="line">	)<span class="comment">//可以创建一个服务监听 第一个参数端口号 第二个服务器名称 第三个回调</span></div><div class="line"></div><div class="line">编辑package.json</div><div class="line"><span class="string">"start"</span>: <span class="string">"node server.js"</span> <span class="comment">//用nodejs启动server</span></div></pre></td></tr></table></figure></p>

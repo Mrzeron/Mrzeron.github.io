@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="nginx 1.10.2稳定版功能:用于生产环境可以实现目录转发和反向代理">
+<meta name="description" content="Nginx是当前最流行的HTTP Server之一，根据W3Techs的统计，目前世界排名（根据Alexa）前100万的网站中，Nginx的占有率为6.8%。与Apache相比，Nginx在高并发情况下具有巨大的性能优势。Nginx属于典型的微内核设计，其内核非常简洁和优雅，同时具有非常高的可扩展性。Nginx最初仅仅主要被用于做反向代理，后来随着HTTP核心的成熟和各种HTTP扩展模块的丰富，N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx入门">
 <meta property="og:url" content="http://yoursite.com/2015/07/10/nginx入门/index.html">
 <meta property="og:site_name" content="有你的小时光">
-<meta property="og:description" content="nginx 1.10.2稳定版功能:用于生产环境可以实现目录转发和反向代理">
-<meta property="og:updated_time" content="2016-11-12T06:39:58.941Z">
+<meta property="og:description" content="Nginx是当前最流行的HTTP Server之一，根据W3Techs的统计，目前世界排名（根据Alexa）前100万的网站中，Nginx的占有率为6.8%。与Apache相比，Nginx在高并发情况下具有巨大的性能优势。Nginx属于典型的微内核设计，其内核非常简洁和优雅，同时具有非常高的可扩展性。Nginx最初仅仅主要被用于做反向代理，后来随着HTTP核心的成熟和各种HTTP扩展模块的丰富，N">
+<meta property="og:updated_time" content="2016-11-17T05:33:55.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx入门">
-<meta name="twitter:description" content="nginx 1.10.2稳定版功能:用于生产环境可以实现目录转发和反向代理">
+<meta name="twitter:description" content="Nginx是当前最流行的HTTP Server之一，根据W3Techs的统计，目前世界排名（根据Alexa）前100万的网站中，Nginx的占有率为6.8%。与Apache相比，Nginx在高并发情况下具有巨大的性能优势。Nginx属于典型的微内核设计，其内核非常简洁和优雅，同时具有非常高的可扩展性。Nginx最初仅仅主要被用于做反向代理，后来随着HTTP核心的成熟和各种HTTP扩展模块的丰富，N">
 
 
 
@@ -495,7 +495,9 @@
       
 
       
-        <h1 id="nginx-1-10-2稳定版"><a href="#nginx-1-10-2稳定版" class="headerlink" title="nginx 1.10.2稳定版"></a>nginx 1.10.2稳定版</h1><h2 id="功能-用于生产环境"><a href="#功能-用于生产环境" class="headerlink" title="功能:用于生产环境"></a>功能:用于生产环境</h2><p>可以实现目录转发和反向代理<br><a id="more"></a></p>
+        <p>Nginx是当前最流行的HTTP Server之一，根据W3Techs的统计，目前世界排名（根据Alexa）前100万的网站中，Nginx的占有率为6.8%。与Apache相比，Nginx在高并发情况下具有巨大的性能优势。<br>Nginx属于典型的微内核设计，其内核非常简洁和优雅，同时具有非常高的可扩展性。Nginx最初仅仅主要被用于做反向代理，后来随着HTTP核心的成熟和各种HTTP扩展模块的丰富，Nginx越来越多被用来取代Apache而单独承担HTTP Server的责任。</p>
+<a id="more"></a>
+<h1 id="nginx-1-10-2稳定版"><a href="#nginx-1-10-2稳定版" class="headerlink" title="nginx 1.10.2稳定版"></a>nginx 1.10.2稳定版</h1><h2 id="功能-用于生产环境"><a href="#功能-用于生产环境" class="headerlink" title="功能:用于生产环境"></a>功能:用于生产环境</h2><p>可以实现目录转发和反向代理</p>
 <h2 id="启动-nginx-在windows命令行中"><a href="#启动-nginx-在windows命令行中" class="headerlink" title="启动 nginx (在windows命令行中)"></a>启动 nginx (在windows命令行中)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入localhost 可以看到页面</div></pre></td></tr></table></figure>
 <h2 id="停止-nginx-s-stop"><a href="#停止-nginx-s-stop" class="headerlink" title="停止 nginx -s stop"></a>停止 nginx -s stop</h2><h2 id="celler-nginx-安装文件夹"><a href="#celler-nginx-安装文件夹" class="headerlink" title="celler nginx 安装文件夹"></a>celler nginx 安装文件夹</h2><h2 id="etc-nginx-配置文件夹"><a href="#etc-nginx-配置文件夹" class="headerlink" title="etc nginx 配置文件夹"></a>etc nginx 配置文件夹</h2><h3 id="nginx-conf文件"><a href="#nginx-conf文件" class="headerlink" title="nginx.conf文件"></a>nginx.conf文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">	listen 端口号;<span class="comment">//设置默认端口号</span></div><div class="line">	location /&#123;  <span class="comment">//配置关键字 斜杠就是浏览器中的斜杠</span></div><div class="line">		root html;<span class="comment">//html没写路径相当于nginx的安装目录 </span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="在nginx下创建一个文件夹conf-d-如果本地不配置server-会读这个文件夹"><a href="#在nginx下创建一个文件夹conf-d-如果本地不配置server-会读这个文件夹" class="headerlink" title="在nginx下创建一个文件夹conf.d    //如果本地不配置server 会读这个文件夹"></a>在nginx下创建一个文件夹conf.d    //如果本地不配置server 会读这个文件夹</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">在nginx.conf文件中 include  写路径 /user/local/etc/nginx/conf.d<span class="comment">/*.conf; //不加分号会报错</span></div><div class="line">新建一个文件 hello.conf 配置该文件 可以实现目录转发</div><div class="line">	server&#123;</div><div class="line">		listen 80;//默认端口号</div><div class="line">		server_name hello.dev;//配置域名 可以用空格隔开写多个</div><div class="line">		location /&#123; // "/"表示根目录</div><div class="line">			root  路径;//后面加空格加要设置的根目录的路径</div><div class="line">			index index.html index.htm; //目录下没有index可能出会403 权限问题也肯能出现</div><div class="line">		&#125;</div><div class="line">		//可以配置多个</div><div class="line">		location /v2&#123;  //域名/v2这样访问</div><div class="line">			root '';</div><div class="line">			index  index_v2.html;//</div><div class="line">		&#125;</div><div class="line">		//也可以在location中写正则 / /不用写</div><div class="line">		//打开一张图片</div><div class="line">		location \.(jpg|gif|png)$&#123;</div><div class="line">			expires 30d;//过期时间</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	//如果被禁止可以在nginx.conf中设置权限 user root owner; //第一行</div><div class="line">	//配置host后 可以直接访问域名 一个IP可以对应多个域名 通用DNS 202.106.0.20用来解析域名</div></pre></td></tr></table></figure>
