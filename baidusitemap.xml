@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2015/07/15/es6%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2016-11-17T05:18:45.201Z</lastmod>
+    <data>
+        <display>
+        <title>es6常用语法</title>
+        <pubTime>2015-07-15T03:58:43.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="ES6" url="http://yoursite.com/categories/ES6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/08/12/%E5%AE%9E%E7%8E%B0DomReady/</loc>
     <lastmod>2016-11-12T07:19:07.577Z</lastmod>
     <data>
@@ -287,26 +307,6 @@
            
              
               <breadCrumb title="前端工程化" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/07/15/es6%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2016-11-12T06:25:50.259Z</lastmod>
-    <data>
-        <display>
-        <title>es6常用语法</title>
-        <pubTime>2015-07-15T03:58:43.000Z</pubTime>
-        
-        <tag>ES6</tag>
-         
-         
-           
-             
-              <breadCrumb title="ES6" url="http://yoursite.com/categories/ES6/"/>
           
         </display>
     </data>
