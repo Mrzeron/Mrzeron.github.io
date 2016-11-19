@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="babel的安装使用及vue中使用">
+<meta name="description" content="Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="babel的使用">
 <meta property="og:url" content="http://yoursite.com/2015/08/10/babel的使用/index.html">
 <meta property="og:site_name" content="有你的小时光">
-<meta property="og:description" content="babel的安装使用及vue中使用">
-<meta property="og:updated_time" content="2016-11-12T04:15:26.958Z">
+<meta property="og:description" content="Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。">
+<meta property="og:updated_time" content="2016-11-18T01:16:19.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="babel的使用">
-<meta name="twitter:description" content="babel的安装使用及vue中使用">
+<meta name="twitter:description" content="Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。">
 
 
 
@@ -495,8 +495,9 @@
       
 
       
-        <h1 id="babel的安装使用及vue中使用"><a href="#babel的安装使用及vue中使用" class="headerlink" title="babel的安装使用及vue中使用"></a>babel的安装使用及vue中使用</h1><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">babel webpack vue.js </div><div class="line">cnpm i babel-cli -g  </div><div class="line">mkdir course-babel </div><div class="line">npm init</div><div class="line">cnpm i babel-cli -D	</div><div class="line">cnpm i babel-preset-es2015 -D 编译ES6</div><div class="line">cnpm i babel-preset-react -D  编译JSX</div></pre></td></tr></table></figure>
+        <p>Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。</p>
+<a id="more"></a>
+<h1 id="babel的安装使用及vue中使用"><a href="#babel的安装使用及vue中使用" class="headerlink" title="babel的安装使用及vue中使用"></a>babel的安装使用及vue中使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">babel webpack vue.js </div><div class="line">cnpm i babel-cli -g  </div><div class="line">mkdir course-babel </div><div class="line">npm init</div><div class="line">cnpm i babel-cli -D	</div><div class="line">cnpm i babel-preset-es2015 -D 编译ES6</div><div class="line">cnpm i babel-preset-react -D  编译JSX</div></pre></td></tr></table></figure>
 <h2 id="常用部分命令及解释"><a href="#常用部分命令及解释" class="headerlink" title="常用部分命令及解释"></a>常用部分命令及解释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">babel example.js -o compiled.js/babel example.js --out-file compiled.js 编译js</div><div class="line">babel src --out-dir lib/babel src -d lib 编译src目录到lib目录</div><div class="line">package里面scripts里面定义 &quot;名字&quot;:&quot;命令&quot; npm run 名字就可以执行里面的命令</div><div class="line">可以watch文件 babel src --watch --out-dir lib</div><div class="line">babel --help可以查看所有命令</div></pre></td></tr></table></figure>
 <h1 id="编译ES2015"><a href="#编译ES2015" class="headerlink" title="编译ES2015"></a>编译ES2015</h1><h2 id="配置预设"><a href="#配置预设" class="headerlink" title="配置预设"></a>配置预设</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">创建.babelrc &#123;</div><div class="line"><span class="string">"presets"</span>:[<span class="string">"es2015"</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> fruit =[<span class="string">'apple'</span>,<span class="string">'pen'</span>],</div><div class="line">food =[...fruit,<span class="string">'bread'</span>];</div><div class="line"><span class="built_in">console</span>.log(food)</div></pre></td></tr></table></figure>
 <h1 id="编译react"><a href="#编译react" class="headerlink" title="编译react"></a>编译react</h1><h2 id="配置预设-1"><a href="#配置预设-1" class="headerlink" title="配置预设"></a>配置预设</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.babelrc&#123;</div><div class="line"><span class="string">"presets"</span>:[<span class="string">"react"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>

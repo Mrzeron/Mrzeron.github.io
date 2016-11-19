@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="UI框架,yo," />
+  <meta name="keywords" content="UI框架,doyoe/Yo," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="YO框架核心解读">
+<meta name="description" content="Yo 是一个专注于移动开发的 Front-end UI Framework，她轻量，易用，并且具备超强的可配置和扩展能力。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YO框架核心">
+<meta property="og:title" content="doyoe/Yo">
 <meta property="og:url" content="http://yoursite.com/2016/05/10/YO框架核心/index.html">
 <meta property="og:site_name" content="有你的小时光">
-<meta property="og:description" content="YO框架核心解读">
-<meta property="og:updated_time" content="2016-11-12T06:56:21.268Z">
+<meta property="og:description" content="Yo 是一个专注于移动开发的 Front-end UI Framework，她轻量，易用，并且具备超强的可配置和扩展能力。">
+<meta property="og:updated_time" content="2016-11-18T02:07:31.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YO框架核心">
-<meta name="twitter:description" content="YO框架核心解读">
+<meta name="twitter:title" content="doyoe/Yo">
+<meta name="twitter:description" content="Yo 是一个专注于移动开发的 Front-end UI Framework，她轻量，易用，并且具备超强的可配置和扩展能力。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> YO框架核心 | 有你的小时光 </title>
+  <title> doyoe/Yo | 有你的小时光 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -421,7 +421,7 @@
             
             
               
-                YO框架核心
+                doyoe/Yo
               
             
           </h1>
@@ -474,7 +474,7 @@
 
           
           
-             <span id="/2016/05/10/YO框架核心/" class="leancloud_visitors" data-flag-title="YO框架核心">
+             <span id="/2016/05/10/YO框架核心/" class="leancloud_visitors" data-flag-title="doyoe/Yo">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -495,10 +495,9 @@
       
 
       
-        <h1 id="YO框架核心解读"><a href="#YO框架核心解读" class="headerlink" title="YO框架核心解读"></a>YO框架核心解读</h1><a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">lib是核心代码</div><div class="line">lib-&gt;core-&gt;classes 定义了很多方法 </div><div class="line">暂时关闭css js压缩 wathch 改成page<span class="comment">/**/</span>*</div><div class="line">libs放第三方库</div><div class="line">如何引入.string </div><div class="line"><span class="number">1.</span> npm i string-loader -D</div><div class="line"><span class="number">2.</span> 配置gulp 添加loaders</div><div class="line">&#123;</div><div class="line">	test:<span class="regexp">/\.string$/</span>,</div><div class="line">	loader:<span class="string">'string'</span>,</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">script-&gt;新建tpls cd tpls 新建index.string</div><div class="line">scripts-&gt;新建utils -&gt;commom.util.js </div><div class="line"><span class="keyword">var</span> common=&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">		$(<span class="string">'body'</span>).prepend(<span class="string">'str'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">artTemplate模板</div><div class="line"><span class="keyword">var</span> templaete=<span class="built_in">require</span>(<span class="string">""</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">引入zepto.js 官网zeptojs.com</div><div class="line">-&gt;放到libs</div><div class="line">在scripts新建文件夹views 新建index.js</div><div class="line">直接在index引用</div><div class="line">在gulp配置exclude</div><div class="line"></div><div class="line">@include flexbox()</div><div class="line">@include flex(<span class="number">1</span>)</div><div class="line">@include flex-direction(column)</div><div class="line"></div><div class="line">zepto打包</div><div class="line">github搜索</div><div class="line">-&gt;make <span class="number">41</span>行 加模块</div><div class="line">npm i </div><div class="line">npm run-script dist</div></pre></td></tr></table></figure>
-<h1 id="和JQ不同"><a href="#和JQ不同" class="headerlink" title="和JQ不同"></a>和JQ不同</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> Detect侦测设备</div><div class="line"><span class="number">2.</span> touchEvent 手势事件 点击tap  长按longTap 滑动swipe</div></pre></td></tr></table></figure>
-<h1 id="iScroll-官网iscrolljs-com"><a href="#iScroll-官网iscrolljs-com" class="headerlink" title="iScroll 官网iscrolljs.com"></a>iScroll 官网iscrolljs.com</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1. 必须有一个滚动的容器</div><div class="line">2. 容器高度大于视口高度</div><div class="line">3. 图片加载完后调用scroll &#123;window.onload&#125;</div><div class="line">var myScroll =new IScroll(&quot;#index-scroll&quot;,&#123;</div><div class="line"></div><div class="line">	&#125;)</div><div class="line">if(图片加载完毕)&#123;</div><div class="line">	myScroll.refresh();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>Yo 是一个专注于移动开发的 Front-end UI Framework，她轻量，易用，并且具备超强的可配置和扩展能力。<br><a id="more"></a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">lib是核心代码</div><div class="line">lib-&gt;core-&gt;classes 定义了很多方法 </div><div class="line">暂时关闭css js压缩 wathch 改成page<span class="comment">/**/</span>*</div><div class="line">libs放第三方库</div><div class="line">如何引入.string </div><div class="line"><span class="number">1.</span> npm i string-loader -D</div><div class="line"><span class="number">2.</span> 配置gulp 添加loaders</div><div class="line">&#123;</div><div class="line">	test:<span class="regexp">/\.string$/</span>,</div><div class="line">	loader:<span class="string">'string'</span>,</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">script-&gt;新建tpls cd tpls 新建index.string</div><div class="line">scripts-&gt;新建utils -&gt;commom.util.js </div><div class="line"><span class="keyword">var</span> common=&#123;</div><div class="line">	render:<span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">		$(<span class="string">'body'</span>).prepend(<span class="string">'str'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">artTemplate模板</div><div class="line"><span class="keyword">var</span> templaete=<span class="built_in">require</span>(<span class="string">""</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">引入zepto.js 官网zeptojs.com</div><div class="line">-&gt;放到libs</div><div class="line">在scripts新建文件夹views 新建index.js</div><div class="line">直接在index引用</div><div class="line">在gulp配置exclude</div><div class="line"></div><div class="line">@include flexbox()</div><div class="line">@include flex(<span class="number">1</span>)</div><div class="line">@include flex-direction(column)</div></pre></td></tr></table></figure>
+<p>zepto其他模块打包<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">zepto打包</div><div class="line">	github搜索</div><div class="line">	-&gt;make <span class="number">41</span>行 加模块</div><div class="line">	npm i </div><div class="line">	npm run-script dist</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -531,7 +530,7 @@
           
             <a href="/tags/UI框架/" rel="tag">#UI框架</a>
           
-            <a href="/tags/yo/" rel="tag">#yo</a>
+            <a href="/tags/doyoe-Yo/" rel="tag">#doyoe/Yo</a>
           
         </div>
       
@@ -566,7 +565,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/05/10/YO框架核心/"
-     data-title="YO框架核心"
+     data-title="doyoe/Yo"
      data-content=""
      data-url="http://yoursite.com/2016/05/10/YO框架核心/">
   <div class="ds-share-inline">
@@ -599,7 +598,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/05/10/YO框架核心/"
-           data-title="YO框架核心" data-url="http://yoursite.com/2016/05/10/YO框架核心/">
+           data-title="doyoe/Yo" data-url="http://yoursite.com/2016/05/10/YO框架核心/">
       </div>
     
   </div>
@@ -732,7 +731,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YO框架核心解读"><span class="nav-number">1.</span> <span class="nav-text">YO框架核心解读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和JQ不同"><span class="nav-number">2.</span> <span class="nav-text">和JQ不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iScroll-官网iscrolljs-com"><span class="nav-number">3.</span> <span class="nav-text">iScroll 官网iscrolljs.com</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
