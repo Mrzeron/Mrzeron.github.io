@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/12/05/hexo教程/index.html">
 <meta property="og:site_name" content="有你的小时光">
 <meta property="og:description" content="Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win">
-<meta property="og:updated_time" content="2016-11-18T01:23:32.752Z">
+<meta property="og:updated_time" content="2016-11-28T12:07:02.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo教程">
 <meta name="twitter:description" content="Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win">
@@ -499,50 +499,25 @@
 <p>安装Node,用来生成静态页面<br>安装git,把本地git提交到gitHub上<br>（安装到方便查找的地址）</p>
 <p><a href="http://nodejs.cn/" target="_blank" rel="external">Node下载地址</a>&gt;&gt;&gt;&gt;&gt;&gt;<a href="https://git-scm.com/downloads" target="_blank" rel="external">git下载地址</a></p>
 <h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
-<p>在 新建的hexo目录下右键 git bash here</p>
-<pre><code>输入npm install -g hexo 命令回车执行
-</code></pre><p>上一条命令执行完后，输入hexo init 初始化hexo.<br>hexo g 生成静态页面 &gt;&gt;hexo s 启动本地服务进行调试  浏览器输入localhost:4000<br>ctrl +C 停止 </p>
+<p>在 新建的hexo目录下右键 git bash here<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入npm install -g hexo 命令回车执行</div></pre></td></tr></table></figure></p>
+<p>上一条命令执行完后，输入hexo init 初始化hexo.<br>hexo g 生成静态页面 &gt;&gt;hexo s 启动本地服务进行调试  浏览器输入localhost:4000<br>ctrl +C 停止 </p>
 <h1 id="配置gitHub"><a href="#配置gitHub" class="headerlink" title="配置gitHub"></a>配置gitHub</h1><blockquote>
 <p>参考自<a href="http://www.runoob.com/w3cnote/git-guide.html" target="_blank" rel="external">菜鸟教程</a></p>
 </blockquote>
 <hr>
-<p>在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io<br>创建SSH-Key </p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot; 
-</code></pre><p>后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-<pre><code>$ git config --global user.name &quot;your name&quot;
-$ git config --global user.email &quot;your_email@youremail.com&quot;
-</code></pre><p>进入要上传的仓库，右键git bash，添加远程地址：</p>
-<pre><code>$ git remote add master git@github.com:yourName/yourRepo.git
-</code></pre><p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>创建新文件夹，打开，然后执行</p>
-<pre><code>git init 
-</code></pre><p> 以创建新的 git 仓库。</p>
+<p>在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io<br>创建SSH-Key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</div></pre></td></tr></table></figure></p>
+<p>后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;your name&quot;</div><div class="line">$ git config --global user.email &quot;your_email@youremail.com&quot;</div></pre></td></tr></table></figure></p>
+<p>进入要上传的仓库，右键git bash，添加远程地址：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add master git@github.com:yourName/yourRepo.git</div></pre></td></tr></table></figure></p>
+<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>创建新文件夹，打开，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
+<p>以创建新的 git 仓库。</p>
 <h1 id="编辑文章并部署"><a href="#编辑文章并部署" class="headerlink" title="编辑文章并部署"></a>编辑文章并部署</h1><hr>
-<p>可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md<br>找到该文件打开并编辑<br>结束后输入hexo s<br>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “你输入的文章名”。</p>
-<pre><code>执行hexo g 生成静态页面
-</code></pre><p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
-<pre><code>    # Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:          
-type:
-</code></pre><p>改为</p>
-<pre><code>    # Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-type: git
-repository: git@github.com:你的名字/你的名字.github.io.git
-branch: master
-
-
-执行 npm install hexo-deployer-git --save
-</code></pre><p>执行hexo d 部署到gitHub<br>当部署完成后，在浏览器中打开<a href="http://your_name.github.io/" target="_blank" rel="external">http://your_name.github.io/</a></p>
+<p>可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md<br>找到该文件打开并编辑<br>结束后输入hexo s<br>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “你输入的文章名”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">执行hexo g 生成静态页面</div></pre></td></tr></table></figure></p>
+<p>部署到Github前需要配置_config.yml文件，首先找到下面的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">	# Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:  		</div><div class="line">type:</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	# Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repository: git@github.com:你的名字/你的名字.github.io.git</div><div class="line">branch: master</div><div class="line"></div><div class="line"></div><div class="line">执行 npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>执行hexo d 部署到gitHub<br>当部署完成后，在浏览器中打开<a href="http://your_name.github.io/" target="_blank" rel="external">http://your_name.github.io/</a></p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><hr>
-<p>每次部署的步骤，可按以下三步来进行。</p>
-<pre><code>hexo clean
-
-hexo generate
-
-hexo deploy
-</code></pre><p>一些常用命令：</p>
+<p>每次部署的步骤，可按以下三步来进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    hexo clean</div><div class="line"></div><div class="line">    hexo generate</div><div class="line"></div><div class="line">    hexo deploy</div></pre></td></tr></table></figure></p>
+<p>一些常用命令：</p>
 <p>hexo new”postName” #新建文章</p>
 <p>hexo new page”pageName” #新建页面</p>
 <p>hexo generate #生成静态页面至public目录</p>

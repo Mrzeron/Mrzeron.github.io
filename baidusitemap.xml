@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2015/12/05/hexo%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2016-11-28T12:07:02.688Z</lastmod>
+    <data>
+        <display>
+        <title>hexo教程</title>
+        <pubTime>2015-12-05T13:19:00.000Z</pubTime>
+        
+        <tag>hexo搭建教程</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo安装教程" url="http://yoursite.com/categories/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/11/26/NodeJS-ejs-express/</loc>
     <lastmod>2016-11-26T02:05:26.582Z</lastmod>
     <data>
@@ -140,26 +160,6 @@
            
              
               <breadCrumb title="效果篇" url="http://yoursite.com/categories/%E6%95%88%E6%9E%9C%E7%AF%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/12/05/hexo%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2016-11-18T01:23:32.752Z</lastmod>
-    <data>
-        <display>
-        <title>hexo教程</title>
-        <pubTime>2015-12-05T13:19:00.000Z</pubTime>
-        
-        <tag>hexo搭建教程</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo安装教程" url="http://yoursite.com/categories/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
