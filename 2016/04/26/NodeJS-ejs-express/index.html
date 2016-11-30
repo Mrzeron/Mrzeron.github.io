@@ -1,0 +1,1131 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="NodeJS,ejs,express," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="有你的小时光" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="简介NodeJSNode.js是JavaScript在服务器端的一个运行环境，也是一个工具库，用来与服务器端其他软件互动。它的JavaScript解释器，采用了Google公司的V8引擎。
+ExpressExpress 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。使用 Express 可以快速地搭建一个完整功能的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJS+ejs+express">
+<meta property="og:url" content="http://yoursite.com/2016/04/26/NodeJS-ejs-express/index.html">
+<meta property="og:site_name" content="有你的小时光">
+<meta property="og:description" content="简介NodeJSNode.js是JavaScript在服务器端的一个运行环境，也是一个工具库，用来与服务器端其他软件互动。它的JavaScript解释器，采用了Google公司的V8引擎。
+ExpressExpress 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。使用 Express 可以快速地搭建一个完整功能的">
+<meta property="og:updated_time" content="2016-11-30T01:59:41.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJS+ejs+express">
+<meta name="twitter:description" content="简介NodeJSNode.js是JavaScript在服务器端的一个运行环境，也是一个工具库，用来与服务器端其他软件互动。它的JavaScript解释器，采用了Google公司的V8引擎。
+ExpressExpress 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。使用 Express 可以快速地搭建一个完整功能的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> NodeJS+ejs+express | 有你的小时光 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">有你的小时光</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+
+    
+
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'V_fyjhtetD_usbBCyBAh','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NodeJS+ejs+express
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-26T10:00:36+08:00" content="2016-04-26">
+              2016-04-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/26/NodeJS-ejs-express/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/NodeJS-ejs-express/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/26/NodeJS-ejs-express/" class="leancloud_visitors" data-flag-title="NodeJS+ejs+express">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><p>Node.js是JavaScript在服务器端的一个运行环境，也是一个工具库，用来与服务器端其他软件互动。它的JavaScript解释器，采用了Google公司的V8引擎。</p>
+<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。<br>Express 框架核心特性：<br>可以设置中间件来响应 HTTP 请求。<br>定义了路由表用于执行不同的 HTTP 请求动作。<br>可以通过向模板传递参数来动态渲染 HTML 页面。</p>
+<h2 id="ejs"><a href="#ejs" class="headerlink" title="ejs"></a>ejs</h2><p>EJS是一个简单高效的模板语言，通过数据和模板，可以生成HTML标记文本。可以说EJS是一个JavaScript库，EJS可以同时运行在客户端和服务器端，客户端安装直接引入文件即可，服务器端用npm包安装.</p>
+<a id="more"></a>
+<h1 id="NodeJS开始"><a href="#NodeJS开始" class="headerlink" title="NodeJS开始"></a>NodeJS开始</h1><h2 id="helloword"><a href="#helloword" class="headerlink" title="helloword"></a>helloword</h2><p>新建helloword.js<br>执行npm init<br>NodeJS官方的包可以不写路径直接写包名<br>node_modules 模块查找机制类似于作用域链<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">var</span> name = <span class="built_in">require</span>(<span class="string">'./views/name.js'</span>);<span class="comment">//利用CommonJS 加上./ .js提高查找效率</span></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;<span class="comment">//创建一个server</span></div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html;charset=utf-8'</span>&#125;)<span class="comment">//第一个参数状态码, 第二个参数表示返回的类型</span></div><div class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">		res.write(<span class="string">'hellNodeJS'</span>);<span class="comment">//真正返回的内容 可以写多个write</span></div><div class="line">		res.write(name.sayName());</div><div class="line">		res.end();<span class="comment">//end方法作为结束工作用 </span></div><div class="line">		<span class="comment">//req 用户给后端的数据</span></div><div class="line">		<span class="comment">//res 后端返回的数据</span></div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(req.url);<span class="comment">//显示请求url的内容 里面有/ 和/favicon.ico 请求两次所以会打印两次 用if屏蔽这个访问</span></div><div class="line">&#125;).listen(<span class="number">8000</span>) <span class="comment">//监听端口号</span></div></pre></td></tr></table></figure></p>
+<p>node helloword 执行该文件 .js可省略</p>
+<h2 id="自动重启"><a href="#自动重启" class="headerlink" title="自动重启"></a>自动重启</h2><p>npm i supervisor -g  全局安装<br>执行supervisor helloword 启动文件</p>
+<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>新建文件夹views<br>新建文件name.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	name:<span class="string">'lis'</span>,</div><div class="line">	sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="模块化开发-混合继承的使用"><a href="#模块化开发-混合继承的使用" class="headerlink" title="模块化开发(混合继承的使用)"></a>模块化开发(混合继承的使用)</h2><p>新建UserClass.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserClass</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'pz'</span>,</div><div class="line">	<span class="keyword">this</span>.age = <span class="string">'24'</span>,</div><div class="line">	<span class="keyword">this</span>.friend = [<span class="string">'zs'</span>,<span class="string">'ls'</span>];</div><div class="line">&#125;</div><div class="line">UserClass.prototype.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">&#125;</div><div class="line">UserClass.prototype.sayFriends=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.friend;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = UserClass;</div></pre></td></tr></table></figure></p>
+<p>新建User.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserClass=<span class="built_in">require</span>(<span class="string">'./UserClass.js'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name,age,friends</span>)</span>&#123;</div><div class="line">	UserClass.call(<span class="keyword">this</span>,name,age,friends);</div><div class="line">	<span class="keyword">this</span>.name=<span class="string">'zzzz'</span>;</div><div class="line">&#125;</div><div class="line">User.prototype= <span class="keyword">new</span> UserClass();</div><div class="line"><span class="built_in">module</span>.exports=User;</div></pre></td></tr></table></figure></p>
+<p>新建module.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">'./views/User.js'</span>);</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;<span class="comment">//创建一个server</span></div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html;charset=utf-8'</span>&#125;)<span class="comment">//第一个参数状态码, 第二个参数表示返回的类型</span></div><div class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">		<span class="keyword">var</span> user1 = <span class="keyword">new</span> User();</div><div class="line">		<span class="comment">//res.write(user1.name);</span></div><div class="line">		user1.friends.push(<span class="string">'wr'</span>)</div><div class="line">		res.write(user1.sayFriends().toString());<span class="comment">//数组不能直接输出前端 需要转换成字符串</span></div><div class="line">		res.write(user1.sayName());</div><div class="line">		res.end();<span class="comment">//end方法作为结束工作用 </span></div><div class="line">		<span class="comment">//req 用户给后端的数据</span></div><div class="line">		<span class="comment">//res 后端返回的数据</span></div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(req.url);<span class="comment">//显示请求url的内容 里面有/ 和/favicon.ico 请求两次所以会打印两次 用if屏蔽这个访问</span></div><div class="line">&#125;).listen(<span class="number">8000</span>) <span class="comment">//监听端口号</span></div></pre></td></tr></table></figure></p>
+<h2 id="文件操作-File-System"><a href="#文件操作-File-System" class="headerlink" title="文件操作 File System"></a>文件操作 File System</h2><h3 id="同步文件操作-不推荐-会阻塞I-O操作"><a href="#同步文件操作-不推荐-会阻塞I-O操作" class="headerlink" title="同步文件操作(不推荐 会阻塞I/O操作)"></a>同步文件操作(不推荐 会阻塞I/O操作)</h3><p>新建fs.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">var</span> files = <span class="built_in">require</span>(<span class="string">'./views/files.js'</span>);</div><div class="line"><span class="keyword">var</span> name = <span class="built_in">require</span>(<span class="string">'./views/name.js'</span>);<span class="comment">//利用CommonJS 加上./ .js提高查找效率</span></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;<span class="comment">//创建一个server</span></div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html;charset=utf-8'</span>&#125;)<span class="comment">//第一个参数状态码, 第二个参数表示返回的类型</span></div><div class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">		files.readFile(res);<span class="comment">//同步</span></div><div class="line">		files.readFile(<span class="string">'./template/file.js'</span>,res);<span class="comment">//文件异步读取</span></div><div class="line">		异步不写 res.end();<span class="comment">//end方法作为结束工作用  </span></div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;).listen(<span class="number">8000</span>) <span class="comment">//监听端口号</span></div></pre></td></tr></table></figure></p>
+<p>新建file.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);<span class="comment">//引入fs模块</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	readFile:<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> data = fs.readeFileSync(<span class="string">'../template/main.html'</span>,<span class="string">'utf-8'</span>) <span class="comment">//同步读文件方法 第一个参数路径 相对于引用它的路径 第二个为参数编码 返回值为内容</span></div><div class="line">	res.write(data) <span class="comment">//将文件数据返回到页面上</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>新建template文件夹<br>新建main.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">写点内容</div></pre></td></tr></table></figure></p>
+<h3 id="监控文件变化"><a href="#监控文件变化" class="headerlink" title="监控文件变化"></a>监控文件变化</h3><p>npm -g install supervisor<br>执行supervisor fs</p>
+<h3 id="异步读取文件"><a href="#异步读取文件" class="headerlink" title="异步读取文件"></a>异步读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);<span class="comment">//引入fs模块</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	readFile:<span class="function"><span class="keyword">function</span>(<span class="params">file,res</span>)</span>&#123; <span class="comment">//file为传入的文件路径</span></div><div class="line">	fs.readeFile(file,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">	<span class="comment">//data为返回数据</span></div><div class="line">	res.write(data)	;</div><div class="line">	res.end();</div><div class="line">	&#125;);</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="文件写操作"><a href="#文件写操作" class="headerlink" title="文件写操作"></a>文件写操作</h3><p>fs.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">writeFile:<span class="function"><span class="keyword">function</span>(<span class="params">file,res</span>)</span>&#123;</div><div class="line">	fs.writeFile(file,<span class="string">'abc'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">		res.write(<span class="string">'写入成功'</span>)；</div><div class="line">		res.end();</div><div class="line">	&#125;)	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="router"><a href="#router" class="headerlink" title="router"></a>router</h2><p>新建router.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">	home:<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">	res.write(<span class="string">'首页'</span>);</div><div class="line">	res.end();</div><div class="line">	&#125;,</div><div class="line">	login:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	res.write(<span class="string">'登录'</span>);</div><div class="line">	res.end();</div><div class="line">	&#125;,</div><div class="line">	registor:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	res.write(<span class="string">'注册'</span>);</div><div class="line">	res.end();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>新建url.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./router.js'</span>);</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html;charset=utf-8'</span>&#125;)<span class="comment">//</span></div><div class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">		<span class="keyword">var</span> path = req.url.replace(<span class="regexp">/\//</span>,<span class="string">''</span>);</div><div class="line">		router[path](res);</div><div class="line">	&#125;</div><div class="line">&#125;).listen(<span class="number">8000</span>)</div></pre></td></tr></table></figure></p>
+<h1 id="异步调用-async"><a href="#异步调用-async" class="headerlink" title="异步调用 async"></a>异步调用 async</h1><p>串联无关性 并联无关性<br>async不是单独属于NodeJS 可以独立使用<br>npm  i async -D<br>新建async.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">'async'</span>);</div><div class="line"><span class="comment">//串行无关联 第一个先执行 第二个再执行</span></div><div class="line">写法<span class="number">1</span></div><div class="line"><span class="keyword">async</span>.series([</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		<span class="comment">//todo</span></div><div class="line">		callback(<span class="string">'numll'</span>,<span class="string">'one'</span>)<span class="comment">//null表示出错的函数 非null表示有错误 'one'表示返回的结果 </span></div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(<span class="literal">null</span>,<span class="string">'two'</span>)</div><div class="line">	&#125;</div><div class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	<span class="comment">//result 为返回结果组成的数组 </span></div><div class="line">	<span class="comment">//最后执行的函数</span></div><div class="line">&#125;)<span class="comment">//第一个参数是数组  第一个执行跟第二个执行无关联 两个执行的合集跟第二个参数有关联 </span></div><div class="line"></div><div class="line">写法<span class="number">2</span></div><div class="line"></div><div class="line"><span class="keyword">async</span>.series(&#123;</div><div class="line">	one:<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(numm,<span class="string">'one'</span>)</div><div class="line">	&#125;,</div><div class="line">	two:<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(numm,<span class="string">'two'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	<span class="comment">//results位返回结果组成的对象</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// 区别 results返回结果的方式不同 第一个参数的形式不同</span></div><div class="line"><span class="built_in">console</span>.time(<span class="string">'123'</span>);</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'123'</span>);测试执行时间</div><div class="line"></div><div class="line"><span class="comment">//并行无关联 总时间为最长的那一个 第一个第二个可以同时执行</span></div><div class="line"><span class="keyword">async</span>.parallel([</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(<span class="literal">null</span>,<span class="string">'one'</span>)</div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(<span class="literal">null</span>,<span class="string">'two'</span>)</div><div class="line">	&#125;</div><div class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	</div><div class="line">&#125;)</div><div class="line"><span class="comment">//串行有关联 瀑布流异步处理模型</span></div><div class="line"><span class="keyword">async</span>.waterfall([</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">		callback(<span class="literal">null</span>,<span class="string">'one'</span>,<span class="string">'two'</span>)</div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2,callback</span>)</span>&#123; <span class="comment">//arg1,arg2为第一个函数的返回值</span></div><div class="line">		callback(<span class="literal">null</span>,arg1,arg2,<span class="string">'three'</span>);</div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">arr1,arr2,arr3,callback</span>)</span>&#123;<span class="comment">//三个形参代表第二个函数返回的结果</span></div><div class="line">		callback(<span class="literal">null</span>,[arr1,arr2,arr3,<span class="string">'done'</span>])</div><div class="line">	&#125;</div><div class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="get请求和post请求的处理"><a href="#get请求和post请求的处理" class="headerlink" title="get请求和post请求的处理"></a>get请求和post请求的处理</h1><p>querystring 可以用来格式化post请求的内容<br>url 可以格式化解析get请求的内容<br>新建url.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./router.js'</span>);</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html;charset=utf-8'</span>&#125;)<span class="comment">//</span></div><div class="line">	<span class="keyword">if</span>(req.url!==<span class="string">'/favicon.ico'</span>)&#123;</div><div class="line">		<span class="keyword">var</span> path = req.url.replace(<span class="regexp">/\//</span>,<span class="string">''</span>);</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">		router[path](res);</div><div class="line">		&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">		router[<span class="string">'home'</span>](res); </div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;).listen(<span class="number">8000</span>)</div></pre></td></tr></table></figure></p>
+<p>login.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/login"</span> <span class="attr">method</span>=<span class="string">"post"</span> &gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">label</span>&gt;</span>Email:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">label</span>&gt;</span>Password:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'password'</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'submit'</span> <span class="attr">name</span>=<span class="string">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>新建router.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> files=<span class="built_in">require</span>(<span class="string">'./files.js'</span>);</div><div class="line"><span class="keyword">var</span> url =<span class="built_in">require</span>(<span class="string">'url'</span>);<span class="comment">//NodeJS自带组件</span></div><div class="line"><span class="keyword">var</span> queryString = <span class="built_in">require</span>(<span class="string">'querystring'</span>);<span class="comment">//NodeJS自带组件</span></div><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">	home:<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">	res.write(<span class="string">'首页'</span>);</div><div class="line">	res.end();</div><div class="line">	&#125;,</div><div class="line">	login:<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="comment">//res.write('登录');</span></div><div class="line">		<span class="comment">//处理get请求</span></div><div class="line">		<span class="keyword">var</span> urlObject =url.parse(req.url,<span class="literal">true</span>);<span class="comment">//解析url 第一个参数是解析内容 第二个参数是否变为对象</span></div><div class="line">		<span class="comment">//处理post请求</span></div><div class="line">		<span class="keyword">var</span> post  =  <span class="string">''</span>;</div><div class="line">		req.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">			post += chunk;</div><div class="line">		&#125;)<span class="comment">//绑定一个事件 </span></div><div class="line">		req.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="comment">//对post内容进行处理</span></div><div class="line">			<span class="keyword">var</span> urlObject= queryString.parse(post); 对post请求内容进行格式化成为对象</div><div class="line">		&#125;)<span class="comment">//接收完前端数据时触发</span></div><div class="line">		前端提交表单时会触发data事件</div><div class="line">	res.end();</div><div class="line">	&#125;,</div><div class="line">	registor:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	res.write(<span class="string">'注册'</span>);</div><div class="line">	res.end();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="数据库操作-mysql"><a href="#数据库操作-mysql" class="headerlink" title="数据库操作(mysql)"></a>数据库操作(mysql)</h1><p>下载Mysql GPL版 管理工具Workbench<br>打开Workbench 进行初始化<br>命令行连接mysql<br><code>mysql -u root -p</code><br>错误解决方案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">mac mysql 修改密码</div><div class="line">step1：</div><div class="line">苹果-&gt;系统偏好设置-&gt;最下边点mysql 在弹出页面中 关闭mysql服务（点击stop mysql server）</div><div class="line">step2：</div><div class="line">进入终端输入：cd /usr/local/mysql/bin/</div><div class="line">回车后 登录管理员权限 sudo su</div><div class="line">回车后输入以下命令来禁止mysql验证功能 ./mysqld_safe --skip-grant-tables</div><div class="line">step3. </div><div class="line">输入命令 ./mysql</div><div class="line">回车后，输入命令 FLUSH PRIVILEGES; </div><div class="line">回车后，输入命令 SET PASSWORD FOR &apos;root&apos;@&apos;localhost&apos; = PASSWORD(&apos;你的新密码&apos;);</div></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看当前有哪些数据库"><a href="#查看当前有哪些数据库" class="headerlink" title="查看当前有哪些数据库"></a>查看当前有哪些数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show databases;</div></pre></td></tr></table></figure>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database user;//数据库名</div></pre></td></tr></table></figure>
+<h3 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use user;//数据库名</div></pre></td></tr></table></figure>
+<h3 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show tablaes;</div></pre></td></tr></table></figure>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">create table if not exists admin(</div><div class="line">	id int not null auto_increment,</div><div class="line">	username varchar(50) not null,</div><div class="line">	password varchar(20) not null,</div><div class="line">	primary key(id) //设置主键</div><div class="line">	) ;//admin为表名 id为字段 int 整型 not null 非空 auto_increment 自增</div></pre></td></tr></table></figure>
+<h3 id="查看当前表结构"><a href="#查看当前表结构" class="headerlink" title="查看当前表结构"></a>查看当前表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">desc admin //admin为表名</div></pre></td></tr></table></figure>
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">insert into admin(username,password,values(&apos;zs&apos;,&apos;abc13&apos;));</div><div class="line">//ID为自增无需设置 values里面为字段内容</div></pre></td></tr></table></figure>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select * from admin; //从admin中选所有记录 *表示所有</div><div class="line">select * from article order by author //查询并排序</div><div class="line">select count(*) from article group by author;//统计数量</div></pre></td></tr></table></figure>
+<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">updata admin set username=&apos;lisi&apos; where username=&apos;zs&apos; //admin为表名 </div><div class="line">updata admin set username=&apos;lisi&apos;,password=&apos;zzzz&apos; where username=&apos;zs&apos;;//同时改多个字段</div></pre></td></tr></table></figure>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">delete from admin where id=3;</div><div class="line">delete from *;//删除所有 ID会记录添加会继续加</div></pre></td></tr></table></figure>
+<h3 id="清空表"><a href="#清空表" class="headerlink" title="清空表"></a>清空表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">truncate admin; //清空ID无记录添加从0开始</div></pre></td></tr></table></figure>
+<h2 id="多表联合查询"><a href="#多表联合查询" class="headerlink" title="多表联合查询"></a>多表联合查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">select * from user,article;</div><div class="line">//筛选</div><div class="line">select * from user,article where user.username=article.author and user.username=&apos;zs&apos;;</div><div class="line">select * from article where author=&apos;zs&apos; or author=&apos;ls&apos;;</div><div class="line">select * from article where author like &apos;j%&apos;;//%占位符j开头</div></pre></td></tr></table></figure>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><h3 id="内连接-求两个集合的交集-从左找右"><a href="#内连接-求两个集合的交集-从左找右" class="headerlink" title="内连接 求两个集合的交集 从左找右"></a>内连接 求两个集合的交集 从左找右</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from user inner join article on user.username=article.author;</div></pre></td></tr></table></figure>
+<h3 id="左连接-拿到左边集合所有的东西-在拿两个表格相交的部分"><a href="#左连接-拿到左边集合所有的东西-在拿两个表格相交的部分" class="headerlink" title="左连接 拿到左边集合所有的东西 在拿两个表格相交的部分"></a>左连接 拿到左边集合所有的东西 在拿两个表格相交的部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from user left join article on user.username=article.author;</div></pre></td></tr></table></figure>
+<h3 id="右连接-拿到右边集合所有的东西-在拿两个表格相交的部分"><a href="#右连接-拿到右边集合所有的东西-在拿两个表格相交的部分" class="headerlink" title="右连接 拿到右边集合所有的东西 在拿两个表格相交的部分"></a>右连接 拿到右边集合所有的东西 在拿两个表格相交的部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from user right join article on user.username=article.author;</div></pre></td></tr></table></figure>
+<h2 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h2><h3 id="直接连接"><a href="#直接连接" class="headerlink" title="直接连接"></a>直接连接</h3><p>先安装mysql模块 // node连接mysql的brige<br>npm i mysql -D<br>新建mysql.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mysql =<span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="comment">//连接数据库</span></div><div class="line"><span class="keyword">var</span> connection = mysql.createConnection(&#123;</div><div class="line">	host:<span class="string">'localhost'</span>,<span class="comment">//host</span></div><div class="line">	user:<span class="string">'root'</span>, <span class="comment">//账号</span></div><div class="line">	password:<span class="string">''</span>, <span class="comment">//密码</span></div><div class="line">	database:<span class="string">''</span>, <span class="comment">//数据库名字</span></div><div class="line">	port:<span class="string">'3306'</span><span class="comment">//端口号默认端口3306</span></div><div class="line"></div><div class="line">&#125;)<span class="comment">//创建一个数据库连接</span></div><div class="line"><span class="comment">//创建一个连接</span></div><div class="line">connection.connect(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'log-:'</span>+err);</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'connection connect success!!!'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">//插入操作</span></div><div class="line"><span class="keyword">var</span> userInsertSql = <span class="string">'insert  into user(username,password) values("cp","1234")'</span>;<span class="comment">//定义sql语句</span></div><div class="line">connection.query(userInsertSql,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'insert err'</span>+err);</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'insert success~~~~'</span>);</div><div class="line">&#125;)<span class="comment">//执行语句</span></div><div class="line"><span class="comment">//查询操作</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> userInsertSql = <span class="string">'select * from user'</span>;<span class="comment">//定义sql语句</span></div><div class="line">connection.query(userInsertSql,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'select err'</span>+err);</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;results;i++)&#123;</div><div class="line">	<span class="comment">//查询结果在results数组中</span></div><div class="line">	<span class="comment">//console.log(results[i].username)</span></div><div class="line">	&#125;</div><div class="line">&#125;)<span class="comment">//执行语句</span></div><div class="line"></div><div class="line"><span class="comment">//关闭连接</span></div><div class="line">connection.end(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(err);</div><div class="line">		<span class="keyword">return</span> ;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'connection end success!!!'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="连接池连接-提高数据库访问性能"><a href="#连接池连接-提高数据库访问性能" class="headerlink" title="连接池连接 提高数据库访问性能"></a>连接池连接 提高数据库访问性能</h3><p>先安装mysql模块 // node连接mysql的brige<br>npm i mysql -D</p>
+<p>新建datapool.js //创建连接池<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">DataPool</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.flag = <span class="literal">true</span>;<span class="comment">//是否连接过</span></div><div class="line">	<span class="keyword">this</span>.pool = mysql.createPool(&#123;</div><div class="line">		host:<span class="string">'localhost'</span>,<span class="comment">//host</span></div><div class="line">		user:<span class="string">'root'</span>, <span class="comment">//账号</span></div><div class="line">		password:<span class="string">''</span>, <span class="comment">//密码</span></div><div class="line">		database:<span class="string">''</span>, <span class="comment">//数据库名字</span></div><div class="line">		port:<span class="string">'3306'</span><span class="comment">//端口号默认端口3306</span></div><div class="line">	&#125;)<span class="comment">//做连接池的调用</span></div><div class="line">	<span class="keyword">this</span>.getPool = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.flag)&#123;</div><div class="line">			<span class="keyword">this</span>.pool.on(<span class="string">'connection'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">conne</span>)</span>&#123;</div><div class="line">			conne.query(<span class="string">'set session auto_increment=1'</span>)<span class="comment">//执行sql语句</span></div><div class="line">			<span class="keyword">this</span>.flat = <span class="literal">false</span>; </div><div class="line">			&#125;)</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.pool;<span class="comment">//返回pool</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = DataPool;</div></pre></td></tr></table></figure></p>
+<p>新建mysql.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> DataPool = <span class="built_in">require</span>(<span class="string">'./datapool.js'</span>);<span class="comment">//引入连接池</span></div><div class="line"><span class="keyword">var</span> dataPool = <span class="keyword">new</span> DataPool();</div><div class="line"><span class="keyword">var</span> pool = dataPool.getPool();<span class="comment">//连接池自己定义的方法 获取连接池的一个连接</span></div><div class="line"><span class="comment">//执行SQL语句</span></div><div class="line">pool.getConnection(<span class="function"><span class="keyword">function</span>(<span class="params">err,conn</span>)</span>&#123;</div><div class="line">	<span class="comment">//做插入操作</span></div><div class="line">	<span class="keyword">var</span>  userInsertSql = <span class="string">'insert into user(username,password) values("shuiz","456")'</span>;</div><div class="line">	conn.query(userInsertSql,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'insert success'</span>);</div><div class="line">	&#125;)</div><div class="line">	<span class="comment">//查询操作</span></div><div class="line">	conn.query(<span class="string">'select * from user'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;results;i++)&#123;</div><div class="line">		<span class="comment">//查询结果在results数组中</span></div><div class="line">		<span class="comment">//console.log(results[i].username)</span></div><div class="line">	&#125;)</div><div class="line">	<span class="comment">//关闭连接 释放连接池</span></div><div class="line">	coon.release();</div><div class="line">&#125;);<span class="comment">//连接池自带方法</span></div></pre></td></tr></table></figure>
+<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="Mac安装"><a href="#Mac安装" class="headerlink" title="Mac安装"></a>Mac安装</h3><p>Mac使用homebrew安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew update</div><div class="line">brew i  mongobd</div></pre></td></tr></table></figure></p>
+<p>执行 <code>monggo</code></p>
+<h3 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h3><p>直接安装<br>cd到mongodb下server下的bin目录<br>执行 mongod –dbpath D:\MongoDB\data 启动mongodb 新建data文件夹<br>在打开一个命令行到这个目录 执行mongo 执行db</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><h3 id="查看所有表"><a href="#查看所有表" class="headerlink" title="查看所有表"></a>查看所有表</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.getCollectionNames()</div></pre></td></tr></table></figure>
+<h3 id="插入数据-1"><a href="#插入数据-1" class="headerlink" title="插入数据"></a>插入数据</h3><p>插入一条数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.insertOne(&#123;username:&apos;zhangsan&apos;&#125;)// user为文档名</div></pre></td></tr></table></figure></p>
+<p>插入多条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.insertMany([&#123;username:&apos;wang&apos;&#125;,&#123;username:&apos;li&apos;&#125;]);</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.insert(&#123;&#125;)</div></pre></td></tr></table></figure></p>
+<p>可以插入一条也可以插入多条</p>
+<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><p>find() 基本查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.find() //查询user文档的数据</div></pre></td></tr></table></figure></p>
+<p>条件查询<br>第一个参数 约束条件 第二个参数显示字段 1显示 0不显示<br>size() 计算返回总数<br>skip() 从第多少条开始显示<br>limit() 显示的条数<br>sort() 排序 属性:数值 1为升序 -1为降序<br>可以链式操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;)//查询所有</div><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;,&#123;title:1&#125;)</div><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;,&#123;title:1&#125;).size()</div><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;,&#123;title:1&#125;).skip(10)</div><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;,&#123;title:1&#125;).limit(3)</div><div class="line">db.movie.find(&#123;year:&apos;1994&apos;&#125;,&#123;title:1&#125;).sort(&#123;year:1&#125;)</div></pre></td></tr></table></figure></p>
+<p>查询操作符<br>$gt大于<br>$lt小于<br>$in包含<br>$nin不包含<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.movie.find(&#123;&apos;rating.average&apos;:&#123;$gt:9.5&#125;&#125;)</div><div class="line">db.movie.find(&#123;genres:&#123;$in:[&apos;动作&apos;]&#125;&#125;,&#123;title:1&#125;)</div><div class="line">db.movie.find(&#123;genres:&#123;$nin:[&apos;动作&apos;]&#125;&#125;,&#123;title:1&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="数据修改"><a href="#数据修改" class="headerlink" title="数据修改"></a>数据修改</h3><p>修改多条<br>updateMany<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.user.updateMany(</div><div class="line">	&#123;&#125; //第一个参数是过滤器 如果为空就是全部修改</div><div class="line">	,&#123;</div><div class="line">		$set:&#123;password:&apos;1111&apos;&#125;</div><div class="line">	&#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>update<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.user.update(</div><div class="line">	&#123;username=&apos;li&apos;&#125;,</div><div class="line">	&#123;</div><div class="line">		$set:&#123;password:&apos;456789&apos;&#125;;</div><div class="line">	&#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>updateOne<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.user.updateOne(</div><div class="line">	&#123;username=&apos;wang&apos;&#125;,</div><div class="line">	&#123;</div><div class="line">		$set:&#123;password:&apos;2222&apos;&#125;;</div><div class="line">	&#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h3 id="数据删除"><a href="#数据删除" class="headerlink" title="数据删除"></a>数据删除</h3><p>deleteOne 删除一条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.deleteOne(&#123;password:&apos;2222&apos;&#125;)</div></pre></td></tr></table></figure></p>
+<p>remove 删除符合条件的 如果什么都不写所有删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.remove(&#123;password:&apos;456789&apos;&#125;);</div></pre></td></tr></table></figure></p>
+<p>deleteMany 删除符合条件的 如果什么都不写所有删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.user.deleteMany()</div></pre></td></tr></table></figure></p>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>安装mongodb模块<br>npm i mongodb -D<br>新建mongodb.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var mongodb = require(&apos;mongodb&apos;);//引入mongodb模块</div><div class="line">//创建数据库服务器的连接</div><div class="line">var  server = new mongodb.Server(</div><div class="line">	&apos;localhost&apos;,</div><div class="line">	27017,</div><div class="line">	&#123;auto_reconnect:true&#125; //自动重连</div><div class="line">)</div><div class="line">//创建数据库连接</div><div class="line">var db = mongodb.Db(</div><div class="line">	&apos;test&apos;,//数据库库名</div><div class="line">	server,//引入server</div><div class="line">	&#123;safe:true&#125; //是否安全模式</div><div class="line">)</div><div class="line">//执行查询语句</div><div class="line">db.open(function(err,db)&#123;</div><div class="line">	if(err)&#123;</div><div class="line">		console.log(&apos;log&apos;+err);</div><div class="line">	&#125;else&#123;</div><div class="line">	console.log(&apos;mongodb success~~~&apos;);</div><div class="line">	db.collection(&apos;movie&apos;,&#123;safe:true&#125;,function(err,conn)&#123;</div><div class="line">		if(err)&#123;</div><div class="line">			console.log(&apos;collection fail&apos;)</div><div class="line">		&#125;else&#123;</div><div class="line">			conn.find(&#123;&#125;,&#123;title:1&#125;).toArray(function(err,results)&#123;</div><div class="line">			if(!err)&#123;</div><div class="line">				console.log(result[0].title)</div><div class="line">			&#125;</div><div class="line">			&#125;)//find语句</div><div class="line">		&#125;	</div><div class="line">	&#125;)//文档名</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><h2 id="开始-1"><a href="#开始-1" class="headerlink" title="开始"></a>开始</h2><h3 id="安装express"><a href="#安装express" class="headerlink" title="安装express"></a>安装express</h3><p>npm i express -g<br>npm i express -D<br>npm i express-generator -g //可解决不能使用的问题</p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>express -e expressDemo //expressDemo为项目名</p>
+<h3 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h3><p>执行cnpm i </p>
+<h3 id="文件解析"><a href="#文件解析" class="headerlink" title="文件解析"></a>文件解析</h3><p>bin目录下的www文件是服务配置可以改端口<br>public目录是用户访问后端页面的静态资源<br>views是放置ejs模板的文件夹<br>app.js是入口</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>node  ./bin/www 或者 supervisor ./bin/www</p>
+<h2 id="ejs模板"><a href="#ejs模板" class="headerlink" title="ejs模板"></a>ejs模板</h2><p>在app.js中<br>app.set(‘views’,path.join(__direname,’views’));<br>app.set(‘view engine’,’ejs’);</p>
+<p>views目录下存放<br>res.render(‘模板名’,{参数})用来渲染ejs模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;%= 变量 %&gt;但是无法解析html标签</div><div class="line">&lt;%- 变量 %&gt;可以解析html标签</div><div class="line">&lt;% if(条件)&#123;%&gt;</div><div class="line">&lt;% &#125; else &#123; %&gt;</div><div class="line">&lt;% &#125;%&gt;</div><div class="line">&lt;%- include header %&gt; 引入外面定义ejs模板</div><div class="line">&lt;% res.forEach(function(row,index)&#123;%&gt;</div><div class="line">	内容</div><div class="line">	&lt;td&gt;&lt;%= (index+1) %&gt;&lt;/td&gt;</div><div class="line">	&lt;td&gt;&lt;%- item.title %&gt;&lt;/td&gt;</div><div class="line">	&lt;td&gt; &lt;/td&gt;</div><div class="line"></div><div class="line">&lt;% &#125;)%&gt; </div><div class="line">``</div><div class="line">## 路由</div><div class="line">在app.js中使用use(&apos;&apos;,&apos;&apos;)定义路由</div><div class="line">路由自动继承</div><div class="line">get请求处理</div></pre></td></tr></table></figure></p>
+<p>var express =require(‘express’);<br>router.get(‘/login’,function(req,res){<br>    res.send(‘get login success’); //send 返回字符串<br>})<br>module.exports = router;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">post请求处理</div></pre></td></tr></table></figure></p>
+<p>var express =require(‘express’);<br>router.post(‘/login’,function(req,res){<br>    res.send(‘post login success’); //send 返回字符串<br>})<br>module.exports = router;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">all请求处理</div></pre></td></tr></table></figure></p>
+<p>var express =require(‘express’);<br>router.all(‘/login’,function(req,res){<br>    res.send(‘accecpt get or post req’); //send 返回字符串<br>})<br>module.exports = router;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">路由正则匹配</div></pre></td></tr></table></figure></p>
+<p>var express =require(‘express’);<br>router.all(‘/ab*cd’,function(req,res){<br>    res.send(‘路由正则匹配’); //send 返回字符串<br>})<br>module.exports = router;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">返回一个文件</div></pre></td></tr></table></figure></p>
+<p>var express =require(‘express’);<br>router.all(‘/html,function(req,res){<br>    res.sendFile(‘./index.html’)//路径相当于app.js<br>})<br>module.exports = router;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">## 表单提交数据处理</div><div class="line">get方式</div><div class="line">```js</div><div class="line">var express =require(&apos;express&apos;);</div><div class="line">router.get(&apos;/html,function(req,res)&#123;</div><div class="line">	req.query[&apos;username&apos;]//get方法提取数据</div><div class="line">	req.param(&apos;username&apos;)//也可以提取数据</div><div class="line">&#125;)</div><div class="line">module.exports = router;</div></pre></td></tr></table></figure></p>
+<p>post方式<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var express =require('express');</div><div class="line">router.get('/html,function(req,res)&#123;</div><div class="line">	req.body['username']//post方法提取数据</div><div class="line">&#125;)</div><div class="line">module.exports = router;</div></pre></td></tr></table></figure></p>
+<h2 id="连接mongodb"><a href="#连接mongodb" class="headerlink" title="连接mongodb"></a>连接mongodb</h2><p>使用MongoClient连接<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MongoClient =  <span class="built_in">require</span>(<span class="string">'mongodb'</span>).MongoClient;</div><div class="line"><span class="keyword">var</span> DB_CONN_STR = <span class="string">'mongodb://localhost:27017/test'</span>;<span class="comment">//使用mongodb协议</span></div><div class="line">router.post(<span class="string">'/registor'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> username = req.body[<span class="string">'username'</span>];</div><div class="line">	<span class="keyword">var</span> password = req.body[<span class="string">'password'</span>];</div><div class="line">	<span class="keyword">var</span> nickname = req.body[<span class="string">'nickname'</span>];</div><div class="line">	<span class="keyword">var</span> insertData = <span class="function"><span class="keyword">function</span>(<span class="params">db,callback</span>)</span>&#123;</div><div class="line">	<span class="comment">//连接到表</span></div><div class="line">	<span class="keyword">var</span> co	nn = db.collection(<span class="string">'user'</span>);<span class="comment">//传入文档名字</span></div><div class="line">	<span class="keyword">var</span> data = [&#123;username:username,password:password,nickname:nickname&#125;];</div><div class="line">	<span class="comment">//插入数据</span></div><div class="line">		conn.insert(data,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span>(err)&#123;</div><div class="line">			<span class="built_in">console</span>.log(err);</div><div class="line">			<span class="keyword">return</span> ;</div><div class="line">		&#125;</div><div class="line">		callback(results);</div><div class="line">		&#125;)</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	MongoClient.connect(DB_CONN_STR，<span class="function"><span class="keyword">function</span>(<span class="params">err,db</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'connect  success'</span>);</div><div class="line">		insertData(db,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</div><div class="line"></div><div class="line">			res.send(<span class="string">'注册成功'</span>)</div><div class="line">			db.close()</div><div class="line">			&#125;)</div><div class="line">		&#125;)<span class="comment">//第一个参数请求的URL</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/login'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> username = req.body[<span class="string">'username'</span>];</div><div class="line">	<span class="keyword">var</span> password = req.body[<span class="string">'password'</span>];</div><div class="line">	<span class="keyword">var</span> findData = <span class="function"><span class="keyword">function</span>(<span class="params">db,callback</span>)</span>&#123;</div><div class="line">	<span class="comment">//连接到表</span></div><div class="line">	<span class="keyword">var</span> conn = db.collection(<span class="string">'user'</span>);<span class="comment">//传入文档名字</span></div><div class="line">	<span class="keyword">var</span> data = [&#123;username:username,password:password&#125;];</div><div class="line">	<span class="comment">//查找数据</span></div><div class="line">		conn.find((data).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">			callback(results)</div><div class="line">		&#125;)</div><div class="line">		</div><div class="line">	</div><div class="line">	MongoClient.connect(DB_CONN_STR，<span class="function"><span class="keyword">function</span>(<span class="params">err,db</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'connect  success'</span>);</div><div class="line">		findData(db,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</div><div class="line">			<span class="keyword">if</span>(result.length&gt;<span class="number">0</span>)&#123;</div><div class="line">				res.send(<span class="string">'登录成功'</span>)</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				res.send(<span class="string">'登录失败'</span>)</div><div class="line">			&#125;</div><div class="line">			db.close()</div><div class="line">			&#125;)</div><div class="line">		&#125;)<span class="comment">//第一个参数请求的URL</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a>express-session</h2><p>安装express-session<br>npm i express-session -D<br>app.js中引用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>);</div><div class="line"><span class="comment">//配置session 配置一次就不需要改变了</span></div><div class="line">app.use(session(&#123;</div><div class="line">	scret: <span class="string">'recommend 128 bytes random sting'</span>,<span class="comment">//建议写一个128位的字符串</span></div><div class="line">	cookie: &#123;maxAge:<span class="number">20</span>*<span class="number">60</span>*<span class="number">1000</span>&#125;,<span class="comment">//毫秒为单位 设置cookie过期时间</span></div><div class="line">	reave:<span class="literal">true</span>,<span class="comment">//新请求干掉原来的cookie</span></div><div class="line">	saveUninitalized:<span class="literal">true</span>,<span class="comment">//可以用来存储未初始化的session</span></div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
+<p>登录成功后操作<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/login'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> username = req.body[<span class="string">'username'</span>];</div><div class="line">	<span class="keyword">var</span> password = req.body[<span class="string">'password'</span>];</div><div class="line">	<span class="keyword">var</span> findData = <span class="function"><span class="keyword">function</span>(<span class="params">db,callback</span>)</span>&#123;</div><div class="line">	<span class="comment">//连接到表</span></div><div class="line">	<span class="keyword">var</span> conn = db.collection(<span class="string">'user'</span>);<span class="comment">//传入文档名字</span></div><div class="line">	<span class="keyword">var</span> data = [&#123;username:username,password:password&#125;];</div><div class="line">	<span class="comment">//查找数据</span></div><div class="line">		conn.find((data).toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">			callback(results)</div><div class="line">		&#125;)</div><div class="line">		</div><div class="line">	</div><div class="line">	MongoClient.connect(DB_CONN_STR，<span class="function"><span class="keyword">function</span>(<span class="params">err,db</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'connect  success'</span>);</div><div class="line">		findData(db,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</div><div class="line">			<span class="keyword">if</span>(result.length&gt;<span class="number">0</span>)&#123;</div><div class="line">				<span class="comment">//session对象在req上可以访问</span></div><div class="line">				<span class="comment">//保存session</span></div><div class="line">				req.session.username = result[<span class="number">0</span>].username;</div><div class="line">				<span class="comment">//路由跳转</span></div><div class="line">				<span class="comment">//路由重定向</span></div><div class="line">				res.redirect(<span class="string">'/'</span>);</div><div class="line">				res.send(<span class="string">'登录成功'</span>)</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				res.send(<span class="string">'登录失败'</span>)</div><div class="line">			&#125;</div><div class="line">			db.close()</div><div class="line">			&#125;)</div><div class="line">		&#125;)<span class="comment">//第一个参数请求的URL</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>清除session<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">routre.get(<span class="string">'/logout'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="comment">//方法一 只能一个一个去掉</span></div><div class="line">	req.session.username=undefinde;</div><div class="line">	res.redirect(<span class="string">'/'</span>)</div><div class="line"></div><div class="line">	<span class="comment">//方法二</span></div><div class="line">	req.session.destory(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">			<span class="keyword">if</span>(err)&#123;</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				res.redirect(<span class="string">'/'</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="富文本编辑器"><a href="#富文本编辑器" class="headerlink" title="富文本编辑器"></a>富文本编辑器</h3><p>百度 ueditor<br>kindeditor<br>xheditor </p>
+<h3 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h3><p>表单中的enctype设置为multipart/form-data就可以传输二进制流<br>需要安装multiparty<br>才可以接收图片<br>cnpm i multiparty -D<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//引入</span></div><div class="line"><span class="keyword">var</span> multiparty = <span class="built_in">require</span>(<span class="string">'multiparty'</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">router.post(<span class="string">'/uploadImg'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> form = <span class="keyword">new</span> multiparty.Form();</div><div class="line">	<span class="comment">//设置编码</span></div><div class="line">	form.encoding = <span class="string">'utf-8'</span>;<span class="comment">//大小写都可以</span></div><div class="line">	<span class="comment">//设置文件的存储路径</span></div><div class="line">	form.uploadDir = <span class="string">'/uploadtemp'</span><span class="comment">//临时文件夹的路径</span></div><div class="line">	<span class="comment">//设置文件大小限制</span></div><div class="line">	form.maxFileSize = <span class="number">2</span>*<span class="number">1024</span>*<span class="number">1024</span>;</div><div class="line">	form.parse(req,<span class="function"><span class="keyword">function</span>(<span class="params">err,fields,files</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> uploadurl = <span class="string">'./images/upload/'</span>;</div><div class="line">		file = files[<span class="string">'filedata'</span>];</div><div class="line">		originFilename = file[<span class="number">0</span>].originalFilename;<span class="comment">//原始文件名</span></div><div class="line">		tmpPath = file[<span class="number">0</span>].path;</div><div class="line">		<span class="keyword">var</span> timestamp = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();<span class="comment">//存一个时间戳</span></div><div class="line">		uploadurl += timestamp + originalFilename;<span class="comment">//修改文件名</span></div><div class="line">		newPath = <span class="string">'./public/'</span> + uploadurl;<span class="comment">//</span></div><div class="line">		<span class="comment">//nodeJS提供的读取文件流的方法 FS模块</span></div><div class="line">		<span class="keyword">var</span> fileReadStream = fs.createReadStream(tmpPath);</div><div class="line">		<span class="comment">//写文件流的方法 FS模块</span></div><div class="line">		<span class="keyword">var</span> fileWriteStream = fs.createWriteStream(newPath);</div><div class="line">		fileReadStream.pipe(fileWriteStream)<span class="comment">//管道流操作</span></div><div class="line">		fileWriteStream.on(<span class="string">'close'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			fs.unlinkSync(tmpPath);<span class="comment">//同步操作删除掉文件夹</span></div><div class="line">			res.send(<span class="string">'&#123;"err":"","msg":"'</span><span class="string">"+ uploadurl +"</span><span class="string">'"&#125;'</span>);<span class="comment">//给富文本框的 msg是上传的url</span></div><div class="line"></div><div class="line">		&#125;) <span class="comment">//在写文件流上触发事件 </span></div><div class="line"></div><div class="line">	&#125;)</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="显示列表"><a href="#显示列表" class="headerlink" title="显示列表"></a>显示列表</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">router.all(<span class="string">'/list'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> username = req.session.username ||<span class="string">''</span>;</div><div class="line">	<span class="keyword">if</span>(username)&#123;</div><div class="line">		<span class="keyword">var</span> title = req.query[<span class="string">'title'</span>];</div><div class="line">		<span class="keyword">var</span> contnet = req.query[<span class="string">'content'</span>];</div><div class="line">		<span class="keyword">var</span> findData = <span class="function"><span class="keyword">function</span>(<span class="params">db,callback</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> conn =db.collection(’comment);</div><div class="line">		<span class="keyword">async</span>.parallel([</div><div class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">				conn.find(&#123;&#125;),toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">					<span class="keyword">if</span>(err)&#123;</div><div class="line"></div><div class="line">					&#125;</div><div class="line">					<span class="keyword">else</span>&#123;</div><div class="line">						callback(<span class="literal">null</span>,results.length)</div><div class="line">					&#125;&#125;</div><div class="line">			&#125;,</div><div class="line">			<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line"></div><div class="line">			callback(<span class="literal">null</span>,<span class="string">'todo'</span>)</div><div class="line">			&#125;</div><div class="line">		],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(results)</div><div class="line">			&#125;)</div><div class="line">		</div><div class="line">		&#125;)</div><div class="line">	&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">colgroup</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!--可以单独给样式--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">col</span> <span class="attr">style</span>=<span class="string">"width:10%;"</span>&gt;</span><span class="tag">&lt;/<span class="name">col</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">col</span> <span class="attr">style</span>=<span class="string">'width:40%'</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>您的支持将鼓励我继续进步！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://ocq2u27lk.bkt.clouddn.com/alipay.png" alt="Binging Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NodeJS/" rel="tag">#NodeJS</a>
+          
+            <a href="/tags/ejs/" rel="tag">#ejs</a>
+          
+            <a href="/tags/express/" rel="tag">#express</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/15/hybrid开发/" rel="next" title="hybrid开发">
+                <i class="fa fa-chevron-left"></i> hybrid开发
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/10/YO框架核心/" rel="prev" title="doyoe/Yo">
+                doyoe/Yo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/26/NodeJS-ejs-express/"
+     data-title="NodeJS+ejs+express"
+     data-content=""
+     data-url="http://yoursite.com/2016/04/26/NodeJS-ejs-express/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/26/NodeJS-ejs-express/"
+           data-title="NodeJS+ejs+express" data-url="http://yoursite.com/2016/04/26/NodeJS-ejs-express/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Binging" />
+          <p class="site-author-name" itemprop="name">Binging</p>
+          <p class="site-description motion-element" itemprop="description"><p>我流浪在这孤独的尘世，真爱如狗，这个标准不可改，单身如狗，直到找到另外一个和我嗅味相投的狗，我们相逢，最后，我们由狗修炼成人，获得自由。</P></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Mrzeron" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  gayHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-zhan-90" target="_blank">
+                  
+                    <i class="fa fa-google"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" target="_blank">百度</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://example.com/" target="_blank">新浪</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NodeJS"><span class="nav-number">1.1.</span> <span class="nav-text">NodeJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Express"><span class="nav-number">1.2.</span> <span class="nav-text">Express</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ejs"><span class="nav-number">1.3.</span> <span class="nav-text">ejs</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NodeJS开始"><span class="nav-number">2.</span> <span class="nav-text">NodeJS开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#helloword"><span class="nav-number">2.1.</span> <span class="nav-text">helloword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动重启"><span class="nav-number">2.2.</span> <span class="nav-text">自动重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS"><span class="nav-number">2.3.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化开发-混合继承的使用"><span class="nav-number">2.4.</span> <span class="nav-text">模块化开发(混合继承的使用)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作-File-System"><span class="nav-number">2.5.</span> <span class="nav-text">文件操作 File System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步文件操作-不推荐-会阻塞I-O操作"><span class="nav-number">2.5.1.</span> <span class="nav-text">同步文件操作(不推荐 会阻塞I/O操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控文件变化"><span class="nav-number">2.5.2.</span> <span class="nav-text">监控文件变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步读取文件"><span class="nav-number">2.5.3.</span> <span class="nav-text">异步读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件写操作"><span class="nav-number">2.5.4.</span> <span class="nav-text">文件写操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#router"><span class="nav-number">2.6.</span> <span class="nav-text">router</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步调用-async"><span class="nav-number">3.</span> <span class="nav-text">异步调用 async</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#get请求和post请求的处理"><span class="nav-number">4.</span> <span class="nav-text">get请求和post请求的处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库操作-mysql"><span class="nav-number">5.</span> <span class="nav-text">数据库操作(mysql)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">5.1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看当前有哪些数据库"><span class="nav-number">5.1.1.</span> <span class="nav-text">查看当前有哪些数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">5.1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开数据库"><span class="nav-number">5.1.3.</span> <span class="nav-text">打开数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看表"><span class="nav-number">5.1.4.</span> <span class="nav-text">查看表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表"><span class="nav-number">5.1.5.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看当前表结构"><span class="nav-number">5.1.6.</span> <span class="nav-text">查看当前表结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数据"><span class="nav-number">5.1.7.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">5.1.8.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据"><span class="nav-number">5.1.9.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">5.1.10.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清空表"><span class="nav-number">5.1.11.</span> <span class="nav-text">清空表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表联合查询"><span class="nav-number">5.2.</span> <span class="nav-text">多表联合查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接"><span class="nav-number">5.3.</span> <span class="nav-text">连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内连接-求两个集合的交集-从左找右"><span class="nav-number">5.3.1.</span> <span class="nav-text">内连接 求两个集合的交集 从左找右</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左连接-拿到左边集合所有的东西-在拿两个表格相交的部分"><span class="nav-number">5.3.2.</span> <span class="nav-text">左连接 拿到左边集合所有的东西 在拿两个表格相交的部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#右连接-拿到右边集合所有的东西-在拿两个表格相交的部分"><span class="nav-number">5.3.3.</span> <span class="nav-text">右连接 拿到右边集合所有的东西 在拿两个表格相交的部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接"><span class="nav-number">5.4.</span> <span class="nav-text">数据库连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接连接"><span class="nav-number">5.4.1.</span> <span class="nav-text">直接连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接池连接-提高数据库访问性能"><span class="nav-number">5.4.2.</span> <span class="nav-text">连接池连接 提高数据库访问性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongoDB"><span class="nav-number">6.</span> <span class="nav-text">MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">6.1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac安装"><span class="nav-number">6.1.1.</span> <span class="nav-text">Mac安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows安装"><span class="nav-number">6.1.2.</span> <span class="nav-text">windows安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作"><span class="nav-number">6.2.</span> <span class="nav-text">常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看所有表"><span class="nav-number">6.2.1.</span> <span class="nav-text">查看所有表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数据-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">6.2.3.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据修改"><span class="nav-number">6.2.4.</span> <span class="nav-text">数据修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据删除"><span class="nav-number">6.2.5.</span> <span class="nav-text">数据删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接数据库"><span class="nav-number">6.3.</span> <span class="nav-text">连接数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#express"><span class="nav-number">7.</span> <span class="nav-text">express</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始-1"><span class="nav-number">7.1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装express"><span class="nav-number">7.1.1.</span> <span class="nav-text">安装express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建项目"><span class="nav-number">7.1.2.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖包"><span class="nav-number">7.1.3.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件解析"><span class="nav-number">7.1.4.</span> <span class="nav-text">文件解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">7.1.5.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ejs模板"><span class="nav-number">7.2.</span> <span class="nav-text">ejs模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接mongodb"><span class="nav-number">7.3.</span> <span class="nav-text">连接mongodb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express-session"><span class="nav-number">7.4.</span> <span class="nav-text">express-session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#富文本编辑器"><span class="nav-number">7.4.1.</span> <span class="nav-text">富文本编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传图片"><span class="nav-number">7.4.2.</span> <span class="nav-text">上传图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示列表"><span class="nav-number">7.5.</span> <span class="nav-text">显示列表</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Binging</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/libs/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/libs/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/libs/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/libs/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/libs/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zzzmmm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("1X1RoOV72nXY03MIczUa300j-gzGzoHsz", "Yh2utpLGiQ3vEzfj9Epx7ttI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+  
+</body>
+</html>

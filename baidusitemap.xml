@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/04/26/NodeJS-ejs-express/</loc>
+    <lastmod>2016-11-30T01:59:41.062Z</lastmod>
+    <data>
+        <display>
+        <title>NodeJS+ejs+express</title>
+        <pubTime>2016-04-26T02:00:36.000Z</pubTime>
+        
+        <tag>NodeJS</tag>
+         
+        <tag>ejs</tag>
+         
+        <tag>express</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2015/12/05/hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2016-11-28T12:07:02.688Z</lastmod>
     <data>
@@ -18,27 +39,6 @@
              
               <breadCrumb title="hexo安装教程" url="http://yoursite.com/categories/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/26/NodeJS-ejs-express/</loc>
-    <lastmod>2016-11-26T02:05:26.582Z</lastmod>
-    <data>
-        <display>
-        <title>NodeJS+ejs+express</title>
-        <pubTime>2016-11-26T02:00:36.000Z</pubTime>
-        
-        <tag>NodeJS</tag>
-         
-        <tag>ejs</tag>
-         
-        <tag>express</tag>
-         
-         
-           
         </display>
     </data>
     </url>
