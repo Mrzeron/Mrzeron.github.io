@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/11/20/socket/</loc>
+    
+    <lastmod>2016-12-08T15:17:14.861Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/04/26/NodeJS-ejs-express/</loc>
     
     <lastmod>2016-11-30T02:02:51.320Z</lastmod>
